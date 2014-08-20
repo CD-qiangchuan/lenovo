@@ -1,0 +1,123 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<!--网页最上方板块webtop开始-->
+<div class="webtop-bg">
+  <div class="webtop">
+    <p>欢迎，来到<em>成都联想网上商城！</em> {insert_scripts files='transport.js,utils.js'}
+      {insert name='member_info'} </p>
+    <ul>
+      <li><a href="#">联想官网</a></li>
+      <li class="webtop-separator  sp-h"></li>
+      <li><a href="user.php">我的账户</a></li>
+      <li class="webtop-separator  sp-h"></li>
+      <li><a href="javascript:void(0)">帮助中心</a></li>
+      <li class="webtop-separator  sp-h"></li>
+      <li><a href="javascript:void(0)">EPP会员专享</a></li>
+      <li class="webtop-separator  sp-h"></li>
+      <li><a href="javascript:void(0)">银行分期</a></li>
+    </ul>
+  </div>
+</div>
+<!--header开始-->
+<div class="header">
+  <div class="hd-logo"> <img src="images/logo.jpg" /> </div>
+  <div class="hd-search">
+    <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+      <input name="keywords" type="text" id="keyword" class="hd-text-box"  value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}" title="在此处输入关键字"/>
+      <input name="imageField" type="submit" class="hd-sub" value="搜索" />
+      <ul class="hd-hot-query">
+        <!--热门关键字--> 
+        {if $searchkeywords}
+        {foreach name=skeyword from=$searchkeywords item=val}
+        <li><a href="search.php?keywords={$val|escape:url}">{$val}</a></li>
+        {if ! $smarty.foreach.skeyword.last}
+        <li class="webtop-separator"></li>
+        {/if}
+        {/foreach}
+        {/if}
+      </ul>
+    </form>
+  </div>
+  <div class="hd-tool">
+    <div class="hd-tool-account"><a href="#"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
+    <div class="hd-tool-shopping shopping-sty"><a href="#"><span class="hd-shopping-ico shopping-ico-bg"></span><span class="hd-shopping-til">购物车</span><span class="hd-tool-jt tool-jt-bg"></span></a> </div>
+    <div class="shopping-minicart"> <i class="shopping-minicart-ico"></i> <span>购物车中还没有商品，赶紧选购吧！</span> </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--公告滚动-->
+<div class="site-info" id="scrollDiv"> <span class="site-info-ico"></span>
+  <ul>
+  <!--{foreach from=$new_articles item=article}-->
+<li><a href="{$article.url}" title="{$article.title|escape:html}"><!--{$article.short_title|truncate:25:true}--></a></li>
+<!--{/foreach}--> 
+  </ul>
+</div>
+<!--header end--> 
+<!--main-nav主导航开始-->
+<div class="main-nav">
+  <div class="main-nav-box"> 
+    <!--所有产品分类-->
+    <div class="sidebar">
+      <h3>所有产品分类</h3>
+      <ul class="sidebar-ul">
+        <!--{foreach from=$categories item=cat}-->
+        <li class="sidebar-f-h sidebar-li-height" id="sidebar-li">
+          <h4>{$cat.name}</h4>
+          <!--<span> <a href="#">家用分体台式机</a> <a href="#">商用笔记本电脑</a> </span>-->
+          <div class="sub-sidebar">
+          <!--{foreach from=$cat.cat_id item=child}-->
+            <dl>
+              <dt>{$child.name}</dt>
+              <!--{foreach from=$child.cat_id item=childer}-->
+              <dd class="webtop-separator"></dd>
+              <dd>{$childer.name}</dd>
+              <!--{/foreach}-->
+			  
+            </dl>
+            <!--{/foreach}-->
+          </div>
+        </li>
+        <!--{/foreach}-->
+      </ul>
+    </div>
+    <!--主导航-->
+    <ul class="mainbar">
+      <!--栏目导航-->
+      <li><a href="../index.php"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}</a>
+      <li> 
+        <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+      <li><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>{$nav.name}</a>
+      <li> 
+        <!-- {/foreach} --> 
+        <!--自定义导航--> 
+        <!--{if $navigator_list.top}--> 
+        
+        <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
+      <li><a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a></li>
+      <!-- {/foreach} --> 
+      <!-- {/if} -->
+    </ul>
+    <div class="clear"></div>
+  </div>
+</div>
+<script type="text/javascript">
+    {literal}
+    <!--
+    function checkSearchForm()
+    {
+        if(document.getElementById('keyword').value)
+        {
+            return true;
+        }
+        else
+        {
+            alert("{$lang.no_keywords}");
+            return false;
+        }
+    }
+    -->
+    {/literal}
+</script> 

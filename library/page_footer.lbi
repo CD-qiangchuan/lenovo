@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="blank"></div>
+<!--foot-->
+<div class="footer">
+  <div class="footer-box"> 
+    <!--网店帮助--> 
+    <!--{if $helps}--> 
+    <!-- {foreach from=$helps item=help_cat} -->
+    <dl>
+      <dt><span class="footer-circle"></span><a href='{$help_cat.cat_id}' title="{$help_cat.cat_name}">{$help_cat.cat_name}</a></dt>
+      <!-- {foreach from=$help_cat.article item=item} -->
+      <dd><a href="{$item.url}" title="{$item.title|escape:html}">{$item.short_title}</a></dd>
+      <!-- {/foreach} -->
+    </dl>
+    <!-- {/foreach} --> 
+    <!--{/if}-->
+    <div class="clear"></div>
+    <p class="footer-tel">服务热线： <span>028-85047106  028-850480466  400-028-6620</span></p>
+    <div class="footer-botton">
+      <div class="footer-botton-left"> <img src="images/footer1.jpg" /><img src="images/footer2.jpg" /> </div>
+      <div class="footer-botton-right">
+        <p>©2011-2014 成都强川科技有限公司 版 权 所 有   ICP备案编号：蜀ICP备11026978号-6</p>
+        <p>友情链接：
+        <!-- {if $txt_links} --> 
+        <!--开始文字类型的友情链接{foreach from=$txt_links item=link}--> 
+        <a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a> | 
+        <!--结束文字类型的友情链接{/foreach}--> 
+        <!-- {/if} -->
+        工作时间：周一至周六 9:00-18:00
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{insert name='query_info'}

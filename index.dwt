@@ -1,0 +1,1261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js'}
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script><!--首页的基本js方法-->
+<script type="text/javascript" src="js/jquery.jslides.js"></script><!--首页幻灯片方法-->
+<script type="text/javascript" src="js/jquery-1.2.1.pack.js"></script><!--公告滚动js-->
+<script type="text/javascript">
+//调用公告滚动方法
+$(document).ready(function(){
+setInterval('AutoScroll("scrollDiv")',5000)
+});
+</script>
+<!--解决common.js与jquery.js冲突-->
+<script type="text/javascript">
+$(function() {
+window.__Object_toJSONString = Object.prototype.toJSONString;
+delete Object.prototype.toJSONString;
+});
+</script>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!--main-banner部分开始幻灯片-->
+<div class="main-banner">
+    <ul class="main-banner-img"  id="slides">
+        <li class="main-banner1"><a href="javascript:void(0)"></a></li>
+        <li class="main-banner2"><a href="javascript:void(0)"></a></li>
+        <li class="main-banner3"><a href="javascript:void(0)"></a></li>
+        <li class="main-banner4"><a href="javascript:void(0)"></a></li>
+    </ul>    
+</div>
+
+<!--recommend-prc特惠产品部分-->
+<div class="recommend-prc">
+     <span class="recommend-per"></span>
+     <ul class="recommend-prc-box">
+     <!--分类调用-->
+		 <!--{foreach from=$home_goods item=goods}-->
+         <li>
+             <span class="recommend-prc-img"><a href="{$goods.url}"><img width="163" height="132" src="{$goods.thumb}" title="{$goods.name|escape:html}" /></a></span>
+             <a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a>
+             <span class="recommend-price"> ￥{$goods.shop_price}</span>
+             <span class="price-old">￥{$goods.market_price}</span>
+         </li>
+         <!--{/foreach}-->
+     </ul>
+     <span class="recommend-prc-count">1/5</span>
+     <span class="recommend-next"></span>
+     <div class="clear"></div>
+</div>
+<!--推荐专区-->
+<div class="nominate-box">
+    <ul class="nominate-ul">
+        <li class="nominate-orange nominate-h" id="nominate-li">
+            <h1>热门销售</h1>
+            <h3>ThinkPad T440 20B6002XCD</h3>
+            <span class="nominate-btn"><img src="images/nominate/btn-1.png" /></span>
+            <span class="nominate-img"><img src="images/nominate/prc2.png" /></span>
+        </li>
+        <li class="nominate-green nominate-h" id="nominate-li">
+            <h1>品牌特卖</h1>
+            <h3>扬天 S800-30 商用一体台式电脑</h3>
+            <span class="nominate-btn"><a href="#" class="nominate-botn botn-green">高性能计算体验</a></span>
+            <span class="nominate-img"><img src="images/nominate/prc2.png" /></span>
+        </li>
+        <li class="nominate-purple nominate-h" id="nominate-li">
+            <h1>精选推荐</h1>
+            <h3>家悦S535 23寸台式电脑</h3>
+            <span class="nominate-btn"><a href="#" class="nominate-botn  botn-purple">人性化贴心设计</a></span>
+            <span class="nominate-img"><img src="images/nominate/prc2.png" /></span>
+        </li>
+        <li class="nominate-brown nominate-h" id="nominate-li">
+            <h1>促销特惠</h1>
+            <h3>YOGA平板10-旗舰版</h3>
+            <span class="nominate-btn"><a href="#" class="nominate-botn botn-brown">自由体验，无与伦比</a></span>
+            <span class="nominate-img"><img src="images/nominate/prc2.png" /></span>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+
+<!--1F笔记本电脑-->
+<div class="notebook-floor" id="floor1">
+<div class="clear"></div>
+    <div class="ntbk-f">
+        <div class="ntbk-f-til">
+            <h2>1F<a href="#">笔记本电脑</a></h2>
+        </div>
+    </div>
+    <!--1F选项卡切换-->
+   <div class="tab">
+    <div class="tab-list">
+        <ul id="menu1">
+            <li class="tab-cur" onclick="setTab('menu1','1','showDiv1');" id="li1">家用笔记本</li>
+            <li onclick="setTab('menu1','2','showDiv1');" id="li2">商用笔记本</li>
+        </ul>
+    </div>
+    <div class="tabCon" id="showDiv1">
+		<div class="tabDiv tab-cur" id="main1">        
+            <!--左边图片切换部分-->
+            <div class="tab-ad-glide"><!-- #BeginLibraryItem "/library/index_ad_1F_home.lbi" --> <!-- #EndLibraryItem --></div>
+            <!--中间图片显示部分-->
+            <div class="tab-recommend-prc">
+                <div class="tab-recommend-prcspan1">
+                    <div class="recommend-prcspan1-big">
+                    <!--中间广告-->
+                    <!--{foreach from=$ec_ad1F-1 item=Ad}-->
+                     <a href="{$Ad.imglink}"><img width="430" height="320" src="{$Ad.imgcode}" /></a>
+                     <!--{/foreach}-->
+                    </div>
+                    <div class="recommend-prcspan1-nol"> 
+                      <!--{foreach from=$ec_ad1F-2 item=Ad}-->
+                      <a href="{$Ad.imglink}"><img width="250" height="320" src="{$Ad.imgcode}" /></a>
+                      <!--{/foreach}-->                      
+                    </div>
+                </div>
+                <div class="tab-recommend-prcspan2">
+                <!--家用精品推荐-->
+                    <!--{foreach from=$1F_best_home_good item=goods}-->
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥{$goods.shop_price}</div>
+                            <div class="prcspan2-item-p"><a href="{$goods.url}">{$goods.name|truncate:13:false}</a></div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <a href="{$goods.url}"><img src="{$goods.thumb}"  title="{$goods.name|escape:html}" width="86" height="76" /></a>
+                        </div>
+                    </div>
+                    <!--{/foreach}-->
+                </div>
+            </div>
+            <!--右边排行榜部分-->
+            <div class="tab-prc-hot">
+                <div class="tab-hot-hd">TOP销售排行榜</div>
+                <div class="tab-hot-bd">
+                	<!-- #BeginLibraryItem "/library/1F_home_top5.lbi" --> <!-- #EndLibraryItem -->                              
+                </div>       
+            </div>
+        </div>
+	  <div id="main2" class="tabDiv">
+                      <!--左边图片切换部分-->
+            <div class="tab-ad-glide"><img src="images/1F/2.png" /></div>
+            <!--中间图片显示部分-->
+            <div class="tab-recommend-prc">
+                <div class="tab-recommend-prcspan1">
+                    <div class="recommend-prcspan1-big">
+                    <!--中间广告-->
+                    <!--{foreach from=$ec_ad1F-3 item=Ad}-->
+                     <a href="{$Ad.imglink}"><img width="430" height="320" src="{$Ad.imgcode}" /></a>
+                     <!--{/foreach}-->
+                    </div>
+                    <div class="recommend-prcspan1-nol">    
+                      <!--{foreach from=$ec_ad1F-4 item=Ad}-->
+                      <a href="{$Ad.imglink}"><img width="250" height="320" src="{$Ad.imgcode}" /></a>
+                      <!--{/foreach}-->                       
+                    </div>
+                </div>
+                <div class="tab-recommend-prcspan2">
+               		<!--商用精品推荐-->
+                    <!--{foreach from=$1F_best_shangyong_good item=goods}-->
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥{$goods.shop_price}</div>
+                            <div class="prcspan2-item-p"><a href="{$goods.url}">{$goods.name|truncate:13:false}</a></div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <a href="{$goods.url}"><img src="{$goods.thumb}"  title="{$goods.name|escape:html}" width="86" height="76" /></a>
+                        </div>
+                    </div>
+                    <!--{/foreach}-->
+                </div>
+            </div>
+            <!--右边排行榜部分-->
+            <div class="tab-prc-hot">
+                <div class="tab-hot-hd">TOP销售排行榜</div>
+                <div class="tab-hot-bd">              
+                   <!-- #BeginLibraryItem "/library/1F_shangyong_top5.lbi" --> <!-- #EndLibraryItem -->                     
+                </div>       
+            </div>
+      </div>
+	</div>
+    <div class="clear"></div>
+   </div>
+   </div>
+<!--2F分体台式机-->
+<div class="notebook-floor" id="floor2">
+<div class="clear"></div>
+    <div class="ntbk-f">
+        <div class="ntbk-f-til">
+            <h2>2F<a href="#">分体台式机</a></h2>
+        </div>
+    </div>
+    <!--2F选项卡切换-->
+   <div class="tab">
+    <div class="tab-list">
+        <ul id="menu2">
+            <li class="tab-cur" onclick="setTab('menu2','1','showDiv2');" id="li1">家用分体机</li>
+            <li onclick="setTab('menu2','2','showDiv2');" id="li2">商用分体机</li>
+        </ul>
+    </div>
+    <div class="tabCon" id="showDiv2">
+		<div class="tabDiv tab-cur" id="main1">        
+            <!--左边图片切换部分-->
+            <div class="tab-ad-glide"><img src="images/1F/1.jpg" /></div>
+            <!--中间图片显示部分-->
+            <div class="tab-recommend-prc">
+                <div class="tab-recommend-prcspan1">
+                    <div class="recommend-prcspan1-big">
+                        <div class="prcspan1-big-p">
+                            <h2>U510-IFI(暮光灰)</h2>
+                            <p>15.6英寸 + 500G硬盘 + 第三代酷睿CPU</p>
+                        </div>
+                        <div class="prcspan1-big-bom">
+                            <div class="prcspan1-big-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                                <span class="tab-price-old">￥5999.00</span>
+                                <span class="prcspan1-big-btn"><a href="#">立即抢购</a></span>
+                            </div>
+                            <div class="prcspan1-big-img">
+                                <img src="images/1F/prc-big.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan1-nol">
+                        <div class="prcspan1-nol-p">
+                            <h2>S410pT-IFI(曜石黑)</h2>
+                            <p>强劲性能 + 强效视觉效果</p>
+                        </div>
+                        <div class="prcspan1-nol-bom">
+                            <div class="prcspan1-nol-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                            </div>
+                            <div class="prcspan1-nol-img">
+                                <img src="images/1F/prc-nol.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-recommend-prcspan2">
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item border-rit-none">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右边排行榜部分-->
+            <div class="tab-prc-hot">
+                <div class="tab-hot-hd">TOP销售排行榜</div>
+                <div class="tab-hot-bd">
+                    <div class="tab-hot-item ">
+                        <div class="tab-hot-num tab-num-col">1</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">2</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">3</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">4</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">5</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>                    
+                </div>       
+            </div>
+        </div>
+	  <div id="main2" class="tabDiv">
+                      <!--左边图片切换部分-->
+            <div class="tab-ad-glide"><img src="images/1F/2.png" /></div>
+            <!--中间图片显示部分-->
+            <div class="tab-recommend-prc">
+                <div class="tab-recommend-prcspan1">
+                    <div class="recommend-prcspan1-big">
+                        <div class="prcspan1-big-p">
+                            <h2>U510-IFI(暮光灰)</h2>
+                            <p>15.6英寸 + 500G硬盘 + 第三代酷睿CPU</p>
+                        </div>
+                        <div class="prcspan1-big-bom">
+                            <div class="prcspan1-big-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                                <span class="tab-price-old">￥5999.00</span>
+                                <span class="prcspan1-big-btn"><a href="#">立即抢购</a></span>
+                            </div>
+                            <div class="prcspan1-big-img">
+                                <img src="images/1F/prc-big.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan1-nol">
+                        <div class="prcspan1-nol-p">
+                            <h2>S410pT-IFI(曜石黑)</h2>
+                            <p>强劲性能 + 强效视觉效果</p>
+                        </div>
+                        <div class="prcspan1-nol-bom">
+                            <div class="prcspan1-nol-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                            </div>
+                            <div class="prcspan1-nol-img">
+                                <img src="images/1F/prc-nol.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-recommend-prcspan2">
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item border-rit-none">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右边排行榜部分-->
+            <div class="tab-prc-hot">
+                <div class="tab-hot-hd">TOP销售排行榜</div>
+                <div class="tab-hot-bd">
+                    <div class="tab-hot-item ">
+                        <div class="tab-hot-num tab-num-col">1</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">2</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">3</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">4</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">5</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>                    
+                </div>       
+            </div>
+      </div>
+	</div>
+    <div class="clear"></div>
+   </div>
+   </div>
+<!--3F一体台式机-->
+<div class="notebook-floor" id="floor3">
+<div class="clear"></div>
+    <div class="ntbk-f">
+        <div class="ntbk-f-til">
+            <h2>3F<a href="#">一体台式机</a></h2>
+        </div>
+    </div>
+    <!--1F选项卡切换-->
+   <div class="tab">
+    <div class="tab-list">
+        <ul id="menu3">
+            <li class="tab-cur" onclick="setTab('menu3','1','showDiv3');" id="li1">家用一体机</li>
+            <li onclick="setTab('menu3','2','showDiv3');" id="li2">商用一体机</li>
+        </ul>
+    </div>
+    <div class="tabCon" id="showDiv3">
+		<div class="tabDiv tab-cur" id="main1">        
+            <!--左边图片切换部分-->
+            <div class="tab-ad-glide"><img src="images/1F/1.jpg" /></div>
+            <!--中间图片显示部分-->
+            <div class="tab-recommend-prc">
+                <div class="tab-recommend-prcspan1">
+                    <div class="recommend-prcspan1-big">
+                        <div class="prcspan1-big-p">
+                            <h2>U510-IFI(暮光灰)</h2>
+                            <p>15.6英寸 + 500G硬盘 + 第三代酷睿CPU</p>
+                        </div>
+                        <div class="prcspan1-big-bom">
+                            <div class="prcspan1-big-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                                <span class="tab-price-old">￥5999.00</span>
+                                <span class="prcspan1-big-btn"><a href="#">立即抢购</a></span>
+                            </div>
+                            <div class="prcspan1-big-img">
+                                <img src="images/1F/prc-big.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan1-nol">
+                        <div class="prcspan1-nol-p">
+                            <h2>S410pT-IFI(曜石黑)</h2>
+                            <p>强劲性能 + 强效视觉效果</p>
+                        </div>
+                        <div class="prcspan1-nol-bom">
+                            <div class="prcspan1-nol-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                            </div>
+                            <div class="prcspan1-nol-img">
+                                <img src="images/1F/prc-nol.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-recommend-prcspan2">
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item border-rit-none">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右边排行榜部分-->
+            <div class="tab-prc-hot">
+                <div class="tab-hot-hd">TOP销售排行榜</div>
+                <div class="tab-hot-bd">
+                    <div class="tab-hot-item ">
+                        <div class="tab-hot-num tab-num-col">1</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">2</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">3</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">4</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">5</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>                    
+                </div>       
+            </div>
+        </div>
+	  <div id="main2" class="tabDiv">
+                      <!--左边图片切换部分-->
+            <div class="tab-ad-glide"><img src="images/1F/2.png" /></div>
+            <!--中间图片显示部分-->
+            <div class="tab-recommend-prc">
+                <div class="tab-recommend-prcspan1">
+                    <div class="recommend-prcspan1-big">
+                        <div class="prcspan1-big-p">
+                            <h2>U510-IFI(暮光灰)</h2>
+                            <p>15.6英寸 + 500G硬盘 + 第三代酷睿CPU</p>
+                        </div>
+                        <div class="prcspan1-big-bom">
+                            <div class="prcspan1-big-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                                <span class="tab-price-old">￥5999.00</span>
+                                <span class="prcspan1-big-btn"><a href="#">立即抢购</a></span>
+                            </div>
+                            <div class="prcspan1-big-img">
+                                <img src="images/1F/prc-big.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan1-nol">
+                        <div class="prcspan1-nol-p">
+                            <h2>S410pT-IFI(曜石黑)</h2>
+                            <p>强劲性能 + 强效视觉效果</p>
+                        </div>
+                        <div class="prcspan1-nol-bom">
+                            <div class="prcspan1-nol-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                            </div>
+                            <div class="prcspan1-nol-img">
+                                <img src="images/1F/prc-nol.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-recommend-prcspan2">
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item border-rit-none">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右边排行榜部分-->
+            <div class="tab-prc-hot">
+                <div class="tab-hot-hd">TOP销售排行榜</div>
+                <div class="tab-hot-bd">
+                    <div class="tab-hot-item ">
+                        <div class="tab-hot-num tab-num-col">1</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">2</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">3</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">4</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">5</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>                    
+                </div>       
+            </div>
+      </div>
+	</div>
+    <div class="clear"></div>
+   </div>
+   </div>
+ <!--4F Think产品-->
+<div class="notebook-floor" id="floor4">
+<div class="clear"></div>
+    <div class="ntbk-f">
+        <div class="ntbk-f-til">
+            <h2>4F<a href="#">Think 产品</a></h2>
+        </div>
+    </div>
+    <!--4F选项卡切换-->
+   <div class="tab">
+    <div class="tab-list">
+        <ul id="menu4">
+            <li class="tab-cur" onclick="setTab('menu4','1','showDiv4');" id="li1">ThinkPad</li>
+            <li onclick="setTab('menu4','2','showDiv4');" id="li2">ThinkServer</li>
+             <li onclick="setTab('menu4','3','showDiv4');" id="li3">ThinkStation</li>
+        </ul>
+    </div>
+    <div class="tabCon" id="showDiv4">
+	  <div class="tabDiv tab-cur" id="main1">        
+            <!--左边图片切换部分-->
+            <div class="tab-ad-glide"><img src="images/1F/1.jpg" /></div>
+            <!--中间图片显示部分-->
+            <div class="tab-recommend-prc">
+                <div class="tab-recommend-prcspan1">
+                    <div class="recommend-prcspan1-big">
+                        <div class="prcspan1-big-p">
+                            <h2>U510-IFI(暮光灰)</h2>
+                            <p>15.6英寸 + 500G硬盘 + 第三代酷睿CPU</p>
+                        </div>
+                        <div class="prcspan1-big-bom">
+                            <div class="prcspan1-big-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                                <span class="tab-price-old">￥5999.00</span>
+                                <span class="prcspan1-big-btn"><a href="#">立即抢购</a></span>
+                            </div>
+                            <div class="prcspan1-big-img">
+                                <img src="images/1F/prc-big.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan1-nol">
+                        <div class="prcspan1-nol-p">
+                            <h2>S410pT-IFI(曜石黑)</h2>
+                            <p>强劲性能 + 强效视觉效果</p>
+                        </div>
+                        <div class="prcspan1-nol-bom">
+                            <div class="prcspan1-nol-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                            </div>
+                            <div class="prcspan1-nol-img">
+                                <img src="images/1F/prc-nol.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-recommend-prcspan2">
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item border-rit-none">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右边排行榜部分-->
+            <div class="tab-prc-hot">
+                <div class="tab-hot-hd">TOP销售排行榜</div>
+                <div class="tab-hot-bd">
+                    <div class="tab-hot-item ">
+                        <div class="tab-hot-num tab-num-col">1</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">2</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">3</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">4</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">5</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>                    
+                </div>       
+            </div>
+        </div>
+	  <div id="main2" class="tabDiv">
+                      <!--左边图片切换部分-->
+            <div class="tab-ad-glide"><img src="images/1F/2.png" /></div>
+            <!--中间图片显示部分-->
+            <div class="tab-recommend-prc">
+                <div class="tab-recommend-prcspan1">
+                    <div class="recommend-prcspan1-big">
+                        <div class="prcspan1-big-p">
+                            <h2>U510-IFI(暮光灰)</h2>
+                            <p>15.6英寸 + 500G硬盘 + 第三代酷睿CPU</p>
+                        </div>
+                        <div class="prcspan1-big-bom">
+                            <div class="prcspan1-big-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                                <span class="tab-price-old">￥5999.00</span>
+                                <span class="prcspan1-big-btn"><a href="#">立即抢购</a></span>
+                            </div>
+                            <div class="prcspan1-big-img">
+                                <img src="images/1F/prc-big.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan1-nol">
+                        <div class="prcspan1-nol-p">
+                            <h2>S410pT-IFI(曜石黑)</h2>
+                            <p>强劲性能 + 强效视觉效果</p>
+                        </div>
+                        <div class="prcspan1-nol-bom">
+                            <div class="prcspan1-nol-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                            </div>
+                            <div class="prcspan1-nol-img">
+                                <img src="images/1F/prc-nol.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-recommend-prcspan2">
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item border-rit-none">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右边排行榜部分-->
+            <div class="tab-prc-hot">
+                <div class="tab-hot-hd">TOP销售排行榜</div>
+                <div class="tab-hot-bd">
+                    <div class="tab-hot-item ">
+                        <div class="tab-hot-num tab-num-col">1</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">2</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">3</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">4</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">5</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>                    
+                </div>       
+            </div>
+      </div>
+      <div id="main3" class="tabDiv">
+                      <!--左边图片切换部分-->
+            <div class="tab-ad-glide"><img src="images/1F/2.png" /></div>
+            <!--中间图片显示部分-->
+            <div class="tab-recommend-prc">
+                <div class="tab-recommend-prcspan1">
+                    <div class="recommend-prcspan1-big">
+                        <div class="prcspan1-big-p">
+                            <h2>U510-IFI(暮光灰)</h2>
+                            <p>15.6英寸 + 500G硬盘 + 第三代酷睿CPU</p>
+                        </div>
+                        <div class="prcspan1-big-bom">
+                            <div class="prcspan1-big-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                                <span class="tab-price-old">￥5999.00</span>
+                                <span class="prcspan1-big-btn"><a href="#">立即抢购</a></span>
+                            </div>
+                            <div class="prcspan1-big-img">
+                                <img src="images/1F/prc-big.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan1-nol">
+                        <div class="prcspan1-nol-p">
+                            <h2>S410pT-IFI(曜石黑)</h2>
+                            <p>强劲性能 + 强效视觉效果</p>
+                        </div>
+                        <div class="prcspan1-nol-bom">
+                            <div class="prcspan1-nol-price">
+                                <span class="tab-recommend-price">￥4299.00</span>
+                            </div>
+                            <div class="prcspan1-nol-img">
+                                <img src="images/1F/prc-nol.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-recommend-prcspan2">
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                    <div class="recommend-prcspan2-item border-rit-none">
+                        <div class="prcspan2-item-left">
+                            <div class="prcspan2-item-price">￥4099.00</div>
+                            <div class="prcspan2-item-p">Lenovo Z480S-IFI</div>
+                        </div>
+                        <div class="prcspan2-item-img">
+                            <img src="images/1F/prc-small1.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--右边排行榜部分-->
+            <div class="tab-prc-hot">
+                <div class="tab-hot-hd">TOP销售排行榜</div>
+                <div class="tab-hot-bd">
+                    <div class="tab-hot-item ">
+                        <div class="tab-hot-num tab-num-col">1</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">2</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num tab-num-col">3</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">4</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>
+                    <div class="tab-hot-item">
+                        <div class="tab-hot-num">5</div>
+                        <div class="tab-hot-text">
+                            <div class="tab-hot-p">昭阳 E4430G-ISE</div>
+                            <div class="tab-hot-price">￥7199.00</div>
+                        </div>
+                        <div class="tab-hot-img">
+                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
+                        </div>
+                    </div>                    
+                </div>       
+            </div>
+      </div>
+	</div>
+    <div class="clear"></div>
+   </div>
+   </div>
+<!--5F 图形工作站-->
+<div class="workstation-floor" id="floor5">
+    <div class="wkst-f">
+        <div class="wkst-f-til">
+            <h2>5F<a href="#">图形工作站</a></h2>
+        </div>
+    </div>
+    <div class="wkst-floor-bd">
+        <div class="wkst-ad-glide"><img src="images/5F/ad.jpg" /></div>
+        <div class="wkst-floor-item">
+            <a href="#"><img src="images/5F/5F-1.jpg" width="241" height="297"/></a>
+        </div>
+        <div class="wkst-floor-item">
+			<a href="#"><img src="images/5F/5F-2.jpg" width="241" height="297"/></a>
+        </div>
+        <div class="wkst-floor-item">
+			<a href="#"><img src="images/5F/5F-3.jpg" width="241" height="297"/></a>
+        </div>
+        <div class="wkst-floor-item border-rit-none">
+			<a href="#"><img src="images/5F/5F-4.jpg" width="241" height="297"/></a>
+        </div>
+    </div>
+</div>
+<!--6F 服务器-->
+<div class="workstation-floor" id="floor6">
+    <div class="wkst-f">
+        <div class="wkst-f-til">
+            <h2>6F<a href="#">服务器</a></h2>
+        </div>
+    </div>
+    <div class="wkst-floor-bd">
+        <div class="wkst-ad-glide"><img src="images/5F/ad.jpg" /></div>
+        <div class="wkst-floor-item">
+            <div class="wskt-item-img"><img src="images/5F/prc1.jpg" /></div>
+            <div class="wkst-item-info">
+                <span class="wkst-item-til">联想YOGA 平板8</span>
+                <p class="wkst-item-intro">自由无度，优化各模式使用体验</p>
+            </div>
+            <div class="wkst-item-price">￥2199.00</div>
+        </div>
+        <div class="wkst-floor-item">
+            <div class="wskt-item-img"><img src="images/5F/prc2.jpg" /></div>
+            <div class="wkst-item-info">
+                <span class="wkst-item-til">联想YOGA 平板8</span>
+                <p class="wkst-item-intro">自由无度，优化各模式使用体验</p>
+            </div>
+            <div class="wkst-item-price">￥2199.00</div>
+        </div>
+        <div class="wkst-floor-item">
+            <div class="wskt-item-img"><img src="images/5F/prc3.jpg" /></div>
+            <div class="wkst-item-info">
+                <span class="wkst-item-til">联想YOGA 平板8</span>
+                <p class="wkst-item-intro">自由无度，优化各模式使用体验</p>
+            </div>
+            <div class="wkst-item-price">￥2199.00</div>
+        </div>
+        <div class="wkst-floor-item border-rit-none">
+            <div class="wskt-item-img"><img src="images/5F/prc4.jpg" /></div>
+            <div class="wkst-item-info">
+                <span class="wkst-item-til">联想YOGA 平板8</span>
+                <p class="wkst-item-intro">自由无度，优化各模式使用体验</p>
+            </div>
+            <div class="wkst-item-price">￥2199.00</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--end-->
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!--左边固定栏-->
+<div class="left-sidebar">
+    <ul class="left-sidebar-item">
+        <li class="left-sidebar-order"><a href="#" title="我的账户"></a></li>
+        <li class="left-sidebar-collect">
+            <a href="#" title="收藏"></a>
+            <div class="left-collect-box">
+                 <h5>我收藏的产品</h5>
+                 <p>暂无相关内容</p>
+                 <div class="left-collect-bottom1"></div>
+                 <div class="left-collect-bottom2"></div>
+            </div>
+        </li>
+        <li class="left-sidebar-browse">
+            <a href="#" title="浏览"></a>
+            <div class="left-collect-box">
+                 <h5>我的浏览记录</h5>
+                 <p>暂无相关内容</p>
+                 <div class="left-collect-bottom1"></div>
+                 <div class="left-collect-bottom2"></div>
+            </div>
+        </li>
+        <li class="left-sidebar-consult">
+            <a href="#" title="咨询"></a>
+            <div class="left-consult-box">
+                <div class="left-consult-img"></div>
+                <div class="left-consult-text">
+                    <p>QQ咨询，获取更多优惠</p>
+                    <p class="consult-text-p">时间：9:00 - 18:00</p>
+                </div>
+            </div>
+        </li>
+        <li class="left-sidebar-contact">
+            <a href="#" title="联系"></a>
+            <div class="left-contact-box">
+                <div class="left-contact-img"></div>
+                <div class="left-contact-text">
+                    <p>服务热线</p>
+                    <p class="contact-text-p">400-028-6620</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--右边固定栏-->
+<div class="right-sidebar">
+    <div class="right-sidebar-item">
+        <a href="#" title="推荐" class="right-sidebar-recommend"><span class="sidebar-hid">推荐</span></a>
+        <a href="#floor1" title="笔记本电脑"><span class="sidebar-hid">笔记本</span></a>
+        <a href="#floor2" title="分体台式机"><span class="sidebar-hid">分体机</span></a>
+        <a href="#floor3" title="一体台式机"><span class="sidebar-hid">一体机</span></a>
+        <a href="#floor4" title="Think产品"><span class="sidebar-hid">Think</span></a>
+        <a href="#floor5" title="图形工作站"><span class="sidebar-hid">工作站</span></a>
+        <a href="#floor6" title="服务器"><span class="sidebar-hid">服务器</span></a>
+    </div>
+    <span  class="scrolltop"><a href="#" title="返回顶部"></a></span>
+</div>
+</body>
+</html>
+

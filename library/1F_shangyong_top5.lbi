@@ -1,0 +1,11 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {foreach name=business_notobook_top5 from=$business_notobook_top5 item=goods}-->
+<div class="tab-hot-item">
+  <div class="tab-hot-num <!-- {if $smarty.foreach.business_notobook_top5.iteration<4}-->tab-num-col<!-- {/if} --> ">{$smarty.foreach.business_notobook_top5.iteration}</div>
+  <div class="tab-hot-text">
+    <div class="tab-hot-p">{$goods.short_name|truncate:13:false}</div>
+    <div class="tab-hot-price">￥{$goods.price}</div>
+  </div>
+  <div class="tab-hot-img"> <a href="{$goods.url}"><img width="70" height="59" src="{$goods.thumb}" alt="{$goods.name|escape:html}"/></a> </div>
+</div>
+<!-- {/foreach} -->

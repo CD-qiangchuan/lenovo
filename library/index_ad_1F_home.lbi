@@ -1,0 +1,5 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--广告调用-->
+<!--{foreach from=$ec_ad1F item=Ad}-->
+<A href="{$Ad.imglink}" target="_blank"><img alt="{$Ad.title|escape:html}" src="{$Ad.imgcode}" /></A>
+<!--{/foreach}-->

@@ -1,0 +1,726 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/global.js"></script>
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+<script  type="text/javascript">
+function $id(element) {
+  return document.getElementById(element);
+}
+//切屏--是按钮，_v是内容平台，_h是内容库
+function reg(str){
+  var bt=$id(str+"_b").getElementsByTagName("h2");
+  for(var i=0;i<bt.length;i++){
+    bt[i].subj=str;
+    bt[i].pai=i;
+    bt[i].style.cursor="pointer";
+    bt[i].onclick=function(){
+      $id(this.subj+"_v").innerHTML=$id(this.subj+"_h").getElementsByTagName("blockquote")[this.pai].innerHTML;
+      for(var j=0;j<$id(this.subj+"_b").getElementsByTagName("h2").length;j++){
+        var _bt=$id(this.subj+"_b").getElementsByTagName("h2")[j];
+        var ison=j==this.pai;
+        _bt.className=(ison?"":"h2bg");
+      }
+    }
+  }
+  $id(str+"_h").className="none";
+  $id(str+"_v").innerHTML=$id(str+"_h").getElementsByTagName("blockquote")[0].innerHTML;
+}
+
+</script>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header-1.lbi" --><!-- #EndLibraryItem --> 
+<!--当前位置 start-->
+<div class="current-position">
+  <p><!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --></p>
+</div>
+<!--当前位置 end--> 
+
+<!--产品详情板块-->
+<div class="pd-goods-show"> 
+  <!--产品图片展示-->
+  <div class="pd-good-left">
+    <div class="pd-good-mainImg"> <img src="images/pd/main1.jpg"  width="600" height="420" /> </div>
+    <div class="pd-good-imgItem">
+      <ul>
+        <li class="pd-picimg pd-pic-active"><i class="trigon-bg trigon-show"></i><img src="images/pd/img1.jpg" width="140" height="88" /></li>
+        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/img2.jpg" width="140" height="88" /></li>
+        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/img3.jpg" width="140" height="88" /></li>
+        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/img4.jpg" width="140" height="88" /></li>
+      </ul>
+    </div>
+  </div>
+  <!--产品基本信息-->
+  <div class="pd-good-right">
+    <div class="pd-goodRig-top">
+      <!--商品名-->
+      <h2 class="pd-good-name">{$goods.goods_style_name}</h2>
+      <p class="pd-good-brief">Y400/Y500，全新一代“彪悍的小Y”，预装Windows 8 中文版，搭载Intel Ivy Bridge新平台CPU，配以NVIDIA 28NM制程高</p>
+      <ul class="pd-good-configuration">
+        <li><span>CPU类型：</span>i5-3230M(2.6GHz，可睿频加速至3.2 </li>
+        <li><span>内    存：</span>4GB DDR3</li>
+        <li><span>操作系统：</span>Windows 8 中文版 </li>
+        <li><span>显    卡：</span>GeForce GT 750M</li>
+        <li><span>屏    幕：</span>14.0英寸</li>
+        <li><span>硬    盘： </span>1TB HDD硬盘</li>
+      </ul>
+    </div>
+    <div class="pd-goodRig-botm">
+      <ul class="pd-good-price">
+        <li>
+        <span>商品编号：</span>
+                <!-- {if $cfg.show_goodssn} 显示商品货号--> 
+                {$goods.goods_sn} 
+                <!-- {/if} --> 
+        </li>
+        <li><span>市场价：</span><span class="pd-good-marketPrice">￥{$goods.market_price}</span></li>
+        <li><span>销售价：</span><span class="pd-good-sellPrice">￥{$goods.shop_price_formated}</span></li>
+        <li><span class="pd-good-blockSpan">库存状况：</span>
+                <!-- {if $goods.goods_number neq "" and $cfg.show_goodsnumber} 商品库存--> 
+                <!-- {if $goods.goods_number eq 0} --> 
+                <span class="pd-good-blockSpan">暂无库存</span><a href="#" class="pd-good-inform">到货通知我</a> 
+                <!-- {else} --> 
+                <span class="pd-good-blockSpan">有货</span>
+                <!-- {/if} --> 
+                <!-- {/if} -->
+          <div class="clear"></div>
+        </li>
+        <li><span class="pd-delivery-span">配送至：</span>
+          <div id="pd-store-selector">
+            <div class="pd-delivery-place">
+              <div class="pd-delivery-placeText">成都市区</div>
+              <b></b> </div>
+            <div class="pd-delivery-province">
+              <div class="pd-delivery-tab">
+                <div class="pd-place tab-list">
+                  <ul class="pd-place-tab" id="pd-place-tab">
+                    <li class="tab-cur" onclick="setTab('pd-place-tab','1','pd-areaBox');" id="li1"><a><em>四川省</em><i></i></a></li>
+                    <li onclick="setTab('pd-place-tab','2','pd-areaBox');" id="li2"><a><em>成都市</em><i></i></a></li>
+                    <li onclick="setTab('pd-place-tab','3','pd-areaBox');" id="li3"><a ><em>成都市区</em><i></i></a></li>
+                  </ul>
+                </div>
+                <div id="pd-areaBox" class="tabCon">
+                  <div class="pd-area tabDiv tab-cur" id="main1">
+                    <ul class="pd-area-list">
+                      <li><a href="#">北京</a></li>
+                      <li><a href="#">云南</a></li>
+                      <li><a href="#">河南</a></li>
+                      <li><a href="#">重庆</a></li>
+                      <li><a href="#">西藏</a></li>
+                      <li><a href="#">上海</a></li>
+                      <li><a href="#">湖北</a></li>
+                      <li><a href="#">山西</a></li>
+                      <li><a href="#">江西</a></li>
+                      <li><a href="#">甘肃</a></li>
+                    </ul>
+                  </div>
+                  <div class="tabDiv" id="main2">
+                    <ul class="pd-area-list">
+                      <li><a href="#">绵阳</a></li>
+                      <li><a href="#">德阳</a></li>
+                      <li><a href="#">泸州</a></li>
+                      <li><a href="#">宜宾</a></li>
+                      <li><a href="#">达州</a></li>
+                      <li><a href="#">遂宁</a></li>
+                      <li><a href="#">南充</a></li>
+                      <li><a href="#">巴中</a></li>
+                      <li><a href="#">乐山</a></li>
+                      <li><a href="#">眉山</a></li>
+                      <li><a href="#">自贡</a></li>
+                      <li><a href="#">广安</a></li>
+                    </ul>
+                  </div>
+                  <div class="tabDiv" id="main3">
+                    <ul class="pd-area-list">
+                      <li><a href="#">郫县</a></li>
+                      <li><a href="#">龙泉驿区</a></li>
+                      <li><a href="#">都江堰</a></li>
+                      <li><a href="#">新津县</a></li>
+                      <li><a href="#">高新西区</a></li>
+                      <li><a href="#">青羊区</a></li>
+                      <li><a href="#">锦江区</a></li>
+                      <li><a href="#">金牛区</a></li>
+                      <li><a href="#">武侯区</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          11:00前完成下单，预计<b>后天（8月15日）</b>送达</li>
+        <li><span class="pd-good-quantity">购买数量： </span><span class="pd-good-decrease"></span>
+          <input type="text" size="5" value="1" class="pd-good-input"/>
+          <span class="pd-good-increase"></span>
+          <div class="clear"></div>
+        </li>
+        <li><span class="pd-good-serveSpan">支持服务： </span><a href="#" class="pd-good-serve">免运费</a><a href="#" class="pd-good-serve">快速上门</a></li>
+        <div class="clear"></div>
+      </ul>
+      <div class="pd-good-btn"> <a href="javascript:addToCart(1)"  class="pd-good-buy"><i class="pd-good-buyIco"></i>加入购物车</a> <a href="#" class="pd-good-collect"><i class="pd-good-collectIco"></i>收藏商品</a> </div>
+      <div class="clear"></div>
+    </div>
+    <div class="jia1">
+      <div class="jiathis_style"><span class="jiathis_txt">分享到：</span> <a class="jiathis_button_tsina" title="分享到新浪微博"><span class="jiathis_txt jtico jtico_tsina"></span></a> <a class="jiathis_button_weixin" title="分享到微信"><span class="jiathis_txt jtico jtico_weixin"></span></a> <a class="jiathis_button_tqq" title="分享到腾讯微博"><span class="jiathis_txt jtico jtico_tqq"></span></a> <a class="jiathis_button_cqq" title="分享到QQ好友"><span class="jiathis_txt jtico jtico_cqq"></span></a> <a class="jiathis_button_renren" title="分享到人人网"><span class="jiathis_txt jtico jtico_renren"></span></a> <a class="jiathis_button_taobao" title="分享到淘江湖"><span class="jiathis_txt jtico jtico_taobao"></span></a> <a class="jiathis_button_feixin" title="分享到飞信"><span class="jiathis_txt jtico jtico_feixin"></span></a> <a class="jiathis_button_qzone" title="分享到QQ空间"><span class="jiathis_txt jtico jtico_qzone"></span></a> <a class="jiathis_button_hi" title="分享到百度空间"><span class="jiathis_txt jtico jtico_hi"></span></a> <a class="jiathis_button_mogujie" title="分享到蘑菇街"><span class="jiathis_txt jtico jtico_mogujie"></span></a> <a class="jiathis_button_tieba" title="分享到百度贴吧"><span class="jiathis_txt jtico jtico_tieba"></span></a> <a class="jiathis_button_copy" title="复制网址"><span class="jiathis_txt jtico jtico_copy"></span></a> <a class="jiathis_button_email" title="分享到邮件"><span class="jiathis_txt jtico jtico_email"></span></a> <a class="jiathis_button_baidu" title="分享到百度搜藏"><span class="jiathis_txt jtico jtico_baidu"></span></a> <a class="jiathis_button_qq" title="分享到QQ书签"><span class="jiathis_txt jtico jtico_qq"></span></a> <a class="jiathis_button_fb" title="分享到Facebook"><span class="jiathis_txt jtico jtico_fb"></span></a> <a class="jiathis_button_t163" title="分享到网易微博"><span class="jiathis_txt jtico jtico_t163"></span></a> <a class="jiathis_button_meilishuo" title="分享到美丽说"><span class="jiathis_txt jtico jtico_meilishuo"></span></a> <a class="jiathis_button_xiaoyou" title="分享到朋友网"><span class="jiathis_txt jtico jtico_xiaoyou"></span></a> <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a> <a class="jiathis_counter_style"><span class="jiathis_button_expanded jiathis_counter jiathis_bubble_style" id="jiathis_counter_361" title="累计分享0次">0</span></a> </div>
+      <script type="text/javascript">
+var jiathis_config={
+	summary:"",
+	shortUrl:false,
+	hideMore:false
+}
+</script> <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script><script type="text/javascript" src="http://v3.jiathis.com/code/plugin.client.js" charset="utf-8"></script>
+      <div style="position:absolute;width:0px;height:0px;">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="0" height="0" id="JIATHISSWF" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab">
+          <param name="allowScriptAccess" value="always">
+          <param name="swLiveConnect" value="true">
+          <param name="movie" value="http://www.jiathis.com/code/swf/m.swf">
+          <param name="FlashVars" value="z=a">
+          <embed name="JIATHISSWF" src="http://www.jiathis.com/code/swf/m.swf" flashvars="z=a" width="0" height="0" allowscriptaccess="always" swliveconnect="true" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+        </object>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<!--推荐组合-->
+<div class="pd-recommend">
+  <div class="pd-recommend-left">
+    <ul class="pd-recommend-titlebox">
+      <li><a href="#" class="pd-recommend-group">推荐组合</a></li>
+      <li><a href="#">推荐配件</a></li>
+      <li><a href="#">电脑包</a></li>
+      <li><a href="#">耳机/音箱</a></li>
+      <li><a href="#">电池及适配器</a></li>
+      <li><a href="#">键盘/鼠标</a></li>
+      <li><a href="#">Think选件</a></li>
+    </ul>
+    <div class="pd-recommend-prcBox">
+      <div class="pd-recommend-item">
+        <div class="pd-recommend-prcImg"> <img src="images/pd/mouse.jpg" width="100" height="70" /> </div>
+        <div class="pd-recommend-prcName"> <span><a href="#">win8无线多功能鼠标N310</a></span> <span class="pd-recommend-priceBox">单卖价：<span class="pd-recommend-grayPrice">￥59.00</span></span> <span>
+          <input type="checkbox" />
+          <span class="pd-recommend-redPrice">￥59.00</span></span> </div>
+      </div>
+      <div class="pd-recommend-item">
+        <div class="pd-recommend-prcImg"> <img src="images/pd/mouse.jpg" width="100" height="70" /> </div>
+        <div class="pd-recommend-prcName"> <span><a href="#">win8无线多功能鼠标N310</a></span> <span class="pd-recommend-priceBox">单卖价：<span class="pd-recommend-grayPrice">￥59.00</span></span> <span>
+          <input type="checkbox" />
+          <span class="pd-recommend-redPrice">￥59.00</span></span> </div>
+      </div>
+      <div class="pd-recommend-item">
+        <div class="pd-recommend-prcImg"> <img src="images/pd/mouse.jpg" width="100" height="70" /> </div>
+        <div class="pd-recommend-prcName"> <span><a href="#">win8无线多功能鼠标N310</a></span> <span class="pd-recommend-priceBox">单卖价：<span class="pd-recommend-grayPrice">￥59.00</span></span> <span>
+          <input type="checkbox" />
+          <span class="pd-recommend-redPrice">￥59.00</span></span> </div>
+      </div>
+      <div class="pd-recommend-item">
+        <div class="pd-recommend-prcImg"> <img src="images/pd/mouse.jpg" width="100" height="70" /> </div>
+        <div class="pd-recommend-prcName"> <span><a href="#">win8无线多功能鼠标N310</a></span> <span class="pd-recommend-priceBox">单卖价：<span class="pd-recommend-grayPrice">￥59.00</span></span> <span>
+          <input type="checkbox" />
+          <span class="pd-recommend-redPrice">￥59.00</span></span> </div>
+      </div>
+      <div class="pd-recommend-item">
+        <div class="pd-recommend-prcImg"> <img src="images/pd/mouse.jpg" width="100" height="70" /> </div>
+        <div class="pd-recommend-prcName"> <span><a href="#">win8无线多功能鼠标N310</a></span> <span class="pd-recommend-priceBox">单卖价：<span class="pd-recommend-grayPrice">￥59.00</span></span> <span>
+          <input type="checkbox" />
+          <span class="pd-recommend-redPrice">￥59.00</span></span> </div>
+      </div>
+      <div class="pd-recommend-item">
+        <div class="pd-recommend-prcImg"> <img src="images/pd/mouse.jpg" width="100" height="70" /> </div>
+        <div class="pd-recommend-prcName"> <span><a href="#">win8无线多功能鼠标N310</a></span> <span class="pd-recommend-priceBox">单卖价：<span class="pd-recommend-grayPrice">￥59.00</span></span> <span>
+          <input type="checkbox" />
+          <span class="pd-recommend-redPrice">￥59.00</span></span> </div>
+      </div>
+    </div>
+  </div>
+  <div class="pd-recommend-right">
+    <div class="pd-recommend-arrows"></div>
+    <div class="pd-recommend-suit">
+      <h3 class="pd-recommend-h3">超值特惠装</h3>
+      <ul>
+        <li><span>已选择：</span><em class="pd-recommend-num">0</em>个配件<em class="pd-recommend-clearAll">[清除选择]</em></li>
+        <li>套装价：<span class="pd-recommend-redPrice">￥3059.00</span></li>
+        <li>原 价：<span class="pd-recommend-grayPrice">￥3559.00</span></li>
+        <li>已节省：<span>￥500.00</span></li>
+        <li><a href="#" class="pd-recommend-buyBtn">立即购买</a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="pd-recommend-all"> 
+  <!--左边类别-->
+  <div class="pd-recommend-leftBox"> 
+    <!--相关类别-->
+    <div class="pd-leftBox-sort">
+      <h3>相关分类</h3>
+      <ul class="pd-leftBox-sortBox">
+        <li><a href="#">笔记本电脑</a></li>
+        <li><a href="#">平板电脑</a></li>
+        <li><a href="#">一体台式机</a></li>
+        <li><a href="#">数码配件</a></li>
+        <li><a href="#">分体台式机</a></li>
+        <li><a href="#">Think产品</a></li>
+        <li><a href="#">服务器</a></li>
+      </ul>
+    </div>
+    <!--推荐购买-->
+    <div class="pd-recommend-finalbuy">
+      <h4>浏览了该商品的人最终购买了</h4>
+      <div class="pd-finalbuy-item">
+        <div class="pd-finalbuy-img"> <img src="images/pd/img4.jpg" /> </div>
+        <div class="pd-finalbuy-goodsname"> <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span> </div>
+      </div>
+      <div class="pd-finalbuy-item">
+        <div class="pd-finalbuy-img"> <img src="images/pd/img4.jpg" /> </div>
+        <div class="pd-finalbuy-goodsname"> <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span> </div>
+      </div>
+      <div class="pd-finalbuy-item">
+        <div class="pd-finalbuy-img"> <img src="images/pd/img4.jpg" /> </div>
+        <div class="pd-finalbuy-goodsname"> <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span> </div>
+      </div>
+      <div class="pd-finalbuy-item">
+        <div class="pd-finalbuy-img"> <img src="images/pd/img4.jpg" /> </div>
+        <div class="pd-finalbuy-goodsname"> <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span> </div>
+      </div>
+      <div class="pd-finalbuy-item">
+        <div class="pd-finalbuy-img"> <img src="images/pd/img4.jpg" /> </div>
+        <div class="pd-finalbuy-goodsname"> <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span> </div>
+      </div>
+      <div class="pd-finalbuy-item">
+        <div class="pd-finalbuy-img"> <img src="images/pd/img4.jpg" /> </div>
+        <div class="pd-finalbuy-goodsname"> <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span> </div>
+      </div>
+      <div class="pd-finalbuy-item">
+        <div class="pd-finalbuy-img"> <img src="images/pd/img4.jpg" /> </div>
+        <div class="pd-finalbuy-goodsname"> <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span> </div>
+      </div>
+      <div class="pd-finalbuy-item">
+        <div class="pd-finalbuy-img"> <img src="images/pd/img4.jpg" /> </div>
+        <div class="pd-finalbuy-goodsname"> <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span> </div>
+      </div>
+      <div class="pd-finalbuy-item">
+        <div class="pd-finalbuy-img"> <img src="images/pd/img4.jpg" /> </div>
+        <div class="pd-finalbuy-goodsname"> <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span> </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--浏览记录-->
+    <div class="pd-browse-box">
+      <h4>最近浏览过的商品</h4>
+      <div class="pd-browse-history">
+        <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
+        <div class="pd-browse-historyName"> <a href="#">Y480M-ITH(L)<br />
+          14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span> </div>
+      </div>
+      <div class="pd-browse-history">
+        <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
+        <div class="pd-browse-historyName"> <a href="#">Y480M-ITH(L)<br />
+          14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span> </div>
+      </div>
+      <div class="pd-browse-history">
+        <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
+        <div class="pd-browse-historyName"> <a href="#">Y480M-ITH(L)<br />
+          14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span> </div>
+      </div>
+      <div class="pd-browse-history">
+        <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
+        <div class="pd-browse-historyName"> <a href="#">Y480M-ITH(L)<br />
+          14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span> </div>
+      </div>
+    </div>
+  </div>
+  <!--右边详情-->
+  <div class="pd-recommend-rightBox">
+    <div class="pd-recommend-tab tab-list">
+      <ul id="pd-tab-menu1">
+        <li class="tab-cur" onclick="setTab('pd-tab-menu1','1','pd-tab-show1');" id="li1">商品详情</li>
+        <li onclick="setTab('pd-tab-menu1','2','pd-tab-show1');" id="li2">商品参数</li>
+        <li onclick="setTab('pd-tab-menu1','3','pd-tab-show1');" id="li3">商品评论（15）</li>
+        <li onclick="setTab('pd-tab-menu1','4','pd-tab-show1');" id="li4">商品咨询（78）</li>
+        <li onclick="setTab('pd-tab-menu1','5','pd-tab-show1');" id="li5">售后保障</li>
+      </ul>
+    </div>
+    <div class="tabCon" id="pd-tab-show1"> 
+      <!--商品详情-->
+      <div class="tabDiv tab-cur" id="main1">
+        <p class="pd-main1-p"><img src="images/pd/a63bc53bdf23cbb9.jpg" /></p>
+      </div>
+      <!--商品参数-->
+      <div class="tabDiv" id="main2">
+        <div class="pd-goods-params">
+          <table width="100%" class="pd-goods-paramsTable">
+            <colgroup>
+            <col class="pd-span1">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>处理器</th>
+                <td>第三代智能英特尔 酷睿i5处理器i5-3230M(2.6GHz，可睿频加速至3.2GHz)</td>
+              </tr>
+              <tr>
+                <th>操作系统</th>
+                <td>Windows 8 中文版</td>
+              </tr>
+              <tr>
+                <th>内存</th>
+                <td>4GB DDR3 </td>
+              </tr>
+              <tr>
+                <th>缓存</th>
+                <td>3M三级高速缓存</td>
+              </tr>
+              <tr>
+                <th>硬盘</th>
+                <td>海量1TB HDD硬盘</td>
+              </tr>
+              <tr>
+                <th>无线局域网卡</th>
+                <td>NON-INTEL 1X1 BGN 无线网卡</td>
+              </tr>
+              <tr>
+                <th>光驱</th>
+                <td>超级DVD刻录</td>
+              </tr>
+              <tr>
+                <th>显示屏 </th>
+                <td>14.0"，16：9黄金比例，LED背光</td>
+              </tr>
+              <tr>
+                <th>显卡</th>
+                <td>NVIDIA 28NM制程高性能GeForce GT 750M大型游戏级显卡</td>
+              </tr>
+              <tr>
+                <th>显示内存 </th>
+                <td>2G GDDR5</td>
+              </tr>
+              <tr>
+                <th>键盘</th>
+                <td>联想高触感巧克力键盘</td>
+              </tr>
+              <tr>
+                <th>视频输出 </th>
+                <td>HDMI高清影音端口，标准VGA</td>
+              </tr>
+              <tr>
+                <th>摄像头</th>
+                <td>HD720p自适应环境光摄像头</td>
+              </tr>
+              <tr>
+                <th>声音系统</th>
+                <td>JBL专业品牌音响，杜比认证音效</td>
+              </tr>
+              <tr>
+                <th>网卡</th>
+                <td>100M/1000M以太自适应网卡</td>
+              </tr>
+              <tr>
+                <th>标准接口</th>
+                <td>1个USB3.0接口，2个USB2.0接口，VGA接口，RJ45，全阵列式抗噪麦克风，支持立体音的耳机插孔/音频输出，六合一读卡器(SD/SD-pro/MMC/MS/MS-pro/XD)，HDMI高清输出接口</td>
+              </tr>
+              <tr>
+                <th>电源</th>
+                <td>100~240V宽电压电源适配器</td>
+              </tr>
+              <tr>
+                <th>电池类型</th>
+                <td>高性能6芯锂离子电池</td>
+              </tr>
+              <tr>
+                <th>尺寸</th>
+                <td>350mm x 245mm x 15~33mm</td>
+              </tr>
+              <tr>
+                <th>重量</th>
+                <td>2.2Kg(含有6芯电池，具体重量依据产品出货配置为准)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--商品评价-->
+      <div class="tabDiv" id="main3">
+        <div class="pd-goods-evaluate">
+          <div class="pd-goods-sp"> <span>商品评价</span> </div>
+          <p><span class="span-block">如果您对本商品有什么评价或经验，欢迎分享！</span><a class="pd-goods-span" href="#commentBox">我要评价</a></p>
+          <p>共<em>15</em>人评论，<a href="#" class="pd-goods-allComment">查看全部评论</a>。</p>
+        </div>
+        <div class="pd-goods-evaluateItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-goods-evaluateCont"> 很好的电脑，我们都非常喜欢。 </div>
+          <div class="pd-goods-evaluateTime">2014-08-09 12:25</div>
+        </div>
+        <div class="pd-goods-evaluateItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-goods-evaluateCont"> 很好的电脑，我们都非常喜欢。 </div>
+          <div class="pd-goods-evaluateTime">2014-08-09 12:25</div>
+        </div>
+        <div class="pd-goods-evaluateItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-goods-evaluateCont"> 很好的电脑，我们都非常喜欢。 </div>
+          <div class="pd-goods-evaluateTime">2014-08-09 12:25</div>
+        </div>
+        <div class="pd-goods-evaluateItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-goods-evaluateCont"> 很好的电脑，我们都非常喜欢。 </div>
+          <div class="pd-goods-evaluateTime">2014-08-09 12:25</div>
+        </div>
+        <div class="pd-goods-evaluateItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-goods-evaluateCont"> 很好的电脑，我们都非常喜欢。 </div>
+          <div class="pd-goods-evaluateTime">2014-08-09 12:25</div>
+        </div>
+        <div class="pd-goods-evaluateItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-goods-evaluateCont"> 很好的电脑，我们都非常喜欢。 </div>
+          <div class="pd-goods-evaluateTime">2014-08-09 12:25</div>
+        </div>
+        <div class="pd-goods-evaluateItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-goods-evaluateCont"> 很好的电脑，我们都非常喜欢。 </div>
+          <div class="pd-goods-evaluateTime">2014-08-09 12:25</div>
+        </div>
+        <div class="pd-goods-evaluateItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-goods-evaluateCont"> 很好的电脑，我们都非常喜欢。 </div>
+          <div class="pd-goods-evaluateTime">2014-08-09 12:25</div>
+        </div>
+        <ul class="pd-goods-index">
+          <li>显示10条，共<em class="red-color">15</em>条</li>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">上一页</a></li>
+          <li><a href="#" class="red-color">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">下一页</a></li>
+          <li><a href="#">末页</a></li>
+        </ul>
+        <div class="clear"></div>
+        <div class="pd-comment-publish" id="commentBox"> <b>发表评论：</b>
+          <form action="#" method="post">
+            <textarea></textarea>
+            <p>联系方式:
+              <input type="text" />
+              <span class="gray">(电话、Email、QQ等)</span></p>
+            <p>验证码:
+              <input type="text" />
+            </p>
+            <input type="submit" value="提交评价" />
+          </form>
+        </div>
+      </div>
+      <!--购买咨询-->
+      <div class="tabDiv" id="main4">
+        <div class="pd-goods-consult">
+          <div class="pd-goods-sp"> <span>商品咨询</span> </div>
+          <p><span class="span-block">如果您对本商品有什么评价或经验，欢迎分享！</span><a class="pd-goods-span" href="#consultBox">我要咨询</a></p>
+          <p>共<em class="red-color">78</em>人评论，<a href="#" class="pd-goods-allComment">查看全咨询</a>。</p>
+        </div>
+        <div class="pd-goods-consultItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-consult-box">
+            <div class="pd-consult">
+              <div class="pd-goods-consultCont"> 此款笔记本出问题后去当地联想实体店保修需要带什么证明吗？只要带电脑就好了？ </div>
+              <div class="pd-goods-consultTime">2014-08-09 12:25</div>
+            </div>
+            <div class="pd-evaluate-reply">
+              <div class="pd-evaluate-replyCont">回复：<span class="blue-color">您好，建议您带上购机发票去维修，感谢您对联想的支持，祝您购物愉快！</span></div>
+              <div class="pd-goods-consultTime">2014-08-10 10:50</div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-goods-consultItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-consult-box">
+            <div class="pd-consult">
+              <div class="pd-goods-consultCont"> 此款笔记本出问题后去当地联想实体店保修需要带什么证明吗？只要带电脑就好了？ </div>
+              <div class="pd-goods-consultTime">2014-08-09 12:25</div>
+            </div>
+            <div class="pd-evaluate-reply">
+              <div class="pd-evaluate-replyCont">回复：<span class="blue-color">您好，建议您带上购机发票去维修，感谢您对联想的支持，祝您购物愉快！</span></div>
+              <div class="pd-goods-consultTime">2014-08-10 10:50</div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-goods-consultItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-consult-box">
+            <div class="pd-consult">
+              <div class="pd-goods-consultCont"> 此款笔记本出问题后去当地联想实体店保修需要带什么证明吗？只要带电脑就好了？ </div>
+              <div class="pd-goods-consultTime">2014-08-09 12:25</div>
+            </div>
+            <div class="pd-evaluate-reply">
+              <div class="pd-evaluate-replyCont">回复：<span class="blue-color">您好，建议您带上购机发票去维修，感谢您对联想的支持，祝您购物愉快！</span></div>
+              <div class="pd-goods-consultTime">2014-08-10 10:50</div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-goods-consultItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-consult-box">
+            <div class="pd-consult">
+              <div class="pd-goods-consultCont"> 此款笔记本出问题后去当地联想实体店保修需要带什么证明吗？只要带电脑就好了？ </div>
+              <div class="pd-goods-consultTime">2014-08-09 12:25</div>
+            </div>
+            <div class="pd-evaluate-reply">
+              <div class="pd-evaluate-replyCont">回复：<span class="blue-color">您好，建议您带上购机发票去维修，感谢您对联想的支持，祝您购物愉快！</span></div>
+              <div class="pd-goods-consultTime">2014-08-10 10:50</div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-goods-consultItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-consult-box">
+            <div class="pd-consult">
+              <div class="pd-goods-consultCont"> 此款笔记本出问题后去当地联想实体店保修需要带什么证明吗？只要带电脑就好了？ </div>
+              <div class="pd-goods-consultTime">2014-08-09 12:25</div>
+            </div>
+            <div class="pd-evaluate-reply">
+              <div class="pd-evaluate-replyCont">回复：<span class="blue-color">您好，建议您带上购机发票去维修，感谢您对联想的支持，祝您购物愉快！</span></div>
+              <div class="pd-goods-consultTime">2014-08-10 10:50</div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-goods-consultItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-consult-box">
+            <div class="pd-consult">
+              <div class="pd-goods-consultCont"> 此款笔记本出问题后去当地联想实体店保修需要带什么证明吗？只要带电脑就好了？ </div>
+              <div class="pd-goods-consultTime">2014-08-09 12:25</div>
+            </div>
+            <div class="pd-evaluate-reply">
+              <div class="pd-evaluate-replyCont">回复：<span class="blue-color">您好，建议您带上购机发票去维修，感谢您对联想的支持，祝您购物愉快！</span></div>
+              <div class="pd-goods-consultTime">2014-08-10 10:50</div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-goods-consultItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-consult-box">
+            <div class="pd-consult">
+              <div class="pd-goods-consultCont"> 此款笔记本出问题后去当地联想实体店保修需要带什么证明吗？只要带电脑就好了？ </div>
+              <div class="pd-goods-consultTime">2014-08-09 12:25</div>
+            </div>
+            <div class="pd-evaluate-reply">
+              <div class="pd-evaluate-replyCont">回复：<span class="blue-color">您好，建议您带上购机发票去维修，感谢您对联想的支持，祝您购物愉快！</span></div>
+              <div class="pd-goods-consultTime">2014-08-10 10:50</div>
+            </div>
+          </div>
+        </div>
+        <div class="pd-goods-consultItem">
+          <div class="pd-goods-headPortrait"> <img src="images/pd/head.jpg" /> <span>135*****984</span> </div>
+          <div class="pd-consult-box">
+            <div class="pd-consult">
+              <div class="pd-goods-consultCont"> 此款笔记本出问题后去当地联想实体店保修需要带什么证明吗？只要带电脑就好了？ </div>
+              <div class="pd-goods-consultTime">2014-08-09 12:25</div>
+            </div>
+            <div class="pd-evaluate-reply">
+              <div class="pd-evaluate-replyCont">回复：<span class="blue-color">您好，建议您带上购机发票去维修，感谢您对联想的支持，祝您购物愉快！</span></div>
+              <div class="pd-goods-consultTime">2014-08-10 10:50</div>
+            </div>
+          </div>
+        </div>
+        <ul class="pd-goods-index">
+          <li>显示10条，共<em class="red-color">15</em>条</li>
+          <li><a href="#">首页</a></li>
+          <li><a href="#">上一页</a></li>
+          <li><a href="#" class="red-color">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">下一页</a></li>
+          <li><a href="#">末页</a></li>
+        </ul>
+        <div class="clear"></div>
+        <div class="pd-comment-publish" id="consultBox"> <b>发表咨询：</b>
+          <form action="#" method="post">
+            <textarea></textarea>
+            <p>联系方式:
+              <input type="text" />
+              <span class="gray">(电话、Email、QQ等)</span></p>
+            <p>验证码:
+              <input type="text" />
+            </p>
+            <input type="submit" value="提交咨询" />
+          </form>
+        </div>
+      </div>
+      <!--售后保障-->
+      <div class="tabDiv" id="main5">
+        <div class="after-sales-service">
+          <h3>售后保障</h3>
+          <p>本产品全国联保，享受三包服务。</p>
+          <p>客服电话：400-028-6620（9:00-18:00周一至周五）</p>
+          <p>更多联想售后服务信息：http://support1.lenovo.com.cn/lenovo/wsi/index.html?intcmp=I_F_suning_idea_4</p>
+          <p>全国电子产品维修中心地址请致电4008-365-365或4008-198-198查询</p>
+          <p>因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。网站商品的功能参数仅供参考，请以实物为准，我司只能确保网站经营商品均为原厂正品行货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript">
+var goods_id = {$goods_id};
+var goodsattr_style = {$cfg.goodsattr_style|default:1};
+var gmt_end_time = {$promote_end_time|default:0};
+{foreach from=$lang.goods_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var goodsId = {$goods_id};
+var now_time = {$now_time};
+
+<!-- {literal} -->
+onload = function(){
+  changePrice();
+  fixpng();
+  try { onload_leftTime(); }
+  catch (e) {}
+}
+
+/**
+ * 点选可选属性或改变数量时修改商品价格的函数
+ */
+function changePrice()
+{
+  var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
+  var qty = document.forms['ECS_FORMBUY'].elements['number'].value;
+
+  Ajax.call('goods.php', 'act=price&id=' + goodsId + '&attr=' + attr + '&number=' + qty, changePriceResponse, 'GET', 'JSON');
+}
+
+/**
+ * 接收返回的信息
+ */
+function changePriceResponse(res)
+{
+  if (res.err_msg.length > 0)
+  {
+    alert(res.err_msg);
+  }
+  else
+  {
+    document.forms['ECS_FORMBUY'].elements['number'].value = res.qty;
+
+    if (document.getElementById('ECS_GOODS_AMOUNT'))
+      document.getElementById('ECS_GOODS_AMOUNT').innerHTML = res.result;
+  }
+}
+<!-- {/literal} -->
+</script>
+</html>

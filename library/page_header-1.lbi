@@ -1,0 +1,102 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<!--网页最上方板块webtop开始-->
+<div class="webtop-bg">
+  <div class="webtop">
+    <p>欢迎，来到<em>成都联想网上商城！</em> <a href="#" class="webtop-login">登录</a> <span class="webtop-separator"></span> <a href="#">注册</a></p>
+    <ul>
+      <li><a href="#">联想官网</a></li>
+      <li class="webtop-separator  sp-h"></li>
+      <li><a href="#">我的账户</a></li>
+      <li class="webtop-separator  sp-h"></li>
+      <li><a href="#">帮助中心</a></li>
+      <li class="webtop-separator  sp-h"></li>
+      <li><a href="#">EPP会员专享</a></li>
+      <li class="webtop-separator  sp-h"></li>
+      <li><a href="#">银行分期</a></li>
+    </ul>
+  </div>
+</div>
+<!--header开始-->
+<div class="header">
+  <div class="hd-logo"> <img src="images/logo.jpg" /> </div>
+  <div class="hd-search">
+    <form method="post">
+      <input type="text" class="hd-text-box" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}" title="在此处输入关键字"/>
+      <input type="submit" class="hd-sub" value="搜索" />
+      <ul class="hd-hot-query">
+        <li><a href="#">ThinkPad T440</a></li>
+        <li class="webtop-separator"></li>
+        <li><a href="#">ThinkServer TS 540</a></li>
+        <li class="webtop-separator"></li>
+        <li><a href="#">ThinkStation</a></li>
+      </ul>
+    </form>
+  </div>
+  <div class="hd-tool">
+    <div class="hd-tool-account"><a href="#"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
+    <div class="hd-tool-shopping shopping-sty">
+        <a href="#">
+            <span class="hd-shopping-ico shopping-ico-bg"></span>
+            <span class="hd-shopping-til">购物车</span>
+            <span class="hd-tool-jt tool-jt-bg"></span>
+        </a>
+        <div class="shopping-minicart"> <i class="shopping-minicart-ico"></i> <span>购物车中还没有商品，赶紧选购吧！</span> </div>
+    </div>
+    
+  </div>
+  <div class="clear"></div>
+</div>
+<!--header end--> 
+<!--main-nav主导航开始-->
+<!--导航条-->
+<div class="preference-mian-nav">
+  <div class="preference-nav-box">
+    <div class="all-classify">
+      <h3 class="pd-classify-h3">所有产品分类<span class="down-ico"></span>
+        <ul class="all-classify-list">
+          <li><a href="#">家用笔记本电脑</a></li>
+          <li><a href="#">商用笔记本电脑</a></li>
+          <li><a href="#">家用分体台式机</a></li>
+          <li><a href="#">商用分体台式机</a></li>
+          <li><a href="#">家用一体台式机</a></li>
+          <li><a href="#">商用一体台式机</a></li>
+          <li><a href="#">ThinkPad</a></li>
+          <li><a href="#">ThinkServer</a></li>
+          <li><a href="#">ThinkStation</a></li>
+          <li><a href="#">服务器</a></li>
+          <li><a href="#">平板电脑</a></li>
+          <li><a href="#">数码配件</a></li>
+        </ul>
+      </h3>
+    </div>
+    <ul class="pd-mainbar">
+      <li><a href="#">商城首页</a></li>
+      <li><a href="#">特惠专区</a></li>
+      <li><a href="#">新品专区</a></li>
+      <li><a href="#">图形工作站</a></li>
+      <li><a href="#">ThinkPad</a></li>
+      <li><a href="#">ThinkServer</a></li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+    {literal}
+    <!--
+    function checkSearchForm()
+    {
+        if(document.getElementById('keyword').value)
+        {
+            return true;
+        }
+        else
+        {
+            alert("{$lang.no_keywords}");
+            return false;
+        }
+    }
+    -->
+    {/literal}
+</script> 
