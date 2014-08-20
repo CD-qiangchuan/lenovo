@@ -16,6 +16,7 @@
 <script type="text/javascript" src="js/global.js"></script>
 {* 包含脚本文件 *}
 {insert_scripts files='common.js'}
+{insert_scripts files='transport.js'}
 <script  type="text/javascript">
 function $id(element) {
   return document.getElementById(element);
@@ -71,12 +72,12 @@ function reg(str){
       <h2 class="pd-good-name">{$goods.goods_style_name}</h2>
       <p class="pd-good-brief">Y400/Y500，全新一代“彪悍的小Y”，预装Windows 8 中文版，搭载Intel Ivy Bridge新平台CPU，配以NVIDIA 28NM制程高</p>
       <ul class="pd-good-configuration">
-        <li><span>CPU类型：</span>i5-3230M(2.6GHz，可睿频加速至3.2 </li>
-        <li><span>内    存：</span>4GB DDR3</li>
-        <li><span>操作系统：</span>Windows 8 中文版 </li>
-        <li><span>显    卡：</span>GeForce GT 750M</li>
-        <li><span>屏    幕：</span>14.0英寸</li>
-        <li><span>硬    盘： </span>1TB HDD硬盘</li>
+        <li><span>CPU类型：</span>{$goods_CPU}</li>
+        <li><span>内    存：</span>{$goods_Memory}</li>
+        <li><span>操作系统：</span>{$goods_System}</li>
+        <li><span>显    卡：</span>{$goods_Graph}</li>
+        <li><span>尺    寸：</span>{$goods_Size}</li>
+        <li><span>硬    盘： </span>{$goods_Hard}</li>
       </ul>
     </div>
     <div class="pd-goodRig-botm">
@@ -170,7 +171,7 @@ function reg(str){
         <li><span class="pd-good-serveSpan">支持服务： </span><a href="#" class="pd-good-serve">免运费</a><a href="#" class="pd-good-serve">快速上门</a></li>
         <div class="clear"></div>
       </ul>
-      <div class="pd-good-btn"> <a href="javascript:addToCart(1)"  class="pd-good-buy"><i class="pd-good-buyIco"></i>加入购物车</a> <a href="#" class="pd-good-collect"><i class="pd-good-collectIco"></i>收藏商品</a> </div>
+      <div class="pd-good-btn"> <a href="javascript:addToCart({$goods.goods_id})"  class="pd-good-buy"><i class="pd-good-buyIco"></i>加入购物车</a> <a href="#" class="pd-good-collect"><i class="pd-good-collectIco"></i>收藏商品</a> </div>
       <div class="clear"></div>
     </div>
     <div class="jia1">
@@ -268,13 +269,9 @@ var jiathis_config={
     <div class="pd-leftBox-sort">
       <h3>相关分类</h3>
       <ul class="pd-leftBox-sortBox">
-        <li><a href="#">笔记本电脑</a></li>
-        <li><a href="#">平板电脑</a></li>
-        <li><a href="#">一体台式机</a></li>
-        <li><a href="#">数码配件</a></li>
-        <li><a href="#">分体台式机</a></li>
-        <li><a href="#">Think产品</a></li>
-        <li><a href="#">服务器</a></li>
+          <!--{foreach from=$categories item=cat}-->
+          <li><a href="{$cat.url}">{$cat.name}</a></li>
+          <!--{/foreach}-->
       </ul>
     </div>
     <!--推荐购买-->
@@ -319,30 +316,8 @@ var jiathis_config={
       <div class="clear"></div>
     </div>
     <!--浏览记录-->
-    <div class="pd-browse-box">
-      <h4>最近浏览过的商品</h4>
-      <div class="pd-browse-history">
-        <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
-        <div class="pd-browse-historyName"> <a href="#">Y480M-ITH(L)<br />
-          14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span> </div>
-      </div>
-      <div class="pd-browse-history">
-        <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
-        <div class="pd-browse-historyName"> <a href="#">Y480M-ITH(L)<br />
-          14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span> </div>
-      </div>
-      <div class="pd-browse-history">
-        <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
-        <div class="pd-browse-historyName"> <a href="#">Y480M-ITH(L)<br />
-          14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span> </div>
-      </div>
-      <div class="pd-browse-history">
-        <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
-        <div class="pd-browse-historyName"> <a href="#">Y480M-ITH(L)<br />
-          14.0英寸笔记本电脑</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span> </div>
-      </div>
-    </div>
-  </div>
+<!-- #BeginLibraryItem "/library/history.lbi" --><!-- #EndLibraryItem -->
+</div>
   <!--右边详情-->
   <div class="pd-recommend-rightBox">
     <div class="pd-recommend-tab tab-list">
@@ -357,7 +332,7 @@ var jiathis_config={
     <div class="tabCon" id="pd-tab-show1"> 
       <!--商品详情-->
       <div class="tabDiv tab-cur" id="main1">
-        <p class="pd-main1-p"><img src="images/pd/a63bc53bdf23cbb9.jpg" /></p>
+        {$goods.goods_desc}
       </div>
       <!--商品参数-->
       <div class="tabDiv" id="main2">
@@ -367,86 +342,15 @@ var jiathis_config={
             <col class="pd-span1">
             </colgroup>
             <tbody>
+              <!-- {foreach from=$properties item=property_group key=key} -->
+              <!-- {foreach from=$property_group item=property} -->
               <tr>
-                <th>处理器</th>
-                <td>第三代智能英特尔 酷睿i5处理器i5-3230M(2.6GHz，可睿频加速至3.2GHz)</td>
+                <th>{$property.name|escape:html}</td>
+                <td >{$property.value}</td>
               </tr>
-              <tr>
-                <th>操作系统</th>
-                <td>Windows 8 中文版</td>
-              </tr>
-              <tr>
-                <th>内存</th>
-                <td>4GB DDR3 </td>
-              </tr>
-              <tr>
-                <th>缓存</th>
-                <td>3M三级高速缓存</td>
-              </tr>
-              <tr>
-                <th>硬盘</th>
-                <td>海量1TB HDD硬盘</td>
-              </tr>
-              <tr>
-                <th>无线局域网卡</th>
-                <td>NON-INTEL 1X1 BGN 无线网卡</td>
-              </tr>
-              <tr>
-                <th>光驱</th>
-                <td>超级DVD刻录</td>
-              </tr>
-              <tr>
-                <th>显示屏 </th>
-                <td>14.0"，16：9黄金比例，LED背光</td>
-              </tr>
-              <tr>
-                <th>显卡</th>
-                <td>NVIDIA 28NM制程高性能GeForce GT 750M大型游戏级显卡</td>
-              </tr>
-              <tr>
-                <th>显示内存 </th>
-                <td>2G GDDR5</td>
-              </tr>
-              <tr>
-                <th>键盘</th>
-                <td>联想高触感巧克力键盘</td>
-              </tr>
-              <tr>
-                <th>视频输出 </th>
-                <td>HDMI高清影音端口，标准VGA</td>
-              </tr>
-              <tr>
-                <th>摄像头</th>
-                <td>HD720p自适应环境光摄像头</td>
-              </tr>
-              <tr>
-                <th>声音系统</th>
-                <td>JBL专业品牌音响，杜比认证音效</td>
-              </tr>
-              <tr>
-                <th>网卡</th>
-                <td>100M/1000M以太自适应网卡</td>
-              </tr>
-              <tr>
-                <th>标准接口</th>
-                <td>1个USB3.0接口，2个USB2.0接口，VGA接口，RJ45，全阵列式抗噪麦克风，支持立体音的耳机插孔/音频输出，六合一读卡器(SD/SD-pro/MMC/MS/MS-pro/XD)，HDMI高清输出接口</td>
-              </tr>
-              <tr>
-                <th>电源</th>
-                <td>100~240V宽电压电源适配器</td>
-              </tr>
-              <tr>
-                <th>电池类型</th>
-                <td>高性能6芯锂离子电池</td>
-              </tr>
-              <tr>
-                <th>尺寸</th>
-                <td>350mm x 245mm x 15~33mm</td>
-              </tr>
-              <tr>
-                <th>重量</th>
-                <td>2.2Kg(含有6芯电池，具体重量依据产品出货配置为准)</td>
-              </tr>
+              <!-- {/foreach}--> 
+              <!-- {/foreach}-->
+             
             </tbody>
           </table>
         </div>
@@ -672,7 +576,6 @@ var jiathis_config={
   </div>
   <div class="clear"></div>
 </div>
-
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 <script type="text/javascript">

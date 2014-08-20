@@ -5,38 +5,43 @@ var process_request = "{$lang.process_request}";
 <!--网页最上方板块webtop开始-->
 <div class="webtop-bg">
   <div class="webtop">
-    <p>欢迎，来到<em>成都联想网上商城！</em> <a href="#" class="webtop-login">登录</a> <span class="webtop-separator"></span> <a href="#">注册</a></p>
+    <p>欢迎，来到<em>成都联想网上商城！</em> {insert_scripts files='transport.js,utils.js'}
+      {insert name='member_info'} </p>
     <ul>
-      <li><a href="#">联想官网</a></li>
+      <li><a href="/">联想官网</a></li>
       <li class="webtop-separator  sp-h"></li>
-      <li><a href="#">我的账户</a></li>
+      <li><a href="user.php">我的账户</a></li>
       <li class="webtop-separator  sp-h"></li>
-      <li><a href="#">帮助中心</a></li>
+      <li><a href="javascript:void(0)">帮助中心</a></li>
       <li class="webtop-separator  sp-h"></li>
-      <li><a href="#">EPP会员专享</a></li>
+      <li><a href="javascript:void(0)">EPP会员专享</a></li>
       <li class="webtop-separator  sp-h"></li>
-      <li><a href="#">银行分期</a></li>
+      <li><a href="javascript:void(0)">银行分期</a></li>
     </ul>
   </div>
 </div>
 <!--header开始-->
 <div class="header">
-  <div class="hd-logo"> <img src="images/logo.jpg" /> </div>
+  <div class="hd-logo"> <a href="/"><img src="images/logo.jpg" /></a> </div>
   <div class="hd-search">
-    <form method="post">
-      <input type="text" class="hd-text-box" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}" title="在此处输入关键字"/>
-      <input type="submit" class="hd-sub" value="搜索" />
+    <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()">
+      <input name="keywords" type="text" id="keyword" class="hd-text-box"  value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}" title="在此处输入关键字"/>
+      <input name="imageField" type="submit" class="hd-sub" value="搜索" />
       <ul class="hd-hot-query">
-        <li><a href="#">ThinkPad T440</a></li>
+        <!--热门关键字--> 
+        {if $searchkeywords}
+        {foreach name=skeyword from=$searchkeywords item=val}
+        <li><a href="search.php?keywords={$val|escape:url}">{$val}</a></li>
+        {if ! $smarty.foreach.skeyword.last}
         <li class="webtop-separator"></li>
-        <li><a href="#">ThinkServer TS 540</a></li>
-        <li class="webtop-separator"></li>
-        <li><a href="#">ThinkStation</a></li>
+        {/if}
+        {/foreach}
+        {/if}
       </ul>
     </form>
   </div>
   <div class="hd-tool">
-    <div class="hd-tool-account"><a href="#"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
+    <div class="hd-tool-account"><a href="user.php"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
     <div class="hd-tool-shopping shopping-sty">
         <a href="#">
             <span class="hd-shopping-ico shopping-ico-bg"></span>
@@ -57,28 +62,27 @@ var process_request = "{$lang.process_request}";
     <div class="all-classify">
       <h3 class="pd-classify-h3">所有产品分类<span class="down-ico"></span>
         <ul class="all-classify-list">
-          <li><a href="#">家用笔记本电脑</a></li>
-          <li><a href="#">商用笔记本电脑</a></li>
-          <li><a href="#">家用分体台式机</a></li>
-          <li><a href="#">商用分体台式机</a></li>
-          <li><a href="#">家用一体台式机</a></li>
-          <li><a href="#">商用一体台式机</a></li>
-          <li><a href="#">ThinkPad</a></li>
-          <li><a href="#">ThinkServer</a></li>
-          <li><a href="#">ThinkStation</a></li>
-          <li><a href="#">服务器</a></li>
-          <li><a href="#">平板电脑</a></li>
-          <li><a href="#">数码配件</a></li>
+          <!--{foreach from=$categories-1 item=cat}-->
+          <li><a href="{$cat.url}">{$cat.name}</a></li>
+          <!--{/foreach}-->
         </ul>
       </h3>
     </div>
     <ul class="pd-mainbar">
-      <li><a href="#">商城首页</a></li>
-      <li><a href="#">特惠专区</a></li>
-      <li><a href="#">新品专区</a></li>
-      <li><a href="#">图形工作站</a></li>
-      <li><a href="#">ThinkPad</a></li>
-      <li><a href="#">ThinkServer</a></li>
+      <!--栏目导航-->
+      <li><a href="../index.php"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}</a>
+      <li> 
+        <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+      <li><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>{$nav.name}</a>
+      <li> 
+        <!-- {/foreach} --> 
+        <!--自定义导航--> 
+        <!--{if $navigator_list.top}--> 
+        
+        <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
+      <li><a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a></li>
+      <!-- {/foreach} --> 
+      <!-- {/if} -->
     </ul>
   </div>
 </div>
