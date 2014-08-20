@@ -531,6 +531,31 @@ position: absolute;z-index: 99;margin-top: 22px; display:none;}
 .ps-affirm:hover{ border:1px solid #FC9A1F;}
 
 
+/*-----------------------------------------------------------------特惠专区页面样式开始-----------------------------------------------------------*/
+.pf-mainBanner{ width:100%; height:500px;}
+.ps-banner1{ background:url(../images/pf/banner1.jpg) no-repeat; width:100%; height:485px;}
+.pf-ad{ margin:10px auto; width:1200px; height:1450px; overflow:hidden; }
+.pf-ad1,.pf-ad2,.pf-ad3,.pf-ad4,.pf-ad5{ width:1200px;  text-align:center;}
+.ps-empty{ margin:10px auto; width:1200px; height:50px; background:#F0F0F0; }
+.pf-goods{ margin:10px auto; width:1200px; height:1940px;}
+.pf-goods-title{background: url(../images/ico.png) no-repeat scroll -111px -102px;display: block;width: 247px;height: 60px;}
+.pf-goods-item{ float:left; height:410px; width:280px; border:1px solid #e0e0e0;margin: 10px 9px;}
+.pf-gdIco{ background:url(../images/ico.png) no-repeat scroll 13px -171px; width:85px; height:62px;}
+.pf-goods-img{ width:250px; height:250px;margin: 0 auto;}
+.pf-goods-name{ width:240px; margin:5px auto;}
+.pf-goods-name h3 a{ font-size:18px; color:#555;}
+.pf-goods-name h3 a:hover{ color:#D92F25; text-decoration:underline;}
+.pf-goods-gray{ font-size:14px; color:#6e6e6e;}
+.pf-goods-btn{ margin:5px auto; width:240px; height:20px;}
+.ps-btn-pri{ display:block; width:130px; float:left; background:#FED521; color:#D92F25; }
+.ps-btn-pri em{font-size: 28px;font-style: normal;margin-left: 8px;font-weight: bold;}
+.ps-btn-buy{ display: block;width: 100px;float: left;background: none repeat scroll 0% 0% #D92F25;color: rgb(255, 255, 255);line-height: 34px;font-weight: bold;text-align: center; cursor:pointer;}
+.pf-bom{ display:block; margin:0 auto; width:1200px; height:200px;}
+
+/*-------------------------------------------------------------------------我的账户页面样式开始----------------------------------------------------------------*/
+.ma-content{ margin:10px auto; width:1200px; height:500px;}
+.ma-left{ width:240px; float:left; height:400px; border:1px solid #e0e0e0;}
+.ma-right{ float:right; width:950px;}
 
 
 .trigon-show{ display:block;}
