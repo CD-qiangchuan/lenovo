@@ -147,7 +147,7 @@ $(function(){
 		$("img",this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
 		});	
 
-	});
+	
 //首页公告滚动方法
 function AutoScroll(obj){
         $("#"+obj).find("ul:first").animate({
@@ -229,7 +229,7 @@ if(targetObj.style.display!="none"){
    if(openTip  &&  shutTip){
     sourceObj.innerHTML = shutTip; 
    }
-} else {
+else {
    targetObj.style.display="block";
    sourceObj.style.backgroundPosition="left -2085px";
    if(openTip  &&  shutTip){
