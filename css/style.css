@@ -388,7 +388,7 @@ position: absolute;z-index: 99;margin-top: 22px; display:none;}
 .pd-browse-historyName{width: 200px;height: 60px;padding-left:20px;}
 .pd-browse-historyName a{display: block;font-size: 15px;}
 /*产品详情右边*/
-.pd-recommend-rightBox{ width:910px; float:right; height:2265px; overflow:hidden;}
+.pd-recommend-rightBox{ width:910px; float:right; overflow:hidden;}
 .pd-recommend-tab{width: 908px;height: 45px;border: 1px solid #E0E0E0;}
 .pd-recommend-tab li{float:left; display:block; height:45px; line-height:43px; width:120px; cursor:pointer; border-right:1px solid #e0e0e0; text-align:center; font-size:13px;}
 .pd-main1-p{ text-align:center;}
