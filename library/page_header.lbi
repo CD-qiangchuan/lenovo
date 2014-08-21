@@ -50,9 +50,9 @@ var process_request = "{$lang.process_request}";
 <!--公告滚动-->
 <div class="site-info" id="scrollDiv"> <span class="site-info-ico"></span>
   <ul>
-  <!--{foreach from=$new_articles item=article}-->
-<li><a href="{$article.url}" title="{$article.title|escape:html}"><!--{$article.short_title|truncate:25:true}--></a></li>
-<!--{/foreach}--> 
+    <!--{foreach from=$new_articles item=article}-->
+    <li><a href="{$article.url}" title="{$article.title|escape:html}"><!--{$article.short_title|truncate:25:true}--></a></li>
+    <!--{/foreach}-->
   </ul>
 </div>
 <!--header end--> 
@@ -67,17 +67,17 @@ var process_request = "{$lang.process_request}";
         <li class="sidebar-f-h sidebar-li-height" id="sidebar-li">
           <h4>{$cat.name}</h4>
           <!--<span> <a href="#">家用分体台式机</a> <a href="#">商用笔记本电脑</a> </span>-->
-          <div class="sub-sidebar">
-          <!--{foreach from=$cat.cat_id item=child}-->
+          <div class="sub-sidebar"> 
+            <!--{foreach from=$cat.cat_id item=child}-->
             <dl>
               <dt>{$child.name}</dt>
               <!--{foreach from=$child.cat_id item=childer}-->
               <dd class="webtop-separator"></dd>
               <dd>{$childer.name}</dd>
               <!--{/foreach}-->
-			  
+              
             </dl>
-            <!--{/foreach}-->
+            <!--{/foreach}--> 
           </div>
         </li>
         <!--{/foreach}-->

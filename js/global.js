@@ -123,7 +123,30 @@ $(function(){
 		$(this).find(".pd-delivery-province").addClass("trigon-show");
 		},function(){
 			$(this).find(".pd-delivery-province").removeClass("trigon-show");
+<<<<<<< HEAD
 			})
+=======
+			});
+			
+	//产品展示页面筛选板块
+	$(".ps-reset-sublist>li").click(function(){
+		$(".ps-reset-sublist>li").removeClass("reset-active");
+		$(".ps-reset-sublist>li>.ps-setItem-sublist").removeClass("trigon-show");
+		$(this).addClass("reset-active");
+		$(this).find("ul.ps-setItem-sublist").addClass("trigon-show");
+		});
+    //产品展示页面内容排行
+	$(".ps-goods-term>li").click(function(){
+		$(".ps-goods-term>li").removeClass("reset-active");
+		$(this).addClass("reset-active");
+		})
+	//特惠专区鼠标悬停图片向左移动
+	$(".pf-goods-img").hover(function(){
+		$("img",this).stop().animate({"margin-left":"-20px"},{queue:false,duration:200});
+    },function(){
+		$("img",this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
+		});	
+>>>>>>> origin/master
 	});
 //首页公告滚动方法
 function AutoScroll(obj){
@@ -173,6 +196,10 @@ function showScroll(){
 			});	
 					
 		}
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 /*===========================点击展开关闭效果====================================
 oSourceObj    当前控件
 oTargetObj    目标控件
@@ -180,13 +207,22 @@ shutAble    是否可以关闭开关
 oOpenTip    展开时显示标题
 oShutTip    关闭时显示标题
 */
+<<<<<<< HEAD
 function openShutManager(oSourceObj,oTargetObj,shutAble){
 var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
 var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+=======
+function openShutManager(oSourceObj,oTargetObj,shutAble,oOpenTip,oShutTip){
+var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+var openTip = oOpenTip || "";
+var shutTip = oShutTip || "";
+>>>>>>> origin/master
 if(targetObj.style.display!="none"){
    if(shutAble) return;
    targetObj.style.display="none";
     sourceObj.style.backgroundPosition="left -1680px";
+<<<<<<< HEAD
    
 } else {
    targetObj.style.display="block";
@@ -194,6 +230,19 @@ if(targetObj.style.display!="none"){
 }
 };
 
+=======
+   if(openTip  &&  shutTip){
+    sourceObj.innerHTML = shutTip; 
+   }
+} else {
+   targetObj.style.display="block";
+   sourceObj.style.backgroundPosition="left -2085px";
+   if(openTip  &&  shutTip){
+    sourceObj.innerHTML = openTip; 
+   }
+}
+};
+>>>>>>> origin/master
    
 
    
