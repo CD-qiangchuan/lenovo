@@ -58,10 +58,14 @@ function reg(str){
     <div class="pd-good-mainImg"> <img src="images/pd/main1.jpg"  width="600" height="420" /> </div>
     <div class="pd-good-imgItem">
       <ul>
+        <!-- {if $pictures}-->
+        <!-- {foreach from=$pictures item=picture}-->
         <li class="pd-picimg pd-pic-active"><i class="trigon-bg trigon-show"></i><img src="images/pd/img1.jpg" width="140" height="88" /></li>
         <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/img2.jpg" width="140" height="88" /></li>
         <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/img3.jpg" width="140" height="88" /></li>
-        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/img4.jpg" width="140" height="88" /></li>
+        <li class="pd-picimg"><i class="trigon-bg"></i><img src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" width="140" height="88" /></li>
+        <!--{/foreach}-->
+        <!-- {/if}-->
       </ul>
     </div>
   </div>
