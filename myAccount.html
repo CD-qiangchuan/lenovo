@@ -94,34 +94,118 @@
 <!--左边-->
 <div class="ma-left">
     <ul class="ma-left-ul">
-        <li>我的账户</li>
-        <li>订单中心
-            <ul class="">
-                <li>我的订单</li>
-                <li>我的收藏</li>
-                <li>浏览记录</li>
-                <li>到货通知</li>
-                <li>收货地址</li>
+        <li class="ma-left-li redbg-wtcl">我的账户</li>
+        <li><span class="ma-left-li">订单中心</span>
+            <ul class="ma-left-sublist">
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#">我的收藏</a></li>
+                <li><a href="#">浏览记录</a></li>
+                <li><a href="#">到货通知</a></li>
+                <li><a href="#">收货地址</a></li>
             </ul>
         </li>
-        <li>账户中心
-            <ul class="">
-                <li>个人信息</li>
-                <li>登录密码</li>
-                <li>优惠劵</li>
-                <li>积分兑换</li>
+        <li><span class="ma-left-li">账户中心</span>
+            <ul class="ma-left-sublist">
+                <li><a href="#">个人信息</a></li>
+                <li><a href="#">登录密码</a></li>
+                <li><a href="#">优惠劵</a></li>
+                <li><a href="#">积分兑换</a></li>
             </ul>
         </li>
-        <li>售后服务
-             <ul class="">
-                 <li>申请售后服务</li>
+         <li><span class="ma-left-li">售后服务</span>
+             <ul class="ma-left-sublist">
+                 <li><a href="#">申请售后服务</a></li>
              </ul>
         </li>
-    </div>
-
+       </ul>    
+    <div class="clear"></div>
 </div>
 <!--右边-->
-<div class="ma-right"></div>
+<div class="ma-right">
+    <div class="ma-right-info">
+        <p class="ma-info-welcome"><em>某某某，欢迎您！</em>上次登录时间：2014-08-12 11:05:17</p>
+        <p class="ma-info-p">
+            <a href="#" class="ma-info-a">到货通知：0</a>
+            <a href="#" class="ma-info-a">优惠券：0</a>
+            <a href="#" class="ma-info-a">获得积分：0</a>
+            <a href="#" class="ma-info-a2">修改密码</a>
+            <a href="#" class="ma-info-a2">修改收货地址</a>
+        </p>
+    </div>
+    <!--近期订单-->
+    <div class="ma-rig-indent">
+        <div class="ma-indent-title">
+            <h3>近期订单</h3>
+            <a href="#">查看所有订单>></a>
+        </div>
+        <div class="ma-indent-info">
+            <ul>
+                <li>订单信息</li>
+                <li>收货人</li>
+                <li>应付金额</li>
+                <li>订单时间</li>
+                <li>订单状态</li>
+                <li>操作</li>
+            </ul>
+        </div>
+        <p class="ma-indent-num">订单编号：<em>1732903224</em></p>
+        <div class="ma-indent-myinfo">
+            <ul>
+                <li class="ma-indent-li"><img src="images/mya/1.jpg" /></li>
+                <li class="ma-indent-li">某某某</li>
+                <li class="ma-indent-li">
+                    <span class="ma-indent-price">￥3849.00</span>
+                    <span class="ma-indent-buy"><a href="#">在线支付</a></span>
+                </li>
+                <li class="ma-indent-li">
+                    <span class="ma-indent-time">2014-08-08</span>
+                    <span>13:59:02</span>
+                </li>
+                <li class="ma-indent-li">等待发货</li>
+                <li class="ma-indent-btn">
+                    <a href="#">查看</a>
+                    <a href="#" class="ma-indent-btnbg">确认收货</a>
+                    <a href="#">取消订单</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--近期收藏-->
+    <div class="ma-rig-collect">
+        <div class="ma-indent-title">
+            <h3>近期收藏</h3>
+            <a href="#">查看所有收藏>></a>
+        </div>
+        <div class="ma-collect-info">
+            <ul>
+                <li>商品</li>
+                <li>销售价</li>
+                <li>库存情况</li>
+                <li>操作</li>
+            </ul>
+        </div>
+        <div class="ma-collect-myinfo">
+            <ul>
+                <li class="ma-collect-li ma-collect-lfli">
+                    <img src="images/mya/1.jpg" />
+                    <span class="ma-collect-span">
+                        <a href="#" class="ma-collect-title">联想（Lenovo）Y400N 14.0英寸笔记本电脑（i5-3230M 4G 1T 2G独显 摄像头 DVD刻 Win8）</a>
+                        <a href="#" class="ma-collect-time">加入收藏时间：2014-08-04</a>
+                    </span>
+                </li>
+                <li class="ma-collect-li">
+                    <span class="ma-collect-price">￥3849.00</span>
+                </li>
+                <li class="ma-collect-li">库存正常</li>
+                <li class="ma-collect-btn">
+                    <a href="#" class="ma-collect-btnbg">加入购物车</a>
+                    <a href="#">加入对比</a>
+                    <a href="#">取消收藏</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 </div>
 <!--footer-->
 <div class="footer">
