@@ -611,6 +611,20 @@ font-size: 15px;border-bottom: 1px solid #e0e0e0;border-top: 1px solid #e0e0e0;}
 .bf-step-ul li{ display:inline-block;  width:100px; padding-left:20px;}
 .bf-step-num{ display: block;background: url('../images/ico.png') no-repeat scroll -176px -157px transparent;width: 27px;height: 28px;line-height: 28px;text-align: center;color: #fff; margin-top:12px;}
 .bf-step-redbg{background: url('../images/ico.png') no-repeat scroll -206px -157px transparent;}
+.bf-content{ margin:10px auto; width:1200px; height:1000px;}
+.bf-content-title{ display:block; height:40px; line-height:40px; padding-left:20px; border:1px solid #e0e0e0;}
+.bf-consignee-info{ height:100px; padding-left:20px;border:1px solid #e0e0e0; border-top:none;}
+.bf-consignee-h3{display: block;height: 30px;line-height: 30px;padding-top: 20px; font-size:16px;}
+.bf-consignee-h3 a{color: #2D64B3;font-size: 13px;padding-left: 10px;}
+.bf-consignee-h3 a:hover{ color:#e92f25;}
+.bf-consignee-p{ color:#6e6e6e; font-size:13px; margin-top:3px;}
+.bf-consignee-p label{ display:block; float:left;}
+.bf-consignee-p a{display: block;float: left;margin-left: 30px;height: 25px;line-height: 25px;
+width: 160px;border: 1px solid #E0E0E0;border-radius: 5px;text-align: center;color:#6e6e6e;}
+.bf-consignee-p a:hover{ color:#d92f25;}
+
+
+.bf-inp-text{ width:245px;}
 
 
 
