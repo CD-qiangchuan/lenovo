@@ -9,7 +9,9 @@
 <!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
-<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
 <!-- {if $cat_style} -->
 <link href="{$cat_style}" rel="stylesheet" type="text/css" />
 <!-- {/if} -->
@@ -17,182 +19,613 @@
 {insert_scripts files='common.js,global.js,compare.js'}
 </head>
 <body>
-<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_header-1.lbi" --><!-- #EndLibraryItem -->
 <!--当前位置 start-->
-<div class="block box">
- <div id="ur_here">
-  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
- </div>
+<div class="current-position">
+  <p><!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --></p>
 </div>
 <!--当前位置 end-->
-<div class="blank"></div>
-<div class="block clearfix">
-  <!--left start-->
-  <div class="AreaL">
-    <!-- TemplateBeginEditable name="左边区域" -->
-<!-- #BeginLibraryItem "/library/cart.lbi" -->
-
-{insert_scripts files='transport.js'}
-<div class="cart" id="ECS_CARTINFO">
- {insert name='cart_info'}
-</div>
-<div class="blank5"></div>
-
- <!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/library/category_tree.lbi" -->
-
-<div class="box">
- <div class="box_1">
-  <div id="category_tree">
-    <!--{foreach from=$categories item=cat}-->
-     <dl>
-     <dt><a href="{$cat.url}">{$cat.name|escape:html}</a></dt>
-     <!--{foreach from=$cat.children item=child}-->
-     <dd><a href="{$child.url}">{$child.name|escape:html}</a></dd>
-     <!--{/foreach}-->
-     </dl>
-    <!--{/foreach}--> 
-  </div>
- </div>
-</div>
-<div class="blank5"></div>
-
- <!-- #EndLibraryItem -->
- <!-- #BeginLibraryItem "/library/history.lbi" --><!-- #EndLibraryItem -->
-<!-- TemplateEndEditable -->
-<!-- TemplateBeginEditable name="左边广告区域（宽200px）" -->
-<!-- TemplateEndEditable -->
-    <!--AD end-->
-  </div>
-  <!--left end-->
-  <!--right start-->
-  <div class="AreaR">
-	 <!--组合搜索 开始-->
-	  <!--{if $brands.1 || $price_grade.1 || $filter_attr_list}-->
-	  <div class="box">
-		 <div class="box_1">
-			<h3><span>{$lang.goods_filter}</span></h3>
-			<!--{if $brands.1}-->
-			<div class="screeBox">
-			  <strong>{$lang.brand}：</strong>
-				<!--{foreach from=$brands item=brand}-->
-					<!-- {if $brand.selected} -->
-					<span>{$brand.brand_name}</span>
-					<!-- {else} -->
-					<a href="{$brand.url}">{$brand.brand_name}</a>&nbsp;
-					<!-- {/if} -->
-				<!--{/foreach}-->
-			</div>
-			<!--{/if}-->
-			<!--{if $price_grade.1}-->
-			<div class="screeBox">
-			<strong>{$lang.price}：</strong>
-			<!--{foreach from=$price_grade item=grade}-->
-				<!-- {if $grade.selected} -->
-				<span>{$grade.price_range}</span>
-				<!-- {else} -->
-				<a href="{$grade.url}">{$grade.price_range}</a>&nbsp;
-				<!-- {/if} -->
-			<!--{/foreach}-->
-			</div>
-			<!--{/if}-->
-			<!--{foreach from=$filter_attr_list item=filter_attr}-->
-      <div class="screeBox">
-			<strong>{$filter_attr.filter_attr_name|escape:html} :</strong>
-			<!--{foreach from=$filter_attr.attr_list item=attr}-->
-				<!-- {if $attr.selected} -->
-				<span>{$attr.attr_value}</span>
-				<!-- {else} -->
-				<a href="{$attr.url}">{$attr.attr_value}</a>&nbsp;
-				<!-- {/if} -->
-			<!--{/foreach}-->
-			</div>
-      <!--{/foreach}-->
-		 </div>
-		</div>
-		<div class="blank5"></div>
-	  <!-- {/if} -->
-	 <!--组合搜索 结束-->
-   <!-- TemplateBeginEditable name="右边区域" -->
-<!-- #BeginLibraryItem "/library/recommend_best.lbi" -->
-
-<!-- {if $best_goods} -->
-<!-- {if $cat_rec_sign neq 1} -->
-<div class="box">
-<div class="box_2 centerPadd">
-  <div class="itemTit" id="itemBest">
-      {if $cat_rec[1]}
-      <h2><a href="javascript:void(0)" onclick="change_tab_style('itemBest', 'h2', this);get_cat_recommend(1, 0);">{$lang.all_goods}</a></h2>
-      {foreach from=$cat_rec[1] item=rec_data}
-      <h2 class="h2bg"><a href="javascript:void(0)" onclick="change_tab_style('itemBest', 'h2', this);get_cat_recommend(1, {$rec_data.cat_id})">{$rec_data.cat_name}</a></h2>
-      {/foreach}
-      {/if}
-  </div>
-  <div id="show_best_area" class="clearfix goodsBox">
-  <!-- {/if} -->
-  <!--{foreach from=$best_goods item=goods}-->
-  <div class="goodsItem">
-         <span class="best"></span>
-           <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a><br />
-           <a href="#"><img src="images/bnt_buy.gif" /></a> <a href="#"><img src="images/bnt_coll.gif" /></a>
-           <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
-           <font class="f1">
-           <!-- {if $goods.promote_price neq ""} -->
-          {$goods.promote_price}
-          <!-- {else}-->
-          {$goods.shop_price}
-          <!--{/if}-->
-           </font>
+<div class="ps-contentBox">
+<!--产品展示左边Div-->
+<div class="ps-left">
+    <!--商品系列-->
+    <div class="ps-left-set">
+        <ul>
+            <li class="ps-set-li"><span class="pad20">商品系列</span></li>
+            <li class="ps-set-li"><span onclick="openShutManager(this,'notebook',false,'笔记本电脑','笔记本电脑')" class="ps-set-ico">笔记本电脑</span>
+                <ul class="ps-set-sublist" id="notebook" style="display:none;">
+                    <li><a href="#">家用笔记本</a></li>
+                    <li><a href="#">商用笔记本</a></li>
+                </ul>
+            </li>
+            <li class="ps-set-li"><span class="ps-set-ico"  onclick="openShutManager(this,'sub-machine',false,'分体台式机','分体台式机')">分体台式机</span>
+                <ul class="ps-set-sublist" id="sub-machine" style="display:none;">
+                    <li><a href="">家用分体机</a></li>
+                    <li><a href="">商用分体机</a></li>
+                </ul>
+            </li>
+            <li class="ps-set-li"><span class="ps-set-ico"  onclick="openShutManager(this,'aio',false,'一体台式机','一体台式机')">一体台式机</span>
+                <ul class="ps-set-sublist" id="aio" style="display:none;">
+                    <li><a href="">家用一体机</a></li>
+                    <li><a href="">商用一体机</a></li>
+                </ul>
+            </li>
+            <li class="ps-set-li"><span class="ps-set-ico"  onclick="openShutManager(this,'think',false,'Think产品','Think产品')">Think产品</span>
+                <ul class="ps-set-sublist" id="think" style="display:none;">
+                    <li><a href="">ThinkPad</a></li>
+                    <li><a href="">ThinkServer</a></li>
+                    <li><a href="">ThinkStation</a></li>
+                </ul>
+            </li>
+            <li class="ps-set-li"><span class="pad20">服务器</span> </li>
+            <li class="ps-set-li"><span class="pad20">平板电脑</span></li>
+            <li class="ps-set-li"><span class="pad20">数码配件</span></li>
+        </ul>
+    </div>
+    <!--最新上架商品-->
+    <div class="pd-browse-box">
+        <h4>最新上架商品</h4>
+        <div class="pd-browse-history">
+            <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
+            <div class="pd-browse-historyName">
+                <a href="#">Y480M-ITH(L)<br />14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span>
+            </div>
         </div>
-  <!--{/foreach}-->
-  <div class="more"><a href="../search.php?intro=best"><img src="images/more.gif" /></a></div>
-  <!-- {if $cat_rec_sign neq 1} -->
-  </div>
+        <div class="pd-browse-history">
+            <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
+            <div class="pd-browse-historyName">
+                <a href="#">Y480M-ITH(L)<br />14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span>
+            </div>
+        </div>
+        <div class="pd-browse-history">
+            <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
+            <div class="pd-browse-historyName">
+                <a href="#">Y480M-ITH(L)<br />14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span>
+            </div>
+        </div>
+        <div class="pd-browse-history">
+            <div class="pd-browse-historyImg"><img src="images/pd/180.jpg" /></div>
+            <div class="pd-browse-historyName">
+                <a href="#">Y480M-ITH(L)<br />14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00元</em></span>
+            </div>
+        </div>
+    </div>
+    <!--热销榜-->
+    <div class="pd-recommend-finalbuy">
+        <h4>热销榜</h4>
+        <div class="pd-finalbuy-item">
+            <div class="pd-finalbuy-img">
+                <img src="images/pd/img4.jpg" />
+            </div>
+            <div class="pd-finalbuy-goodsname">
+                <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span>
+            </div>
+        </div>
+        <div class="pd-finalbuy-item">
+            <div class="pd-finalbuy-img">
+                <img src="images/pd/img4.jpg" />
+            </div>
+            <div class="pd-finalbuy-goodsname">
+                <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span>
+            </div>
+        </div>
+        <div class="pd-finalbuy-item">
+            <div class="pd-finalbuy-img">
+                <img src="images/pd/img4.jpg" />
+            </div>
+            <div class="pd-finalbuy-goodsname">
+                <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span>
+            </div>
+        </div>
+        <div class="pd-finalbuy-item">
+            <div class="pd-finalbuy-img">
+                <img src="images/pd/img4.jpg" />
+            </div>
+            <div class="pd-finalbuy-goodsname">
+                <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span>
+            </div>
+        </div>
+        <div class="pd-finalbuy-item">
+            <div class="pd-finalbuy-img">
+                <img src="images/pd/img4.jpg" />
+            </div>
+            <div class="pd-finalbuy-goodsname">
+                <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span>
+            </div>
+        </div>
+        <div class="pd-finalbuy-item">
+            <div class="pd-finalbuy-img">
+                <img src="images/pd/img4.jpg" />
+            </div>
+            <div class="pd-finalbuy-goodsname">
+                <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span>
+            </div>
+        </div>
+        <div class="pd-finalbuy-item">
+            <div class="pd-finalbuy-img">
+                <img src="images/pd/img4.jpg" />
+            </div>
+            <div class="pd-finalbuy-goodsname">
+                <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a>
+               <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span>
+            </div>
+        </div>
+        <div class="pd-finalbuy-item">
+            <div class="pd-finalbuy-img">
+                <img src="images/pd/img4.jpg" />
+            </div>
+            <div class="pd-finalbuy-goodsname">
+                <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span>
+            </div>
+        </div>
+        <div class="pd-finalbuy-item">
+            <div class="pd-finalbuy-img">
+                <img src="images/pd/img4.jpg" />
+            </div>
+            <div class="pd-finalbuy-goodsname">
+                <a href="#">Y480M-ITH(L)14.0英寸笔记本电脑</a>
+                <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">4999.00</em>元</span>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+<!--产品展示右边Div-->
+<div class="ps-right">
+    <!--热卖商品推荐-->
+<!-- #BeginLibraryItem "/library/recommend_best.lbi" --><!-- #EndLibraryItem -->
+    <!--条件筛选-->
+    <div class="ps-screening">
+        <div class="ps-screening-title">
+            <div class="ps-screening-t">
+                <h3>家用笔记本</h3>
+                <span>搜索到<em>48</em>件相关商品</span>
+            </div>
+            <div class="ps-screening-reset">
+                <a href="#"><b class="ps-screening-resetIco"></b>重置筛选</a>
+            </div>
+        </div>
+        <div class="ps-screening-cont">
+          <div class="ps-screening-set">
+              <span class="ps-lfsp">相关系列：</span>
+              <span class="ps-redbg">全部系列</span>
+              <ul class="ps-reset-sublist">
+                  <li>Y系列
+                      <ul class="ps-setItem-sublist">
+                          <li>Y400系列</li>
+                  		  <li>Y410系列</li>
+                  		  <li>Y510P系列</li>
+                  		  <li>Y480系列</li>
+                  		  <li>Y485系列</li>
+                      </ul>
+                  </li>
+                  <li>U系列
+                      <ul class="ps-setItem-sublist">
+                          <li>U系列</li>
+                  		  <li>U系列</li>
+                  		  <li>Y510P系列</li>
+                  		  <li>Y480系列</li>
+                  		  <li>Y485系列</li>
+                      </ul>
+                  </li>
+                  <li>S系列
+                      <ul class="ps-setItem-sublist">
+                          <li>S系列</li>
+                  		  <li>S系列</li>
+                  		  <li>S系列</li>
+                  		  <li>Y480系列</li>
+                  		  <li>Y485系列</li>
+                      </ul>
+                  </li>
+                  <li>Z系列
+                      <ul class="ps-setItem-sublist">
+                          <li>Z系列</li>
+                  		  <li>Z系列</li>
+                  		  <li>Z系列</li>
+                  		  <li>Y480系列</li>
+                  		  <li>Y485系列</li>
+                      </ul>
+                  </li>
+                  <li>G系列
+                      <ul class="ps-setItem-sublist">
+                          <li>G系列</li>
+                  		  <li>G系列</li>
+                  		  <li>Y510P系列</li>
+                  		  <li>Y480系列</li>
+                  		  <li>Y485系列</li>
+                      </ul>
+                  </li>
+                  <li>Erazer异能者
+                      <ul class="ps-setItem-sublist">
+                          <li>Erazer系列</li>
+                  		  <li>Erazer系列</li>
+                  		  <li>Y510P系列</li>
+                  		  <li>Y480系列</li>
+                  		  <li>Y485系列</li>
+                      </ul>
+                  </li>
+                  <li>Flex系列
+                      <ul class="ps-setItem-sublist">
+                          <li>Flex系列</li>
+                  		  <li>Flex系列</li>
+                  		  <li>Flex系列</li>
+                  		  <li>Y480系列</li>
+                      </ul>
+                  </li>                  
+              </ul>
+          </div>
+          <!--{if $brands.1 || $price_grade.1 || $filter_attr_list}-->
+          <!--价格筛选start-->
+          <!--{if $price_grade.1}-->
+          <div class="ps-screening-price">
+              <span class="ps-lfsp">价格筛选：</span>
+              <ul class="ps-reset-sublist">
+              <!--{foreach from=$price_grade item=grade}-->
+              	  <!-- {if $grade.selected} -->
+                  <li  class="reset-active">{$grade.price_range}</li>
+                  <!--{else}-->
+                  <a href="{$grade.url}"><li>{$grade.price_range}</li></a>
+                  <!--{/if}-->
+              <!--{/foreach}-->
+              </ul>
+          </div>
+          <!--{/if}-->
+          <!--价格筛选end-->
+          <!--循环筛选属性start-->
+          <!--{foreach from=$filter_attr_list item=filter_attr}-->
+          <div class="ps-screening-price">
+              <span class="ps-lfsp">{$filter_attr.filter_attr_name|escape:html}：</span>
+              <ul class="ps-reset-sublist">
+              <!--{foreach from=$filter_attr.attr_list item=attr}-->
+              <!-- {if $attr.selected} -->
+                  <li class="reset-active">{$attr.attr_value}</li>
+              <!-- {else} -->
+              <a href="{$attr.url}"><li>{$attr.attr_value}</li></a>
+              <!-- {/if} -->
+			  <!--{/foreach}-->
+ 
+              </ul>
+          </div>
+          <!--{/foreach}-->
+          <!--循环筛选end--> 
+          <!-- {/if} --> 
+       </div>
+        <div class="ps-hideBox">
+            <div class="ps-hide" onclick="openShutManager(this,'ps-hidediv',false,'收起','更多选项（内存、厚度、容量..）')">
+               更多选项（内存、厚度、容量...）
+            </div>  
+          </div>
+    </div>
+    <!--商品排列展示-->
+    <div class="ps-goods-box">
+        <div class="ps-goods-fore1">
+            <ul class="ps-goods-term">
+                <li>销量</li>
+                <li>价格</li>
+                <li>评论数</li>
+                <li>上架时间</li>                
+            </ul>
+            <span class="ps-goods-available"><a href="#"><b></b>仅显示有货</a></span>
+            <div class="ps-goods-total">
+                 <span>共找到48件商品</span>
+                 <span>当前1/7页</span>
+                 <div class="ps-goods-btn">
+                   <a href="#">上一页</a>
+                   <a href="#">下一页</a>
+                 </div>
+            </div>
+        </div>
+        <div class="ps-goods">            
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+            <div class="ps-goods-items">
+                <div class="ps-goods-pic"><img src="images/ps/2.jpg" /></div>
+                <div class="ps-goods-name">
+                    <span class="ps-goods-price">￥6899.00</span>
+                    <span class="ps-goods-title">Y410P-ISE 14英寸笔记本电脑（i7-4700MQ 4G1T2G独显 DVD Win 8）</span>
+                    <span class="ps-goods-pj"><a href="#" class="ps-goods-evaluate">18条评价</a><span class="ps-goods-kc">库存正常</span></span>
+                    <a href="#" class="ps-goods-oldPri">￥7999.00</a>                    
+                </div>
+                <div class="ps-goods-tool">
+                    <a href="#">商品详情</a>
+                    <a href="#" class="ps-btn-border">对比</a>
+                    <a href="#">收藏</a>
+                </div>
+            </div>
+        </div>
+        <div class="ps-goods-fore2">
+            <div class="ps-goods-pagenum">
+                <span class="ps-goods-prev"><b></b>上一页</span>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">...</a>
+                <a href="#">6</a>
+                <span class="ps-goods-next">下一页<b></b></span>
+                <span class="ps-pagenum-total">共13页，到第<input type="text" />页</span>
+                <span class="ps-affirm">确认</span>                
+            </div>
+        </div>
+    </div>
 </div>
 </div>
-<div class="blank5"></div>
-  <!-- {/if} -->
-<!-- {/if} -->
 
- <!-- #EndLibraryItem -->
-  <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->
-  <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
-<!-- TemplateEndEditable -->
-
-
-  </div>  
-  <!--right end-->
-</div>
-<div class="blank5"></div>
-<!--帮助-->
-<div class="block">
-  <div class="box">
-   <div class="helpTitBg clearfix">
-    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
-   </div>
-  </div>  
-</div>
-<div class="blank"></div>
-<!--帮助-->
-<!--友情链接 start-->
-<!--{if $img_links  or $txt_links }-->
-<div id="bottomNav" class="box">
- <div class="box_1">
-  <div class="links clearfix">
-    <!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
-    <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a>
-    <!--结束图片类型的友情链接{/foreach}-->
-    <!-- {if $txt_links} -->
-    <!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
-    [<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>] 
-    <!--结束文字类型的友情链接{/foreach}-->
-    <!-- {/if} -->
-  </div>
- </div>
-</div>
-<!--{/if}-->
-<!--友情链接 end-->
-<div class="blank"></div>
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 </html>

@@ -467,7 +467,7 @@ position: absolute;z-index: 99;margin-top: 22px; display:none;}
 .ps-screening-resetIco{ background: url('../images/ico.png') no-repeat scroll -325px -77px transparent;width: 30px;height: 30px;display: block;float: left;}
 .ps-screening-cont{ width:950px; border:1px solid #e0e0e0; border-top:1px dotted #e0e0e0;}
 .ps-screening-set{ height:60px; border-bottom:1px dotted #ccc; padding-left:30px; font-size:14px; margin-top:10px;}
-.ps-lfsp{ display:block; float:left;}
+.ps-lfsp{ display:block; float:left;width: 92px;text-align: right;}
 .ps-redbg{ background:#DA2C21; color:#fff; display:block; height:20px; line-height:20px; width:80px; float:left; text-align:center;}
 .ps-reset-sublist{width: 700px;float: left;margin-left: 10px;}
 .ps-reset-sublist li{ display:block; float:left;margin-left: 20px;font-size: 14px; line-height:25px; cursor:pointer;}
