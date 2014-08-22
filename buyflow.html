@@ -31,15 +31,15 @@
       <ul class="bf-step-ul">
           <li>
               <span class="bf-step-num">1</span>
-              <span>1.我的购物车</span>
+              <span class="bf-step-span">我的购物车</span>
           </li>
           <li>
               <span class="bf-step-num bf-step-redbg">2</span>
-              <span class="red-color">2.填写订单</span>
+              <span class="red-color bf-step-span">填写订单</span>
           </li>
           <li>
               <span class="bf-step-num">3</span>
-              <span>3.提交订单</span>
+              <span class="bf-step-span">提交订单</span>
           </li>
       </ul>
   </div>  
@@ -105,17 +105,17 @@
         <div class="bf-pay-left">
             <h4>支付方式</h4>
             <form action="#" method="post">
-                <span><b></b>预存款支付 <span>商店预存款支付</span></span>
-                <span><input type="radio" />银行汇款（例如工商银行） <span>账号：95588 2588 66666 XXXX 开户名：张强</span></span>
-                <span><input type="radio" />支付宝 <span>有卡就能付，没有开通网银也可付款</span></span>
-                <span><input type="radio" />腾讯财付通 <span>财付通担保交易付款，购物更安全</span></span>
-                <input type="submit" value="保存支付及配送方式"/>
-                <a href="#">取消</a>
+                <p class="bf-pay-title"><b></b>预存款支付 <span class="bf-pay-span1">商店预存款支付</span></p>
+                <p><input type="radio" class="bf-pay-rad" />银行汇款（例如工商银行） <span class="bf-pay-span1">账号：95588 2588 66666 XXXX 开户名：张强</span></p>
+                <p><input type="radio" class="bf-pay-rad"  />支付宝 <span class="bf-pay-span1">有卡就能付，没有开通网银也可付款</span></p>
+                <p><input type="radio" class="bf-pay-rad"  />腾讯财付通 <span class="bf-pay-span1">财付通担保交易付款，购物更安全</span></p>
+                <input type="submit" value="保存支付及配送方式" class="bf-inp-smt2"/>
+                <a href="#" class="bf-inp-reset2">取消</a>
             </form>
         </div>
         <div class="bf-pay-right">
             <h4>配送方式</h4>
-            <span><b></b>快递运输 <span>由商家选择合作快递为您配送</span></span>
+            <p class="bf-pay-title"><b></b>快递运输 <span class="bf-pay-span1">由商家选择合作快递为您配送</span></p>
         </div>
     </div>
     <!--商品清单-->
@@ -125,34 +125,35 @@
     </div>
     <div class="bf-goods-title">
         <ul>
-            <li>商品</li>
-            <li>价格</li>
-            <li>优惠</li>
-            <li>数量</li>
-            <li>库存状态</li>
+            <li class="bf-title-sp">商品</li>
+            <li class="bf-title-li">价格</li>
+            <li class="bf-title-li">优惠</li>
+            <li class="bf-title-li">数量</li>
+            <li class="bf-title-li">库存状态</li>
         </ul>
     </div>
     <div class="bf-goods-info">
          <ul>
-             <li><img src="images/buyf/2.jpg" />
+             <li class="bf-info-sp"><img src="images/buyf/2.jpg" class="bf-info-img" />
                  <span>IdeaPad S410-ITH(F)(云帆白)</span>
              </li>
-             <li>￥3999.00</li>
-             <li></li>
-             <li>1</li>
-             <li>有货</li>
+             <li class="bf-info-li">￥3999.00</li>
+             <li class="bf-info-li"></li>
+             <li class="bf-info-li">1</li>
+             <li class="bf-info-li">有货</li>
          </ul>
     </div>
-    <div class="bf-goods-minute">
+    <div class="bf-minute-info">
+     <div class="bf-goods-minute">
         <div class="bf-minute-left">
-            <p>是否需要发票？<input type="checkbox" /></p>
+            <p>是否需要发票？<input type="checkbox" class="bf-minute-inp2" /></p>
             <p><span>发票抬头：</span>
-               <textarea></textarea>
+               <input type="text" class="bf-minute-inp" />
             </p>
         </div>
         <div class="bf-minute-right">
-            <p>指定送货时间：<input type="checkbox" /></p>
-            <p><span>送货时间：</span>
+            <p>指定送货时间：<input type="checkbox" class="bf-minute-inp2" /></p>
+            <p class="bf-minute-p"><span>送货时间：</span>
                 <select>
                     <option>任意日期</option>
                 </select>
@@ -160,16 +161,15 @@
                     <option>任意时间段</option>
                 </select>
             </p>
-            <p><span>订单附言：</span><input type="text" /></p>
+            <p class="bf-minute-p"><span>订单附言：</span><input type="text" class="bf-minute-inp3" /></p>
         </div>
+    </div>     
+    <div class="bf-total-info">
+        <p class="bf-total-p1"><span class="bf-total-span1"><em>1</em>件商品，商品总价格：</span><span class="bf-total-pri">￥3999.00</span></p>
+        <p class="bf-total-p2"><span  class="bf-total-span2">订单总金额：</span><span class="bf-total-pri2">￥3999.00</span></p>
     </div>
-    <div class="bf-goods-total">
-        <div class="bf-total-info">
-            <p><em>1</em>件商品，商品总价格：<span>￥3999.00</span></p>
-            <p>订单总金额：<span>￥3999.00</span></p>
-        </div>
     </div>
-    <input type="submit" class="" value="提交订单"/>   
+    <input type="submit" class="bf-btn" value="提交订单"/>   
 </div>
 
 
