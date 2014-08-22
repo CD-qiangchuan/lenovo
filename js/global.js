@@ -203,33 +203,19 @@ shutAble    是否可以关闭开关
 oOpenTip    展开时显示标题
 oShutTip    关闭时显示标题
 */
-
-function openShutManager(oSourceObj,oTargetObj,shutAble){
-var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
-var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
-
 function openShutManager(oSourceObj,oTargetObj,shutAble,oOpenTip,oShutTip){
 var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
 var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
 var openTip = oOpenTip || "";
 var shutTip = oShutTip || "";
-
 if(targetObj.style.display!="none"){
    if(shutAble) return;
    targetObj.style.display="none";
     sourceObj.style.backgroundPosition="left -1680px";
-
-   
-} else {
-   targetObj.style.display="block";
-   sourceObj.style.backgroundPosition="left -2085px";   
-}
-};
-
    if(openTip  &&  shutTip){
     sourceObj.innerHTML = shutTip; 
    }
-else {
+} else {
    targetObj.style.display="block";
    sourceObj.style.backgroundPosition="left -2085px";
    if(openTip  &&  shutTip){
