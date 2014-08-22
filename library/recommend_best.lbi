@@ -8,7 +8,7 @@
             <div class="ps-recommend-name">
                 <a href="{$goods.url}">{$goods.name|escape:html}</a>
                 <a href="javascript:void(0)" class="ps-recommend-itemPic">￥{$goods.shop_price}</a>
-                <a href="javascript:addToCart($goods.goods_id)" class="ps-recommend-itemBtn">加入购物车</a>
+                <a href="javascript:addToCart({$goods.id})" class="ps-recommend-itemBtn">加入购物车</a>
             </div>
         </div>
         <!--{/foreach}-->
