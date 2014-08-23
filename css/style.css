@@ -722,23 +722,60 @@ margin-right: 10px;}
 .np-more-item hr{ width:340px; margin:5px auto; border-bottom:0; border-left:0; border-right:0; color:#999;}
 .np-item-cnfig{width: 300px;color: #777;margin: 15px auto;height: 100px;font-size: 15px;line-height: 30px;}
 .np-impower{ margin:10px auto; width: 1200px; height:145px; background:url(../images/pf/b1.jpg) no-repeat;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.ws-info{ background:url(../images/ws/bg1.jpg) no-repeat; margin:0 auto; width:1200px; height:980px;}
+.ws-info-item,.ws-info-item2{ height:280px;}
+.ws-info-img{ width:750px; float:left; margin-top:40px;}
+.ws-info-cont{width: 450px;float: left;padding-top: 50px;}
+.ws-info-title{ font-size:30px; line-height:25px;}
+.ws-info-title b{ display:block; width:10px; height:20px; background:#d92f25; float:left; margin-right:15px;}
+.ws-info-cont p{line-height: 30px;margin-top: 25px;font-size: 14px;text-indent: 2em;}
+.ws-info-cont2{ float:left; width:700px;padding-top: 50px;}
+.ws-info-title2{ font-size:30px; line-height:25px;}
+.ws-info-title2 b{ display:block; width:10px; height:20px; background:#d92f25; float:left; margin-right:15px;}
+.ws-info-cont2 p{line-height: 30px;margin-top: 15px;font-size: 14px;text-indent: 2em;}
+.ws-info-img2{ width:470px; float:right;}
+.ws-info-img3{ float:left; width:400px; margin-top:50px;}
+.ws-info-cont3{ width:760px; float:right; margin-top:50px;}
+.ws-info-cont3 p{line-height: 30px;margin-top: 15px;font-size: 14px;text-indent: 2em;}
+.ws-tab{ margin:10px auto; width:1200px; height:320px; border:1px solid #e0e0e0;}
+.ws-tab-list{ float:left; width:245px;border-right: 1px solid #e0e0e0; font-size:19px;}
+.ws-subtab{ float:right; width:860px;}
+.ws-tab-list li{display: block;height: 79px;text-align: center;line-height: 79px;border-bottom: 1px solid #e0e0e0; cursor:pointer;}
+.ws-subtab .tabDiv{ width:800px; display:none;}
+.ws-subtab-img{ float:left; width:300px; height:300px;}
+.ws-subtab-info{ float:right; width:500px;}
+.ws-tab-list .tab-cur{ background:#d92f25; color:#fff;}
+.ws-subtab  .tab-cur{ display:block;}
+.ws-subtab-title{text-align: center;font-size: 32px;margin: 30px;}
+.ws-subtab-sum{font-size: 14px;line-height: 30px;}
+.ws-subtab-btn{ text-align:center;}
+.ws-subtab-btn a{ display: block;width: 100px;height: 30px;background: none repeat scroll 0% 0% #D92F25;color: #FFF;line-height: 30px;border-radius: 12px;margin: 30px auto;}
+.ws-subtab-btn a:hover{ background:#B7281F;}
+.ws-trigon{background: url('../images/ico.png') no-repeat scroll -316px -153px transparent;width: 70px;height: 80px;display: none;position: absolute;margin-left: 244px;}
+.ws-goods{ margin:10px auto; width:1200px; border:1px solid #e0e0e0; height:350px;}
+.ws-goods-item{ float:left; margin-left:5px; width:225px; height:350px;}
+.ws-goods-img{ width:200px; height:200px;}
+.ws-goods-name p{ line-height:26px;}
+.ws-goods-name p a{ font-size:18px;}
+.ws-goods-name p a:hover{ text-decoration:underline; color:#f00;}
+.ws-goods-sum{color: #A5A5A5;font-size: 13px;}
+.ws-goods-price{ margin-top:5px;}
+.ws-redPric{ color:#d92f25; font-size:21px;}
+.ws-oldPric{ color:#5a5a5a; font-size:14px; text-decoration:line-through; margin-left:5px;}
+.ws-bom{ margin:10px auto 50px; width:1200px; height:350px;}
+.ws-arctop{ float:left; width:255px; height:350px; border:1px solid #e0e0e0;}
+.ws-arctop h3{text-align: center;height: 35px;line-height: 35px;}
+.ws-arctop li{ list-style:square;margin-left: 18px;}
+.ws-arctop li a{ font-size:14px; line-height:30px;}
+.ws-arctop li a:hover{ color:#f00; text-decoration:underline;}
+.ws-banner{ border:1px solid #e0e0e0; float:right; width:930px; height:350px;}
+.ws-banner1{ background:url(../images/ws/banner1.jpg) no-repeat; height:350px;}
+.ws-banner2{ background:url(../images/ws/banner2.jpg) no-repeat; display:none; height:350px;}
+.ws-banner3{ background:url(../images/ws/banner3.jpg) no-repeat; display:none; height:350px;}
+.ws-banner4{ background:url(../images/ws/banner4.jpg) no-repeat; display:none; height:350px;}
+.ws-bannerIco{width: 100px;height: 40px;margin-left: 400px;position: absolute;margin-top: -30px;}
+.ws-banner-ico{ display:block; float:left; margin-left:5px; width:18px; height:25px; background:url(../images/ico.png) no-repeat scroll -284px -160px transparent;}
+.ws-curIco{background:url(../images/ico.png) no-repeat scroll -256px -160px transparent;}
 
 
 

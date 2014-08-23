@@ -48,7 +48,7 @@ $(function(){
 		},function(){
 			$(this).find("span").removeClass("span-hidden");
 		$(this).find("em").removeClass("sidebar-active");
-			})
+			});
 	$(".right-sidebar-item>a").click(function(){
 		$(this).find("em").removeClass("sidebar-hid").addClass("sidebar-active");
 		},function(){
@@ -101,7 +101,7 @@ $(function(){
 		 $(ul).addClass("left-sidebar-on");
 		var ul2=document.getElementsByClassName("right-sidebar");
 		$(ul2).addClass("right-sidebar-on");
-		}
+		};
 	//特惠专区页面“所有分类”hover
 	$(".pd-classify-h3").hover(function(){
 		$(this).find(".down-ico").addClass("up-ico");	
@@ -123,21 +123,18 @@ $(function(){
 		$(this).find(".pd-delivery-province").addClass("trigon-show");
 		},function(){
 			$(this).find(".pd-delivery-province").removeClass("trigon-show");
-
 			})
      //新品专区页鼠标悬停图片向左移动
 	$(".np-newgoods-img").hover(function(){
 		$("img",this).stop().animate({"margin-top":"-10px"},{queue:false,duration:200});
     },function(){
 		$("img",this).stop().animate({"margin-top":"0px"},{queue:false,duration:200});
-		});	
-			});
+		});				
 	$(".np-item-img").hover(function(){
 		$("img",this).stop().animate({"margin-left":"-10px"},{queue:false,duration:200});
     },function(){
 		$("img",this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
-		});	
-			
+		});				
 			
 	//产品展示页面筛选板块
 	$(".ps-reset-sublist>li").click(function(){
@@ -157,8 +154,14 @@ $(function(){
     },function(){
 		$("img",this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
 		});	
+    //新品专区选项卡切换
+	$("#ws-menu1 li").click(function(){
+		$("#ws-menu1>li>.ws-trigon").removeClass('trigon-show');
+		$(this).find(".ws-trigon").addClass("trigon-show");
+		});
 
-	
+
+});	
 //首页公告滚动方法
 function AutoScroll(obj){
         $("#"+obj).find("ul:first").animate({
