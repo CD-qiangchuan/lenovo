@@ -125,8 +125,19 @@ $(function(){
 			$(this).find(".pd-delivery-province").removeClass("trigon-show");
 
 			})
-
+     //新品专区页鼠标悬停图片向左移动
+	$(".np-newgoods-img").hover(function(){
+		$("img",this).stop().animate({"margin-top":"-10px"},{queue:false,duration:200});
+    },function(){
+		$("img",this).stop().animate({"margin-top":"0px"},{queue:false,duration:200});
+		});	
 			});
+	$(".np-item-img").hover(function(){
+		$("img",this).stop().animate({"margin-left":"-10px"},{queue:false,duration:200});
+    },function(){
+		$("img",this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
+		});	
+			
 			
 	//产品展示页面筛选板块
 	$(".ps-reset-sublist>li").click(function(){
