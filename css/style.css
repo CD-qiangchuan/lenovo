@@ -514,19 +514,19 @@ position: absolute;z-index: 99;margin-top: 22px; display:none;}
 
 .ps-goods-fore2{ width:950px; height:50px;}
 .ps-goods-pagenum{ width:530px; float:right;}
-.ps-goods-prev{ display:block;width: 70px;border: 1px solid #E0E0E0; text-align:center; color:#BFBFBF; float:left;line-height: 28px; cursor:pointer;}
-.ps-goods-next{ display:block;width: 70px;border: 1px solid #E0E0E0; text-align:center; color:#6A6A6A; float:left;line-height: 28px; cursor:pointer;}
+.ps-goods-prev a{ display:block;width: 70px;border: 1px solid #E0E0E0; text-align:center; color:#BFBFBF; float:left;line-height: 28px; cursor:pointer;}
+.ps-goods-next a{ display:block;width: 70px;border: 1px solid #E0E0E0; text-align:center; color:#6A6A6A; float:left;line-height: 28px; cursor:pointer;}
 .ps-goods-prev b{ background: url(../images/ico.png) no-repeat scroll -74px -136px;display: block;width: 10px;height: 12px;position:absolute;margin-top: 7px;margin-left: 2px;}
 .ps-goods-next b{ background: url(../images/ico.png) no-repeat scroll -93px -136px;width: 10px;height: 12px; position:absolute; float:right;margin-top: 7px;}
-.ps-goods-prev:hover{ border:1px solid #FC9A1F;}
-.ps-goods-next:hover{ border:1px solid #FC9A1F;}
+.ps-goods-prev a:hover{ border:1px solid #FC9A1F;}
+.ps-goods-next a:hover{ border:1px solid #FC9A1F;}
 
-.ps-goods-pagenum a{ display:block; float:left; width:30px;line-height: 28px;text-align: center;margin-left: 5px;}
+.ps-goods-pagenum>a{ display:block; float:left; width:30px;line-height: 28px;text-align: center;margin-left: 5px;}
 .ps-goods-pagenum a:hover{ border:1px solid #FC9A1F;}
 .ps-pagenum-total{ display:block; float:left;margin-left: 5px;line-height: 28px;}
 .ps-pagenum-total input{ width:25px;margin-top: 3px;}
-.ps-affirm{width: 45px;display: block;float: left;margin-left: 10px;color: #6E6E6E;text-align: center;border: 1px solid #E0E0E0;line-height: 25px; cursor:pointer;}
-.ps-affirm:hover{ border:1px solid #FC9A1F;}
+.ps-affirm a{width: 45px;display: block;float: left;margin-left: 10px;color: #6E6E6E;text-align: center;border: 1px solid #E0E0E0;line-height: 25px; cursor:pointer;}
+.ps-affirm a:hover{ border:1px solid #FC9A1F;}
 
 
 /*-----------------------------------------------------------------特惠专区页面样式开始-----------------------------------------------------------*/
@@ -815,6 +815,24 @@ margin-right: 10px;}
 .ws-bannerIco{width: 100px;height: 40px;margin-left: 400px;position: absolute;margin-top: -30px;}
 .ws-banner-ico{ display:block; float:left; margin-left:5px; width:18px; height:25px; background:url(../images/ico.png) no-repeat scroll -284px -160px transparent;}
 .ws-curIco{background:url(../images/ico.png) no-repeat scroll -256px -160px transparent;}
+
+/*-----------------------------------------------------------ThinkPad页面样式开始------------------------------*/
+.tp-content{ width:100%; height:3000px; background:#484848;}
+.tp-bannerBox{ margin:0 auto; width:1200px; height:450px;}
+.tp-info{ margin:10px auto; width:1200px; height:700px; background:#1e1e1e;}
+.tp-info-item{ height:340px; color:#fff;}
+.tp-info-item2{ height:220px; color:#fff;}
+.tp-info-cont{ width:450px; float:left;margin: 20px 10px 0px 20px;}
+.tp-info-title{ font-size:30px; line-height:25px;}
+.tp-info-ico{ display:block; width:10px; height:20px; background:#d92f25; float:left; margin-right:15px;}
+.tp-info-pic{ width:600px; float:right;}
+.tp-info-pic2{ width:450px; float:left; height:200px; text-align:center;}
+.tp-info-cont2{ width:730px; float:left;}
+.tp-info-cont p,.tp-info-cont2 p{line-height: 25px;font-size: 14px;margin-top: 10px;}
+.tp-goods-list{ height:230px; background:#151515;}
+.tp-goods-item{ width:300px; float:left;}
+.tp-goods-name{ float:left; width:150px; height:100px; color:#fff;}
+.tp-goods-pic{ width:150px; float:left; height:100%;}
 
 
 
