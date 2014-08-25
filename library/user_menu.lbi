@@ -1,21 +1,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<div class="userMenu">
-<a href="user.php" {if $action eq 'default'}class="curs"{/if}><img src="../images/u1.gif"> {$lang.label_welcome}</a>
-<a href="user.php?act=profile"{if $action eq 'profile'}class="curs"{/if}><img src="../images/u2.gif"> {$lang.label_profile}</a>
-<a href="user.php?act=order_list"{if $action eq 'order_list'|| $action eq 'order_detail'}class="curs"{/if}><img src="../images/u3.gif"> {$lang.label_order}</a>
-<a href="user.php?act=address_list"{if $action eq 'address_list'}class="curs"{/if}><img src="../images/u4.gif"> {$lang.label_address}</a>
-<a href="user.php?act=collection_list"{if $action eq 'collection_list'}class="curs"{/if}><img src="../images/u5.gif"> {$lang.label_collection}</a>
-<a href="user.php?act=message_list"{if $action eq 'message_list'}class="curs"{/if}><img src="../images/u6.gif"> {$lang.label_message}</a>
-<a href="user.php?act=tag_list"{if $action eq 'tag_list'}class="curs"{/if}><img src="../images/u7.gif"> {$lang.label_tag}</a>
-<a href="user.php?act=booking_list"{if $action eq 'booking_list'}class="curs"{/if}><img src="../images/u8.gif"> {$lang.label_booking}</a>
-<a href="user.php?act=bonus"{if $action eq 'bonus'}class="curs"{/if}><img src="../images/u9.gif"> {$lang.label_bonus}</a>
-<!-- {if $affiliate.on eq 1} --><a href="user.php?act=affiliate"{if $action eq 'affiliate'}class="curs"{/if}><img src="../images/u10.gif"> {$lang.label_affiliate}</a><!-- {/if} -->
-<a href="user.php?act=comment_list"{if $action eq 'comment_list'}class="curs"{/if}><img src="../images/u11.gif"> {$lang.label_comment}</a>
-<!--<a href="user.php?act=group_buy">{$lang.label_group_buy}</a>-->
-<a href="user.php?act=track_packages"{if $action eq 'track_packages'}class="curs"{/if}><img src="../images/u12.gif"> {$lang.label_track_packages}</a>
-<a href="user.php?act=account_log"{if $action eq 'account_log'}class="curs"{/if}><img src="../images/u13.gif"> {$lang.label_user_surplus}</a>
-<!--{if $show_transform_points}-->
-<a href="user.php?act=transform_points"{if $action eq 'transform_points'}class="curs"{/if}><img src="../images/u14.gif"> {$lang.label_transform_points}</a>
-<!--{/if}-->
-<a href="user.php?act=logout" style="background:none; text-align:right; margin-right:10px;"><img src="../images/bnt_sign.gif"></a>
-</div>
+    <ul class="ma-left-ul">
+        <li class="ma-left-li redbg-wtcl">我的账户</li>
+        <li><span class="ma-left-li">订单中心</span>
+            <ul class="ma-left-sublist">
+                <li><a href="user.php?act=order_list">我的订单</a></li>
+                <li><a href="user.php?act=track_packages">订单轨迹</a></li>
+                <li><a href="user.php?act=collection_list">我的收藏</a></li>
+                <li><a href="user.php?act=booking_list">到货通知</a></li>
+                <li><a href="user.php?act=address_list">收货地址</a></li>
+            </ul>
+        </li>
+        <li><span class="ma-left-li">账户中心</span>
+            <ul class="ma-left-sublist">
+                <li><a href="user.php?act=profile">个人信息</a></li>
+                <li><a href="user.php?act=account_log">资金管理</a></li>
+                <li><a href="user.php?act=affiliate">我的推荐</a></li>
+                <li><a href="user.php?act=bonus">我的红包</a></li>
+                <li><a href="user.php?act=comment_list">我的评论</a></li>
+                <li><a href="user.php?act=message_list">我的留言</a></li>
+                <li><a href="#">积分兑换</a></li>
+                
+            </ul>
+        </li>
+         <li><span class="ma-left-li">售后服务</span>
+             <ul class="ma-left-sublist">
+                 <li><a href="#">申请售后服务</a></li>
+             </ul>
+        </li>
+       </ul>    
+    <div class="clear"></div>

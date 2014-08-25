@@ -552,10 +552,10 @@ position: absolute;z-index: 99;margin-top: 22px; display:none;}
 
 /*-------------------------------------------------------------------------我的账户页面样式开始----------------------------------------------------------------*/
 .ma-content{ margin:10px auto; width:1200px; height:600px;}
-.ma-left{ width:240px; float:left; height:500px; border:1px solid #e0e0e0;}
+.ma-left{ width:240px; float:left;  border:1px solid #e0e0e0;}
 .ma-left-li{padding-left: 20px;height: 35px;line-height: 35px;display: block;font-weight: bold;
 font-size: 15px;border-bottom: 1px solid #e0e0e0;border-top: 1px solid #e0e0e0;}
-.ma-left-sublist{ display:block; width:180px; height:155px; padding-left:35px;}
+.ma-left-sublist{ display:block; width:180px; padding-left:35px;}
 .ma-left-sublist li a{display: block;height: 30px;line-height: 30px;font-size: 14px;}
 .ma-left-sublist li a:hover{ color:#f00;}
 .ma-right{ float:right; width:950px;}
