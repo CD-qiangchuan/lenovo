@@ -159,8 +159,13 @@ $(function(){
 		$("#ws-menu1>li>.ws-trigon").removeClass('trigon-show');
 		$(this).find(".ws-trigon").addClass("trigon-show");
 		});
-
-
+    //购物流程-添加收货地址
+	$("#addr-add").click(function(){
+		$(".bf-step-addr").addClass("trigon-show");
+		})    
+	$(".bf-inp-smt").click(function(){		
+		$(".bf-step-addr2").addClass("trigon-show");
+		})
 });	
 //首页公告滚动方法
 function AutoScroll(obj){

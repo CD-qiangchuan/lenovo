@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>购买流程</title>
+<title>购买流程-填写订单</title>
 <link href="css/style.css" type="text/css"/ rel="stylesheet"/>
 </head>
 
@@ -10,7 +10,7 @@
 <!--网页最上方板块webtop开始-->
 <div class="webtop-bg">
   <div class="webtop">
-    <p>欢迎，来到<em>成都联想网上商城！</em> <a href="#" class="webtop-login">登录</a> <span class="webtop-separator"></span> <a href="#">注册</a></p>
+    <p>欢迎，来到<em>成都联想网上商城！</em> <a href="#" class="webtop-login2">XXX,欢迎来到成都联想旗舰店！</a>  <a href="#">[ 退出 ]</a></p>
     <ul>
       <li><a href="#">联想官网</a></li>
       <li class="webtop-separator  sp-h"></li>
@@ -50,8 +50,9 @@
     <h3 class="bf-content-title">填写订单</h3>
     <div class="bf-consignee-info">
         <h3 class="bf-consignee-h3">收货人信息<a href="#">[修改]</a></h3>
-        <p class="bf-consignee-p"><label>暂无收货地址</label><a href="#">添加新的收货地址</a></p>
+        <p class="bf-consignee-p"><label>暂无收货地址</label><a href="#" id="addr-add">添加新的收货地址</a></p>
     </div>
+    <!--添加新的收货地址-->
     <div class="bf-step-addr">
         <form action="#" method="post">
             <div class="bf-addr-left">
@@ -95,6 +96,30 @@
                   </p>
             </div>
         </form>
+    </div>
+    <!--保存资料后显示收货地址-->
+    <div class="bf-step-addr2">
+            <div class="bf-addr-left">
+                <p><span class="bf-addr-span1">地址标注：</span>空</p>
+                <p><span>所在地区：</span>四川省 成都市 武侯区                  
+                </p>
+                <p><span>详细地址：</span>
+                    四川省 成都市 武侯区一环路南二段新世纪电脑城东18A
+                </p>                
+            </div>
+            <div class="bf-addr-right">
+                <p><span>邮&nbsp;&nbsp;编：</span>610000</p>
+                <p><span>收货人：</span>小A</p>
+                <p>
+                  <span>手&nbsp;&nbsp;机：</span>
+                  18200000000
+                  </p>
+                  <p>
+                  <span>座&nbsp;&nbsp;机：</span>
+                  028-85042466                  
+                  </p>
+            </div>
+        
     </div>
     <!--支付及配送方式-->
     <div class="bf-consignee-info">
@@ -171,9 +196,6 @@
     </div>
     <input type="submit" class="bf-btn" value="提交订单"/>   
 </div>
-
-
-
 
 <!--footer-->
 <div class="footer">

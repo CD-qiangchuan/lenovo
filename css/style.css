@@ -605,7 +605,7 @@ font-size: 15px;border-bottom: 1px solid #e0e0e0;border-top: 1px solid #e0e0e0;}
 .ma-collect-title:hover{ color:#d92f25;}
 .ma-collect-time{font-size: 13px;padding-top: 10px;display: block;}
 
-/*-----------------------------------------------------------------------------------购买流程页面样式开始-----------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------购买流程-填写订单页面样式开始-----------------------------------------------------------------*/
 .bf-step{ float:right; background:url(../images/mya/x.png) no-repeat; width:400px; height:80px; font-size: 14px;color: #6e6e6e; margin-top:20px;}
 .bf-step-ul{ padding-left:32px}
 .bf-step-ul li{ display:inline-block;  width:100px; padding-left:20px;}
@@ -627,9 +627,10 @@ width: 160px;border: 1px solid #E0E0E0;border-radius: 5px;text-align: center;col
 .bf-inp-text2{display: block; width:240px;float: left;margin-right: 8px;}
 .bf-inp-text3{ width:25px; margin:0 5px;}
 .bf-inp-text4{ width:100px; margin-left:5px;}
-.bf-step-addr{ border:1px solid #e0e0e0; border-top:0; height:230px;font-size: 14px;color: #6e6e6e;}
+.bf-step-addr{ border:1px solid #e0e0e0; border-top:0; height:230px;font-size: 14px;color: #6e6e6e; display:none;}
+.bf-step-addr2{ border:1px solid #e0e0e0; border-top:0; height:230px;font-size: 14px;color: #6e6e6e;}
 .bf-addr-span1{ margin-left:10px;}
-.bf-addr-left{ width:390px; height:200px; float:left; margin-left:20px; padding-top:10px; }
+.bf-addr-left{ width:430px; height:200px; float:left; margin-left:20px; padding-top:10px; }
 .bf-addr-left p,.bf-addr-right p{ margin-top:15px;}
 .bf-addr-left p em,.bf-addr-right p em{ color:#f00; font-style:normal;margin-right: 5px; display:block; float:left;}
 .bf-addr-left p span,.bf-addr-right p span{ display:block; float:left; width:70px;}
@@ -682,6 +683,44 @@ margin-right: 10px;}
 .bf-total-pri2{ display:block; float:left; text-align:right; width:150px;color: #d92f25;font-size: 23px;}
 .bf-btn{float: right;height: 40px;background: none repeat scroll 0% 0% #D92F25;color: #FFF;border: 0px none;border-radius: 4px;width: 170px;margin: 25px 60px; font-size:16px;}
 
+/*----------------------------------购物车为空的页面样式-------------------------------*/
+.webtop-login2{ margin-left:180px;}
+.bf-cont2{ margin:10px auto; width:1200px; height:400px;}
+.bf-cont-title{ border:1px solid #e0e0e0; margin-top:60px; width:150px; height:50px; line-height:50px; text-align:center; font-size:20px; font-weight:bold; border-bottom:0;}
+.bf-cont{height: 180px;line-height: 180px;border: 1px solid #E0E0E0;}
+.bf-contt{ width:550px;  margin:10px auto; height:160px;}
+.bf-cont-ico{ background:url(../images/ico.png) no-repeat scroll -70px -210px; width:125px; height:100px;  float:left; margin-top:35px;}
+.bf-contt a{ text-decoration:underline; color:#f00;}
+
+/*-------------------------------购买流程-我的购物车页面样式开始------------------------*/
+
+.bf-cont3{height: 340px;border: 1px solid #E0E0E0;}
+.bf-cont4{ margin:10px auto; width:1200px; height:500px;}
+.bf-shopping-title{ height:80px; border-bottom:1px solid #e0e0e0;}
+.bf-shopping-li{    display: block;    float: left;    text-align: center;    line-height: 80px;    width: 198px;}
+.bf-shopping-title input{display: block;margin: 35px 8px 0 30px;float: left;}
+.bf-shopping-fli{ text-align:left;}
+.bf-info-num{ width:100px; margin: 35px auto;height: 30px;}
+.bf-info-a1{ color:#2D64B3; margin-right:15px;}
+.bf-info-li a:hover{ color:#f00; text-decoration:underline;}
+.bf-delete{ width:200px; height:100px; float:left; padding:20px;}
+.bf-delete a{color:#6e6e6e;}
+.bf-delete a:hover{ text-decoration:underline; color:#f00;}
+.bf-delete-ico{ float:left; background:url(../images/ico.png) no-repeat scroll -185px -195px transparent; width:15px; height:15px;margin-top: 4px;}
+.bf-info-sp input{display: block;float: left;margin: 45px 8px 0 30px;}
+.bf-cont-btn{ margin-top:10px; height:105px;}
+.bf-cont-btn1{ display:block; width:120px; height:40px; line-height:40px; border:1px solid #e0e0e0; text-align:center; border-radius:4px; float:left;}
+.bf-cont-btn2{ background:#d92f25; color:#fff; font-size:20px; font-weight:bold; float:right; text-align:center; border-radius:5px; width:200px; height:50px; line-height:50px;}
+/*-------------------------------------------------购物流程-提交订单样式开始---------------------------*/
+.bf-referBox{ margin:10px auto; width:1200px; height:400px;}
+.bf-refer{ height:300px; border:1px solid #e0e0e0; border-top:3px solid #d92f25;}
+.bf-refer-cont{ width:580px; height:200px; margin:100px auto;;}
+.bf-refer-ico{ background:url(../images/ico.png) no-repeat scroll -5px -245px transparent; width:70px; height:50px; float:left;}
+.bf-refer-p1{ font-size:25px; font-weight:bold;}
+.bf-refer-p2{font-size: 15px;margin-top: 10px;}
+.bf-refer-p2 em{ font-style:normal; color:#d92f25;}
+.bf-refer-p{ line-height:50px; margin-left:10px; font-size:14px; color:#6e6e6e;}
+.bf-refer-p a{ color:#d92f25; text-decoration:underline;}
 /*------------------------------------------------新品专区样式开始---------------------------------*/
 .np-main-banner{ width:100%; height:490px;}
 .np-banner1{ background:url(../images/newp/banner1.jpg) no-repeat; height:490px;}
