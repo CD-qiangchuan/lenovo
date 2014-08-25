@@ -25,13 +25,7 @@ $(document).ready(function(){
 setInterval('AutoScroll("scrollDiv")',5000)
 });
 </script>
-<!--解决common.js与jquery.js冲突-->
-<script type="text/javascript">
-$(function() {
-window.__Object_toJSONString = Object.prototype.toJSONString;
-delete Object.prototype.toJSONString;
-});
-</script>
+
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
@@ -104,7 +98,7 @@ delete Object.prototype.toJSONString;
     </div>
     <!--1F选项卡切换-->
    <div class="tab">
-    <div class="tab-list">
+    <div class="tab-list floor-tab">
         <ul id="menu1">
             <li class="tab-cur" onclick="setTab('menu1','1','showDiv1');" id="li1">家用笔记本</li>
             <li onclick="setTab('menu1','2','showDiv1');" id="li2">商用笔记本</li>
@@ -207,7 +201,7 @@ delete Object.prototype.toJSONString;
     </div>
     <!--2F选项卡切换-->
    <div class="tab">
-    <div class="tab-list">
+    <div class="tab-list floor-tab">
         <ul id="menu2">
             <li class="tab-cur" onclick="setTab('menu2','1','showDiv2');" id="li1">家用分体机</li>
             <li onclick="setTab('menu2','2','showDiv2');" id="li2">商用分体机</li>
@@ -476,7 +470,7 @@ delete Object.prototype.toJSONString;
     </div>
     <!--1F选项卡切换-->
    <div class="tab">
-    <div class="tab-list">
+    <div class="tab-list floor-tab">
         <ul id="menu3">
             <li class="tab-cur" onclick="setTab('menu3','1','showDiv3');" id="li1">家用一体机</li>
             <li onclick="setTab('menu3','2','showDiv3');" id="li2">商用一体机</li>
@@ -745,7 +739,7 @@ delete Object.prototype.toJSONString;
     </div>
     <!--4F选项卡切换-->
    <div class="tab">
-    <div class="tab-list">
+    <div class="tab-list floor-tab">
         <ul id="menu4">
             <li class="tab-cur" onclick="setTab('menu4','1','showDiv4');" id="li1">ThinkPad</li>
             <li onclick="setTab('menu4','2','showDiv4');" id="li2">ThinkServer</li>
@@ -1246,13 +1240,15 @@ delete Object.prototype.toJSONString;
 <!--右边固定栏-->
 <div class="right-sidebar">
     <div class="right-sidebar-item">
-        <a href="#" title="推荐" class="right-sidebar-recommend"><span class="sidebar-hid">推荐</span></a>
-        <a href="#floor1" title="笔记本电脑"><span class="sidebar-hid">笔记本</span></a>
-        <a href="#floor2" title="分体台式机"><span class="sidebar-hid">分体机</span></a>
-        <a href="#floor3" title="一体台式机"><span class="sidebar-hid">一体机</span></a>
-        <a href="#floor4" title="Think产品"><span class="sidebar-hid">Think</span></a>
-        <a href="#floor5" title="图形工作站"><span class="sidebar-hid">工作站</span></a>
-        <a href="#floor6" title="服务器"><span class="sidebar-hid">服务器</span></a>
+        <ul>
+            <li><a href="#" title="推荐" class="right-sidebar-recommend"><span class="sidebar-recommend-ico"></span><em class="sidebar-hid">推荐</em></a></li>
+            <li><a href="#floor1" title="笔记本电脑"><span>1F</span><em class="sidebar-hid">笔记本</em></a></li>
+            <li> <a href="#floor2" title="分体台式机"><span>2F</span><em class="sidebar-hid">分体机</em></a></li>
+            <li><a href="#floor3" title="一体台式机"><span>3F</span><em class="sidebar-hid">一体机</em></a></li>
+            <li><a href="#floor4" title="Think产品"><span>4F</span><em class="sidebar-hid">Think</em></a></li>
+            <li><a href="#floor5" title="图形工作站"><span>5F</span><em class="sidebar-hid">工作站</em></a></li>
+            <li><a href="#floor6" title="服务器"><span>6F</span><em class="sidebar-hid">服务器</em></a></li>
+        </ul>       
     </div>
     <span  class="scrolltop"><a href="#" title="返回顶部"></a></span>
 </div>

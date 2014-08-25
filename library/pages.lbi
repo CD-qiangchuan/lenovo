@@ -3,7 +3,7 @@
 <form name="selectPageForm" action="{$smarty.server.PHP_SELF}" method="get">
         <div class="ps-goods-fore2">
             <div class="ps-goods-pagenum">
-                <!-- {if $pager.page_prev} --><a  href="{$pager.page_prev}"><span class="ps-goods-prev"><b></b>上一页</span></a><!-- {/if} -->
+                <!-- {if $pager.page_prev} --><span class="ps-goods-prev"><a  href="{$pager.page_prev}"><b></b>上一页</a></span><!-- {/if} -->
                 <!-- {if $pager.page_count neq 1} -->
     			<!--{foreach from=$pager.page_number key=key item=item}-->
       			<!-- {if $pager.page eq $key} -->
@@ -13,7 +13,7 @@
                 <!-- {/if} -->
                 <!--{/foreach}-->
                 <!-- {/if} -->
-                <!-- {if $pager.page_next} --><a href="{$pager.page_next}"><span class="ps-goods-next">下一页<b></b></span></a><!-- {/if} -->
+                <!-- {if $pager.page_next} --><span class="ps-goods-next"><a href="{$pager.page_next}">下一页<b></b></a></span><!-- {/if} -->
                 <span class="ps-pagenum-total">共{$pager.page_count}页</span>                
             </div>
         </div>

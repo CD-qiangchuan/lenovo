@@ -57,7 +57,7 @@ margin-left: 3px;float: right;margin-top: 7px;}
 .shopping-minicart-ico{ background:url(../images/shopping-cart.png) no-repeat; display:block; height: 47px;float: left;width: 40px;margin-left: 2px;}
 
 /*.site-info导航上的公告部分*/
-.site-info{width: 1200px;margin: 50px auto 10px; font-size:12px; color:#737373; height:15px; line-height:15px; overflow:hidden;}
+.site-info{width: 1200px;margin: 10px auto 10px; font-size:12px; color:#737373; height:15px; line-height:15px; overflow:hidden;}
 .site-info-ico{ background:url(../images/ico.png) no-repeat scroll 0 -3px; display:block; width:20px; height:20px; float:left;}
 .site-info ul{ margin-left:27px; height:15px;}
 .site-info ul li{ height:15px;}
@@ -73,9 +73,9 @@ margin-left: 3px;float: right;margin-top: 7px;}
 .sidebar-ul li{ padding-left:8px; border-top:1px solid #A2231C;}
 .sidebar-li-height{ height:65px; padding-top:10px;}
 .sidebar-ul span a:hover{ text-decoration:underline; }
-.sidebar-f-h{ background:#D92F25; height:65px;}
+.sidebar-f-h{ background:#D92F25; height:37px;}
 .sidebar-f-h h4{color:#fff;}
-.sidebar-hover{ background:#fff; height:65px;}
+.sidebar-hover{ background:#fff; height:37px;}
 .sidebar-hover a,.sidebar-hover h4{ color:#000;}
 .sidebar-hover a:hover{ color:#f00; text-decoration:underline;}
 .sub-sidebar{ display:none; width:550px; position:absolute; background:#fff; color:#747474;margin-left: 232px;margin-top: -52px; z-index:999;}
@@ -154,8 +154,8 @@ margin-left: 3px;float: right;margin-top: 7px;}
 .tab-hot-num{ width: 26px;height: 26px;float: left;border-radius: 26px; -moz-border-radius: 26px; -webkit-border-radius: 26px; position:relative; z-index:2; behavior:url(E:/兰天英/DW_test/028lenovo2/028lenovo/css/iecss3.htc);color: white;text-align: center;line-height: 26px;background: #C9C9C9;}
 .tab-num-col{ background:#F65954;}
 .tab-hot-text{width: 150px;float: left;margin-left: 18px;}
-.tab-recommend-prcspan1{ height:300px;}
-.recommend-prcspan1-big{ width:430px; float:left; border-right:1px solid #E6E6E6; height:300px;}
+.tab-recommend-prcspan1{ height:320px;}
+.recommend-prcspan1-big{ width:430px; float:left; border-right:1px solid #E6E6E6; height:320px;}
 .prcspan1-big-p{ margin:22px auto auto 20px;}
 .prcspan1-nol-p{ margin:22px auto auto 7px;}
 .prcspan1-big-p h2{ height:35px;}
@@ -172,7 +172,7 @@ margin-left: 3px;float: right;margin-top: 7px;}
 .prcspan1-nol-img img{ float:right; margin-top:-5px;}
 
 .tab-recommend-prcspan2{ width:100%; height:150px; border-top:1px solid #e6e6e6;}
-.recommend-prcspan2-item{ width:225px; height:125px; border-right:1px solid #e6e6e6; float:left;}
+.recommend-prcspan2-item{ width:226px; height:127px; border-right:1px solid #e6e6e6; float:left;}
 .prcspan2-item-left{ float:left; width:135px; padding-top:45px;}
 .prcspan2-item-price{font-size: 22px;color: red;line-height: 35px; padding-left:10px;}
 .prcspan2-item-p{padding-left: 5px;font-size: 15px;}
