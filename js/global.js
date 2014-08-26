@@ -30,16 +30,16 @@ $(function(){
 			$(this).addClass("nominate-h").removeClass("nominate-hover");
 			});
 	//首页特惠专区鼠标悬停图片向左移动
-	$(".recommend-prc-img a").hover(function() {
-        $("img",this).stop().animate({"margin-left":"-20px"},{queue:false,duration:200});
+	$(".recommend-prc-img>a img").hover(function() {
+        $(this).stop().animate({"margin-left":"-20px"},{queue:false,duration:200});
     },function(){
-		$("img",this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
+		$(this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
 		});
 	//首页排行榜鼠标悬停图片向左移动
-	$(".tab-hot-img a").hover(function(){
-		$("img",this).stop().animate({"margin-left":"-20px"},{queue:false,duration:200});
+	$(".tab-hot-img>a img").hover(function(){
+		$(this).stop().animate({"margin-left":"-20px"},{queue:false,duration:200});
     },function(){
-		$("img",this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
+		$(this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
 		});	
 	//首页右边悬浮层
 	$(".right-sidebar-item>li").hover(function(){
