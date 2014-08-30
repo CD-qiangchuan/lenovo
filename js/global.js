@@ -8,12 +8,12 @@ $(function(){
 		$(this).removeClass("shopping-sty").addClass("shopping-hover");
 		$(".hd-shopping-ico").removeClass("shopping-ico-bg").addClass("shopping-ico-hover");
 		$(this).find(".hd-tool-jt").removeClass("tool-jt-bg").addClass("tool-jt-hover");
-		$(".shopping-minicart").show();
+		$("#shopping-minicart").show();
 		},function(){
 			$(this).removeClass("shopping-hover").addClass("shopping-sty");
 			$(".hd-shopping-ico").removeClass("shopping-ico-hover").addClass("shopping-ico-bg");
 			$(".hd-tool-jt").removeClass("tool-jt-hover").addClass("tool-jt-bg");
-			$(".shopping-minicart").hide();
+			$("#shopping-minicart").hide();
 			});
 	//首页sidebar's hover js
 	$(".sidebar-ul>#sidebar-li").hover(function(){
@@ -165,6 +165,14 @@ $(function(){
 		})    
 	$(".bf-inp-smt").click(function(){		
 		$(".bf-step-addr2").addClass("trigon-show");
+		})
+		//产品内容页点开对比
+	$(".ps-contrast-opn").click(function(){
+		$(".ps-contrast").addClass("trigon-show");
+		})		
+    //产品内容页关闭对比
+	$("#ps-contrast-cls").click(function(){
+		$(".ps-contrast").removeClass("trigon-show");
 		})
 });	
 //首页公告滚动方法

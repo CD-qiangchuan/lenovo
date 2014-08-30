@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我的账户</title>
+<title>我的账户-售后</title>
 <link href="css/style.css" type="text/css"/ rel="stylesheet"/>
 </head>
 
@@ -10,7 +10,7 @@
 <!--网页最上方板块webtop开始-->
 <div class="webtop-bg">
   <div class="webtop">
-    <p>欢迎，来到<em>成都联想网上商城！</em> <a href="login.html" class="webtop-login">登录</a> <span class="webtop-separator"></span> <a href="login.html">注册</a></p>
+    <p>欢迎，来到<em>成都联想网上商城！</em> <a href="#" class="webtop-login">登录</a> <span class="webtop-separator"></span> <a href="#">注册</a></p>
     <ul>
       <li><a href="#">联想官网</a></li>
       <li class="webtop-separator  sp-h"></li>
@@ -43,7 +43,7 @@
   <div class="hd-tool">
     <div class="hd-tool-account"><a href="myAccount.html"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
     <div class="hd-tool-shopping shopping-sty">
-        <a href="buyflow0.html">
+        <a href="#">
             <span class="hd-shopping-ico shopping-ico-bg"></span>
             <span class="hd-shopping-til">购物车</span>
             <span class="hd-tool-jt tool-jt-bg"></span>
@@ -122,88 +122,76 @@
 </div>
 <!--右边-->
 <div class="ma-right">
-    <div class="ma-right-info">
-        <p class="ma-info-welcome"><em>某某某，欢迎您！</em>上次登录时间：2014-08-12 11:05:17</p>
-        <p class="ma-info-p">
-            <a href="#" class="ma-info-a">到货通知：0</a>
-            <a href="#" class="ma-info-a">优惠券：0</a>
-            <a href="#" class="ma-info-a">获得积分：0</a>
-            <a href="#" class="ma-info-a2">修改密码</a>
-            <a href="#" class="ma-info-a2">修改收货地址</a>
-        </p>
-    </div>
-    <!--近期订单-->
-    <div class="ma-rig-indent">
-        <div class="ma-indent-title">
-            <h3>近期订单</h3>
-            <a href="#">查看所有订单>></a>
-        </div>
-        <div class="ma-indent-info">
-            <ul>
-                <li>订单信息</li>
-                <li>收货人</li>
-                <li>应付金额</li>
-                <li>订单时间</li>
-                <li>订单状态</li>
-                <li>操作</li>
-            </ul>
-        </div>
-        <p class="ma-indent-num">订单编号：<em>1732903224</em></p>
-        <div class="ma-indent-myinfo">
-            <ul>
-                <li class="ma-indent-li"><img src="images/mya/1.jpg" /></li>
-                <li class="ma-indent-li">某某某</li>
-                <li class="ma-indent-li">
-                    <span class="ma-indent-price">￥3849.00</span>
-                    <span class="ma-indent-buy"><a href="#">在线支付</a></span>
-                </li>
-                <li class="ma-indent-li">
-                    <span class="ma-indent-time">2014-08-08</span>
-                    <span>13:59:02</span>
-                </li>
-                <li class="ma-indent-li">等待发货</li>
-                <li class="ma-indent-btn">
-                    <a href="#">查看</a>
-                    <a href="#" class="ma-indent-btnbg">确认收货</a>
-                    <a href="#">取消订单</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!--近期收藏-->
-    <div class="ma-rig-collect">
-        <div class="ma-indent-title">
-            <h3>近期收藏</h3>
-            <a href="#">查看所有收藏>></a>
-        </div>
-        <div class="ma-collect-info">
-            <ul>
-                <li>商品</li>
-                <li>销售价</li>
-                <li>库存情况</li>
-                <li>操作</li>
-            </ul>
-        </div>
-        <div class="ma-collect-myinfo">
-            <ul>
-                <li class="ma-collect-li ma-collect-lfli">
-                    <img src="images/mya/1.jpg" />
-                    <span class="ma-collect-span">
-                        <a href="#" class="ma-collect-title">联想（Lenovo）Y400N 14.0英寸笔记本电脑（i5-3230M 4G 1T 2G独显 摄像头 DVD刻 Win8）</a>
-                        <a href="#" class="ma-collect-time">加入收藏时间：2014-08-04</a>
-                    </span>
-                </li>
-                <li class="ma-collect-li">
-                    <span class="ma-collect-price">￥3849.00</span>
-                </li>
-                <li class="ma-collect-li">库存正常</li>
-                <li class="ma-collect-btn">
-                    <a href="#" class="ma-collect-btnbg">加入购物车</a>
-                    <a href="#">加入对比</a>
-                    <a href="#">取消收藏</a>
-                </li>
-            </ul>
-        </div>
+    <div class="ma-right-info2">申请售后服务</div>
+    <ul id="menu" class="ma-afterSal-tab">
+        <li class="tab-cur" onclick="setTab('menu','1','showDiv');" id="li1">申请返修/退换货</li>
+        <li onclick="setTab('menu','2','showDiv');" id="li2">查看返修/退换货记录</li>
+        <li onclick="setTab('menu','3','showDiv');" id="li3">查看退款记录</li>
+    </ul>
+    <div class="ma-afterSal-div" id="showDiv">
+         <div class="tabDiv tab-cur" id="main1">
+              <ul class="ma-afterSal-tilte">
+                  <li class="ma-afterSal-200w">订单号</li>
+                  <li class="ma-afterSal-550w">订单商品</li>
+                  <li class="ma-afterSal-200w">下单时间</li>
+              </ul>
+              <ul class="ma-integral-cont">
+                  <li>
+                      <ul class="ma-integral-subcont">
+                          <li class="ma-afterSal-subli ma-afterSal-200w">1732903224</li>
+                          <li class="ma-afterSal-subli ma-afterSal-550w">
+                               <div class="afterSal-subli-img"><img src="images/mya/2.jpg" /></div>
+                               <div class="afterSal-subli-name">
+                                   <p><a href="#">杨天V580c-IFI(WIN8)15.6寸笔记本电脑 （i5-3230M 4G 1T 2G独显 Win8）</a></p>
+                                   <p>￥5899.00</p>
+                                   <a href="#" class="afterSal-subli-btn">申请</a>
+                               </div>
+                          </li>
+                          <li class="ma-afterSal-subli ma-afterSal-subli2 ma-afterSal-200w"><span>2014-08-08</span><span>13:59:02</span></li>
+                      </ul>
+                  </li>
+              </ul>
+         </div>
+         <div class="tabDiv" id="main2">
+             <ul class="ma-afterSal-tilte2">
+                  <li class="ma-afterSal-150w">返修/退换货编号</li>
+                  <li class="ma-afterSal-150w">订单编号</li>
+                  <li class="ma-afterSal-250w">商品名称</li>
+                  <li class="ma-afterSal-197w">申请时间</li>
+                  <li class="ma-afterSal-197w">申请状态</li>
+              </ul>
+             <ul class="ma-integral-cont">
+                  <li>
+                      <ul class="ma-integral-subcont">
+                          <li class="ma-afterSal-subli ma-afterSal-150w">110454240</li>
+                          <li class="ma-afterSal-subli ma-afterSal-150w">426065964</li>
+                          <li class="ma-afterSal-subli ma-afterSal-250w"><p class="ma-afterSal-250wP"><a href="#">杨天V580c-IFI(WIN8)15.6寸笔记本电脑 （i5-3230M 4G 1T 2G独显 Win8）</a></p></li>
+                          <li class="ma-afterSal-subli ma-afterSal-197w">2014-08-30</li>
+                          <li class="ma-afterSal-subli ma-afterSal-subli2 ma-afterSal-197w">处理中</li>
+                      </ul>
+                  </li>
+              </ul>
+         </div>
+         <div class="tabDiv" id="main3">
+              <ul class="ma-afterSal-tilte2">
+                  <li class="ma-afterSal-150w">订单编号</li>
+                  <li class="ma-afterSal-150w">退款明细</li>
+                  <li class="ma-afterSal-250w">商品名称</li>
+                  <li class="ma-afterSal-197w">退款时间</li>
+                  <li class="ma-afterSal-197w">退款原因</li>
+              </ul>
+              <ul class="ma-integral-cont">
+                  <li>
+                      <ul class="ma-integral-subcont">
+                          <li class="ma-afterSal-subli ma-afterSal-150w">110454240</li>
+                          <li class="ma-afterSal-subli ma-afterSal-150w">￥5899.00</li>
+                          <li class="ma-afterSal-subli ma-afterSal-250w"><p class="ma-afterSal-250wP"><a href="#">杨天V580c-IFI(WIN8)15.6寸笔记本电脑 （i5-3230M 4G 1T 2G独显 Win8）</a></p></li>
+                          <li class="ma-afterSal-subli ma-afterSal-197w">2014-08-30</li>
+                          <li class="ma-afterSal-subli ma-afterSal-subli2 ma-afterSal-197w"></li>
+                      </ul>
+                  </li>
+              </ul>
+         </div>
     </div>
 </div>
 </div>
