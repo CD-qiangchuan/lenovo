@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我的账户-积分兑换</title>
+<title>帮助中心-会员注册</title>
 <link href="css/style.css" type="text/css"/ rel="stylesheet"/>
 </head>
 
@@ -26,7 +26,7 @@
 </div>
 <!--header开始-->
 <div class="header">
-  <div class="hd-logo"><a href="index.html"> <img src="images/logo.jpg" /></a> </div>
+  <div class="hd-logo"><a href="index.html"><img src="images/logo.jpg" /></a></div>
   <div class="hd-search">
     <form method="post">
       <input type="text" class="hd-text-box" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}" title="在此处输入关键字"/>
@@ -43,7 +43,7 @@
   <div class="hd-tool">
     <div class="hd-tool-account"><a href="myAccount.html"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
     <div class="hd-tool-shopping shopping-sty">
-        <a href="buyflow1.html">
+        <a href="buyflow0.html">
             <span class="hd-shopping-ico shopping-ico-bg"></span>
             <span class="hd-shopping-til">购物车</span>
             <span class="hd-tool-jt tool-jt-bg"></span>
@@ -76,7 +76,7 @@
       </h3>
     </div>
     <ul class="pd-mainbar">
-        <li><a href="index.html">商城首页</a></li>
+      <li><a href="index.html">商城首页</a></li>
         <li><a href="preference.html">特惠专区</a></li>
         <li><a href="newProduct.html">新品专区</a></li>
         <li><a href="thinkPad.html">ThinkPad</a></li>
@@ -85,89 +85,59 @@
     </ul>
   </div>
 </div>
-<!--当前位置-->
-<div class="current-position">
-  <p><a href="#">商城首页</a>><a href="#">我的账户</a></p>
-</div>
 <!--内容体-->
-<div class="ma-content">
-<!--左边-->
-<div class="ma-left">
-    <ul class="ma-left-ul">
-        <li class="ma-left-li redbg-wtcl">我的账户</li>
-        <li><span class="ma-left-li">订单中心</span>
-            <ul class="ma-left-sublist">
-                <li><a href="myAccount.html">我的订单</a></li>
-                <li><a href="#">我的收藏</a></li>
-                <li><a href="#">浏览记录</a></li>
-                <li><a href="#">到货通知</a></li>
-                <li><a href="myAccount-address.html">收货地址</a></li>
+<div class="help-cont">
+<div class="help-left">
+    <ul>
+        <li class="help-left-tl">帮助中心</li>
+        <li class="help-left-li"><span onclick="openSub(this,'sublist',false,'left-ico1')">购物指南<b class="help-left-ico" id="left-ico1"></b></span>
+            <ul class="help-left-subls" id="sublist" style="display:none;">
+                <li><a href="help.html">购物流程</a></li>
+                <li><a href="helpRegister.html">会员注册</a></li>
+                <li><a href="#">支付流程</a></li>
+                <li><a href="helpPay.html">购物方式</a></li>
+                <li><a href="helpFacilitator.html">服务商信息</a></li>
             </ul>
         </li>
-        <li><span class="ma-left-li">账户中心</span>
-            <ul class="ma-left-sublist">
-                <li><a href="myAccount-infom.html">个人信息</a></li>
-                <li><a href="myAccount-pwd.html">登录密码</a></li>
-                <li><a href="myAccount-coupon.html">优惠劵</a></li>
-                <li><a href="myAccount-integral.html">积分兑换</a></li>
+        <li class="help-left-li"><span onclick="openSub(this,'sublist2',false,'left-ico2')">配送方式<b class="help-left-ico" id="left-ico2"></b></span>
+            <ul class="help-left-subls" id="sublist2" style="display:none;">
+                <li><a href="#">物流查询</a></li>
+                <li><a href="#">签收原则</a></li>
+                <li><a href="#">配送方式</a></li>
+                <li><a href="#">配送方信息</a></li>
             </ul>
         </li>
-         <li><span class="ma-left-li">售后服务</span>
-             <ul class="ma-left-sublist">
-                 <li><a href="myAccount-afterSale.html">申请售后服务</a></li>
-             </ul>
+        <li class="help-left-li"><span onclick="openSub(this,'sublist3',false,'left-ico3')">支付方式<b class="help-left-ico" id="left-ico3"></b></span>
+            <ul class="help-left-subls" id="sublist3" style="display:none;">
+                <li><a href="#">支付宝支付</a></li>
+                <li><a href="#">线下支付</a></li>
+                <li><a href="#">货到付款</a></li>
+            </ul>
         </li>
-       </ul>    
-    <div class="clear"></div>
-</div>
-<!--右边-->
-<div class="ma-right">
-    <div class="ma-right-info2">积分兑换</div>
-    <ul id="menu" class="ma-integral-tab">
-        <li class="tab-cur ma-integral-li" onclick="setTab('menu','1','showDiv');" id="li1">当前总积分</li>
-        <li class="ma-integral-li" onclick="setTab('menu','2','showDiv');" id="li2">可兑换优惠劵</li>
+        <li class="help-left-li"><span onclick="openSub(this,'sublist4',false,'left-ico4')">订单信息<b class="help-left-ico" id="left-ico4"></b></span>    
+            <ul class="help-left-subls" id="sublist4" style="display:none;">
+                <li><a href="#">订单状态</a></li>
+                <li><a href="#">发票制度</a></li>
+            </ul>
+        </li>
+        <li class="help-left-li"><span onclick="openSub(this,'sublist5',false,'left-ico5')">售后服务<b class="help-left-ico" id="left-ico5"></b></span>       
+            <ul class="help-left-subls" id="sublist5" style="display:none;">
+                <li><a href="#">无忧服务</a></li>
+                <li><a href="#">服务政策</a></li>
+                <li><a href="#">商品退货保障</a></li>
+            </ul>
+        </li>
     </ul>
-    <div class="ma-integral-div" id="showDiv">
-         <div class="tabDiv tab-cur" id="main1">
-              <ul class="ma-integral-tilte">
-                  <li>日期</li>
-                  <li>订单号</li>
-                  <li>获得积分</li>
-                  <li>消耗积分</li>
-                  <li>详细说明</li>
-              </ul>
-              <ul class="ma-integral-cont">
-                  <li>
-                      <ul class="ma-integral-subcont">
-                          <li class="ma-integral-subli"></li>
-                          <li class="ma-integral-subli"></li>
-                          <li class="ma-integral-subli"><a href="#" class="ma-integral-subBtn">立即兑换</a></li>
-                          <li class="ma-integral-subli"></li>
-                          <li class="ma-integral-subli ma-integral-subli2"></li>
-                      </ul>
-                  </li>
-              </ul>
-         </div>
-         <div class="tabDiv" id="main2">
-             <ul class="ma-integral-tilte">
-                  <li>优惠劵代码</li>
-                  <li>名称</li>
-                  <li>可否兑换</li>
-                  <li>有效期</li>
-                  <li>描述</li>
-              </ul>
-              <ul class="ma-integral-cont">
-                  <li>
-                      <ul class="ma-integral-subcont">
-                          <li class="ma-integral-subli"></li>
-                          <li class="ma-integral-subli"></li>
-                          <li class="ma-integral-subli"><a href="#" class="ma-integral-subBtn">立即兑换</a></li>
-                          <li class="ma-integral-subli"></li>
-                          <li class="ma-integral-subli ma-integral-subli2"></li>
-                      </ul>
-                  </li>
-              </ul>
-         </div>
+</div>
+<div class="help-right">
+    <div class="help-right-title">会员注册</div>
+    <div class="help-right-cont2">
+        <h2>会员注册</h2>
+        <div class="help-register">
+            <p class="help-register-p">您只要通过成都联想旗舰店注册，即可成为我们的会员，以会员价进行购买。</p>
+            <p class="help-register-p">在成都联想旗舰店注册有如下途径：</p>
+            <p class="help-register-p">a.进入成都联想旗舰店首页，点击页面顶部"<a href="login.html">注册</a>"，然后填写相关信息即可成为会员<br />b.直接从后面的地址进行注册：<a href="login.html">http://028lenovo/login.html</a></p>
+        </div>
     </div>
 </div>
 </div>
@@ -222,5 +192,4 @@
 </div>
 <script src="js/jquery.js"></script>
 <script src="js/global.js"></script>
-</body>
 </html>

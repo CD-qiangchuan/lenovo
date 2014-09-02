@@ -10,13 +10,13 @@
 <!--网页最上方板块webtop开始-->
 <div class="webtop-bg">
   <div class="webtop">
-    <p>欢迎，来到<em>成都联想网上商城！</em> <a href="#" class="webtop-login">登录</a> <span class="webtop-separator"></span> <a href="#">注册</a></p>
+    <p>欢迎，来到<em>成都联想网上商城！</em> <a href="login.html" class="webtop-login">登录</a> <span class="webtop-separator"></span> <a href="login.html">注册</a></p>
     <ul>
-      <li><a href="#">联想官网</a></li>
+      <li><a href="index.html">联想官网</a></li>
       <li class="webtop-separator  sp-h"></li>
-      <li><a href="#">我的账户</a></li>
+      <li><a href="myAccount.html">我的账户</a></li>
       <li class="webtop-separator  sp-h"></li>
-      <li><a href="#">帮助中心</a></li>
+      <li><a href="help.html">帮助中心</a></li>
       <li class="webtop-separator  sp-h"></li>
       <li><a href="#">EPP会员专享</a></li>
       <li class="webtop-separator  sp-h"></li>
@@ -26,7 +26,7 @@
 </div>
 <!--header开始-->
 <div class="header">
-  <div class="hd-logo"> <img src="images/logo.jpg" /> </div>
+  <div class="hd-logo"><a href="index.html"> <img src="images/logo.jpg" /></a></div>
   <div class="hd-search">
     <form method="post">
       <input type="text" class="hd-text-box" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}" title="在此处输入关键字"/>
@@ -41,9 +41,9 @@
     </form>
   </div>
   <div class="hd-tool">
-    <div class="hd-tool-account"><a href="#"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
+    <div class="hd-tool-account"><a href="myAccount.html"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
     <div class="hd-tool-shopping shopping-sty">
-        <a href="#">
+        <a href="buyflow0.html">
             <span class="hd-shopping-ico shopping-ico-bg"></span>
             <span class="hd-shopping-til">购物车</span>
             <span class="hd-tool-jt tool-jt-bg"></span>
@@ -76,7 +76,7 @@
       </h3>
     </div>
     <ul class="pd-mainbar">
-      <li><a href="#">商城首页</a></li>
+      <li><a href="index.html">商城首页</a></li>
         <li><a href="preference.html">特惠专区</a></li>
         <li><a href="newProduct.html">新品专区</a></li>
         <li><a href="thinkPad.html">ThinkPad</a></li>
@@ -89,10 +89,10 @@
 <div class="tp-content">
     <!--banner图片-->
     <div class="tp-bannerBox">
-        <span class="tp-banner-per"></span>
-        <span class="tp-banner-next"></span>
+        <span class="tp-banner-per" id="pre"></span>
+        <span class="tp-banner-next" id="next"></span>
         <ul>
-           <li><a href="#"><img src="images/tp/banner1.jpg" /></a></li>
+           <li><a href="#"><img src="images/tp/banner1.jpg" id="showimg" /></a></li>
         </ul>        
     </div>
     <!--产品介绍-->
@@ -266,5 +266,6 @@
 </div>
 <script src="js/jquery.js"></script> 
 <script src="js/global.js"></script>
+<script src="js/qt.js"></script><!--左右箭头切图-->
 </body>
 </html>

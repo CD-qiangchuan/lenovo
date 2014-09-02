@@ -72,10 +72,10 @@ $(function(){
 		//浏览
 	$(".left-sidebar-browse").hover(function(){
 		$(this).addClass("left-sidebar-browseH").removeClass("left-sidebar-browse");
-		$(this).find(".left-collect-box").addClass("left-side-active");
+		$(this).find(".left-browse-box").addClass("left-side-active");
 		},function(){
 		$(this).addClass("left-sidebar-browse").removeClass("left-sidebar-browseH");
-		$(this).find(".left-collect-box").removeClass("left-side-active");
+		$(this).find(".left-browse-box").removeClass("left-side-active");
 			});
 			//咨询
 	$(".left-sidebar-consult").hover(function(){
@@ -174,6 +174,12 @@ $(function(){
 	$("#ps-contrast-cls").click(function(){
 		$(".ps-contrast").removeClass("trigon-show");
 		})
+     //购买流程2-支付方式
+	 $(".bf-pay-rad").click(function(){
+		 $(".bf-pay-rad").parents("p").removeClass("bf-pay-cur");
+		 $(this).parent("p").addClass("bf-pay-cur");
+		 })
+	
 });	
 //首页公告滚动方法
 function AutoScroll(obj){
@@ -251,6 +257,42 @@ if(targetObj.style.display!="none"){
 }
 };
 
+/*===========================点击展开关闭效果====================================
+oSourceObj    当前控件
+oTargetObj    目标控件
+shutAble    是否可以关闭开关
+bgo         需要改变背景图标
+*/
+function openSub(oSourceObj,oTargetObj,shutAble,bgo){
+var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+var bgo=document.getElementById(bgo);
+if(targetObj.style.display!="none"){
+   if(shutAble) return;
+   targetObj.style.display="none";
+    bgo.style.backgroundPosition="left -1680px";
+  
+} else {
+   targetObj.style.display="block";
+   bgo.style.backgroundPosition="left -2085px";
+   
+}
+};
+/*===========================点击展开关闭效果====================================
+oSourceObj    当前控件
+oTargetObj    目标控件
+shutAble    是否可以关闭开关
+*/
+function opcl(oSourceObj,oTargetObj,shutAble){
+var sourceObj = typeof oSourceObj == "string" ? document.getElementById(oSourceObj) : oSourceObj;
+var targetObj = typeof oTargetObj == "string" ? document.getElementById(oTargetObj) : oTargetObj;
+if(targetObj.style.display!="none"){
+   if(shutAble) return;
+   targetObj.style.display="none";  
+} else {
+   targetObj.style.display="block";
+}
+};
 /*IE 兼容getElementsByClassName*/
 
 function getElementsByClassName(className,tagName) { 

@@ -12,11 +12,11 @@
   <div class="webtop">
     <p>欢迎，来到<em>成都联想网上商城！</em> <a href="#" class="webtop-login2">XXX,欢迎来到成都联想旗舰店！</a>  <a href="#">[ 退出 ]</a></p>
     <ul>
-      <li><a href="#">联想官网</a></li>
+      <li><a href="index.html">联想官网</a></li>
       <li class="webtop-separator  sp-h"></li>
-      <li><a href="#">我的账户</a></li>
+      <li><a href="myAccount.html">我的账户</a></li>
       <li class="webtop-separator  sp-h"></li>
-      <li><a href="#">帮助中心</a></li>
+      <li><a href="help.html">帮助中心</a></li>
       <li class="webtop-separator  sp-h"></li>
       <li><a href="#">EPP会员专享</a></li>
       <li class="webtop-separator  sp-h"></li>
@@ -26,7 +26,7 @@
 </div>
 <!--header开始-->
 <div class="header">
-  <div class="hd-logo"> <img src="images/logo.jpg" /> </div>
+  <div class="hd-logo"><a href="index.html"> <img src="images/logo.jpg" /> </a></div>
   <div class="bf-step">
       <ul class="bf-step-ul">
           <li>
@@ -106,10 +106,10 @@
         <div class="bf-pay-left">
             <h4>支付方式</h4>
             <form action="#" method="post">
-                <p class="bf-pay-cur"><input type="radio" class="bf-pay-rad" />预存款支付 <span class="bf-pay-span1">商店预存款支付</span></p>
-                <p><input type="radio" class="bf-pay-rad" />银行汇款（例如工商银行） <span class="bf-pay-span1">账号：95588 2588 66666 XXXX 开户名：张强</span></p>
-                <p><input type="radio" class="bf-pay-rad"  />支付宝 <span class="bf-pay-span1">有卡就能付，没有开通网银也可付款</span></p>
-                <p><input type="radio" class="bf-pay-rad"  />腾讯财付通 <span class="bf-pay-span1">财付通担保交易付款，购物更安全</span></p>
+                <p><input type="radio" name="pay" class="bf-pay-rad" />预存款支付 <span class="bf-pay-span1">商店预存款支付</span></p>
+                <p><input type="radio" name="pay" class="bf-pay-rad" />银行汇款（例如工商银行） <span class="bf-pay-span1">账号：95588 2588 66666 XXXX 开户名：张强</span></p>
+                <p><input type="radio" name="pay" class="bf-pay-rad"  />支付宝 <span class="bf-pay-span1">有卡就能付，没有开通网银也可付款</span></p>
+                <p><input type="radio" name="pay" class="bf-pay-rad"  />腾讯财付通 <span class="bf-pay-span1">财付通担保交易付款，购物更安全</span></p>
                 <input type="submit" value="保存支付及配送方式" class="bf-inp-smt2"/>
                 <a href="#" class="bf-inp-reset2">取消</a>
             </form>
@@ -136,7 +136,7 @@
     <div class="bf-goods-info">
          <ul>
              <li class="bf-info-sp"><img src="images/buyf/2.jpg" class="bf-info-img" />
-                 <span>IdeaPad S410-ITH(F)(云帆白)</span>
+                 <span><a href="#">IdeaPad S410-ITH(F)(云帆白)</a></span>
              </li>
              <li class="bf-info-li">￥3999.00</li>
              <li class="bf-info-li"></li>
@@ -147,13 +147,14 @@
     <div class="bf-minute-info">
      <div class="bf-goods-minute">
         <div class="bf-minute-left">
-            <p>是否需要发票？<input type="checkbox" class="bf-minute-inp2" /></p>
-            <p><span>发票抬头：</span>
+            <p>是否需要发票？<input type="checkbox" class="bf-minute-inp2" onclick="opcl(this,'info1',false)" /></p>
+            <p id="info1" style="display:none;"><span>发票抬头：</span>
                <input type="text" class="bf-minute-inp" />
             </p>
         </div>
         <div class="bf-minute-right">
-            <p>指定送货时间：<input type="checkbox" class="bf-minute-inp2" /></p>
+            <p>指定送货时间：<input type="checkbox" class="bf-minute-inp2" onclick="opcl(this,'info2',false)" /></p>
+            <div id="info2" style="display:none;">
             <p class="bf-minute-p"><span>送货时间：</span>
                 <select>
                     <option>任意日期</option>
@@ -163,6 +164,7 @@
                 </select>
             </p>
             <p class="bf-minute-p"><span>订单附言：</span><input type="text" class="bf-minute-inp3" /></p>
+            </div>
         </div>
     </div>     
     <div class="bf-total-info">
