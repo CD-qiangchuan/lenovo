@@ -1,8 +1,7 @@
 $(function(){
 	//首页悬浮
 	showScroll();
-	//首页左右切换产品
-	abc();
+	
 	//首页shopping-cart's hover js
 	$(".hd-tool-shopping").hover(function(){
 		$(this).removeClass("shopping-sty").addClass("shopping-hover");
@@ -37,23 +36,18 @@ $(function(){
 		});
 	//首页排行榜鼠标悬停图片向左移动
 	$(".tab-hot-img>a img").hover(function(){
-		$(this).stop().animate({"margin-left":"-20px"},{queue:false,duration:200});
+		$(this).stop().animate({"margin-left":"-15px"},{queue:false,duration:200});
     },function(){
 		$(this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
 		});	
 	//首页右边悬浮层
-	$(".right-sidebar-item>li").hover(function(){
+	$(".right-sidebar-item>ul li").hover(function(){
 		$(this).find("span").addClass("span-hidden");
 		$(this).find("em").addClass("sidebar-active");
 		},function(){
 			$(this).find("span").removeClass("span-hidden");
 		$(this).find("em").removeClass("sidebar-active");
-			});
-	$(".right-sidebar-item>a").click(function(){
-		$(this).find("em").removeClass("sidebar-hid").addClass("sidebar-active");
-		},function(){
-		$(this).find("em").removeClass("sidebar-active").addClass("sidebar-hid");
-			});
+			});	
 	//首页左边悬浮层
 	   //订单
 	$(".left-sidebar-order").hover(function(){
@@ -163,10 +157,18 @@ $(function(){
 	$("#addr-add").click(function(){
 		$(".bf-step-addr").addClass("trigon-show");
 		})    
+	$('#info-alter').click(function(){
+		$(".bf-step-addr").addClass("trigon-show");
+		})
 	$(".bf-inp-smt").click(function(){		
 		$(".bf-step-addr2").addClass("trigon-show");
 		})
-		//产品内容页点开对比
+	//购物流程-修改支付方式
+	$('#consignee-alter').click(function(){
+		$('.bf-pay-way').addClass('trigon-show');
+		})
+	
+	//产品内容页点开对比
 	$(".ps-contrast-opn").click(function(){
 		$(".ps-contrast").addClass("trigon-show");
 		})		
@@ -313,5 +315,11 @@ function getElementsByClassName(className,tagName) {
         return tagAll;
     }
 }
-
+//首页点击滚动显示不同楼层
+function click_scroll(obj){
+	  var scroll_offset = $('#'+obj).offset();  
+  $("body,html").animate({
+   scrollTop:scroll_offset.top  //让body的scrollTop等于pos的top，就实现了滚动
+   },500);
+	}
    

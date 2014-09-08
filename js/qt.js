@@ -3,8 +3,9 @@
 //图片地址
 var imgsrc= new Array();
 imgsrc[0]="images/tp/banner1.jpg";
-imgsrc[1]="images/tp/banner2.jpg";
-imgsrc[2]="images/tp/banner3.jpg";
+imgsrc[1]="images/tp/banner2.png";
+imgsrc[2]="images/tp/banner3.png";
+imgsrc[3]="images/tp/banner4.png";
 //图片预加载
 var arr = new Array();
 for(var i=1; i<=imgsrc.length; i++) {
