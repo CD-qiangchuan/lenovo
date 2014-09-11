@@ -20,18 +20,18 @@
             <div class="tabDiv tab-cur" id="main1">
                 <form action="#" method="post" class="lr-cont-form">
                     <p class="lr-cont-p"><span class="lr-cont-span1">用户名：</span><input type="text" class="login-input" /><span class="lr-cont-span2">邮箱/手机号/用户名</span></p>
-                    <p class="lr-cont-p"><span class="lr-cont-span1">密&nbsp;&nbsp;码：</span><input type="text" class="login-input" /><span class="lr-cont-span2">请输入您的密码</span></p>
+                    <p class="lr-cont-p"><span class="lr-cont-span1">密&nbsp;&nbsp;码：</span><input type="password" class="login-input" /><span class="lr-cont-span2">请输入您的密码</span></p>
                     <p class="lr-cont-p"><span class="lr-cont-span1">验证码：</span><input type="text" class="login-input2" /><span class="lr-cont-span3"><img src="images/arc/va.jpg" /></span><span class="lr-cont-span2"><a href="#">看不清楚？换个图片</a></span></p>
                     <p class="lr-cont-p2"><input type="checkbox" class="lr-cont-ckb" />保持登录状态<a href="Retrieve-password.html">忘记密码</a></p>
                     <input type="submit" value="立即登录" class="login-submit" />
                 </form>
             </div>
             <div id="main2" class="tabDiv register">
-                <form action="#" method="post" class="lr-cont-form2">
-                    <p class="lr-cont-p"><span class="lr-cont-span12">用户名：</span><input type="text" class="login-input" /><span class="lr-cont-span2">邮箱/手机号/用户名</span></p>
-                    <p class="lr-cont-p"><span class="lr-cont-span12">密&nbsp;&nbsp;码：</span><input type="text" class="login-input" /><span class="lr-cont-span2">数字或英文，6-20位</span></p>
-                     <p class="lr-cont-p"><span class="lr-cont-span12">确认密码：</span><input type="text" class="login-input" /><span class="lr-cont-span2">再次输入密码</span></p>
-                      <p class="lr-cont-p"><span class="lr-cont-span12">电子邮箱：</span><input type="text" class="login-input" /><span class="lr-cont-span2">帮助您找回密码</span></p>
+                <form action="#" method="post" class="lr-cont-form2" id="register">
+                    <p class="lr-cont-p"><span class="lr-cont-span12">用户名：</span><input type="text" class="login-input" id="name" /><span class="lr-cont-span2" id="nameTip"></span></p>
+                    <p class="lr-cont-p"><span class="lr-cont-span12">密&nbsp;&nbsp;码：</span><input type="password" class="login-input" id="pwd1" /><span class="lr-cont-span2" id="pwd1Tip"></span></p>
+                     <p class="lr-cont-p"><span class="lr-cont-span12">确认密码：</span><input type="password" class="login-input"  id="pwd2"  onblur="return checkPass('pwd1','pwd2');"/><span style=" width:300px; text-align:left; font-size:12px;" id="errorpwd">再次输入密码</span></p>
+                      <p class="lr-cont-p"><span class="lr-cont-span12">电子邮箱：</span><input type="text" class="login-input" id="email"/><span class="lr-cont-span2" id="emailTip">帮助您找回密码</span></p>
                     <p class="lr-cont-p"><span class="lr-cont-span12">验证码：</span><input type="text" class="login-input2" /><span class="lr-cont-span3"><img src="images/arc/va.jpg" /></span><span class="lr-cont-span2"><a href="#">看不清楚？换个图片</a></span></p>
                     <p class="lr-cont-p3"><input type="checkbox" class="lr-cont-ckb" />我接受本网站<a href="#">隐私保护政策</a></p>
                     <input type="submit" value="立即注册" class="login-submit2" />
@@ -42,5 +42,16 @@
 </div>
 <script src="js/jquery.js"></script> 
 <script src="js/global.js"></script>
+<script src="js/fomvalidator4.0/formValidator.js"></script><!--表单验证必须库-->
+<script src="js/fomvalidator4.0/formValidatorRegex.js"></script><!--表单验证扩展库-->
+<script>
+     $(document).ready(function () {
+       $.formValidator.initConfig({ formID: "register", onError: function () { alert("校验没有通过，具体错误请看错误提示") } });
+	   $("#name").formValidator({ onshow: "邮箱/手机号/用户名",oncorrect: "用户名输入正确" }).regexValidator({ regexp: "username", datatype: "enum", onerror: "用户名格式不正确" });
+	   $("#pwd1").formValidator({ onshow: "数字或英文，6-20位",oncorrect: "密码输入正确" }).regexValidator({ regexp: "username", datatype: "enum", onerror: "密码格式不正确" });	    
+	   $("#email").formValidator({ onshow: "帮助您找回密码", onfocus: "请注意邮箱格式", oncorrect: "邮箱输入正确" }).regexValidator({ regexp: "email", datatype: "enum", onerror: "邮箱格式不正确" }); 
+	 })
+
+</script>
 </body>
 </html>

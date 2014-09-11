@@ -122,9 +122,10 @@
 <div class="ma-right">
     <div class="ma-right-info3">登录密码</div>
     <form action="#" method="post" class="ma-pwd">
-         <p><span>旧密码：</span><input type="text" class="bf-inp-text" /></p>
-         <p><span>新密码：</span><input type="text" class="bf-inp-text" /></p>
-         <p><span>确认密码：</span><input type="text" class="bf-inp-text" /></p>
+         <p><span>旧密码：</span><input type="text" class="bf-inp-text2" /></p>
+         <p><span>新密码：</span><input type="password" class="bf-inp-text2"  id="pwd1"/></p>
+         <p><span>确认密码：</span><input type="password" id="pwd2" class="bf-inp-text2" onblur="return checkPass('pwd1','pwd2');"/><span id="errorpwd" style=" width:300px; text-align:left; color:#d92f25; font-size:12px;"></span>
+         </p>
          <input type="submit" value="修改密码" class="ma-pwd-btn"/>
     </form>    
 </div>

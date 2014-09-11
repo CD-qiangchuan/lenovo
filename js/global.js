@@ -1,7 +1,6 @@
 $(function(){
 	//首页悬浮
 	showScroll();
-	
 	//首页shopping-cart's hover js
 	$(".hd-tool-shopping").hover(function(){
 		$(this).removeClass("shopping-sty").addClass("shopping-hover");
@@ -49,13 +48,13 @@ $(function(){
 		$(this).find("em").removeClass("sidebar-active");
 			});	
 	//首页左边悬浮层
-	   //订单
+	//订单
 	$(".left-sidebar-order").hover(function(){
 		$(this).addClass("left-sidebar-orderH").removeClass("left-sidebar-order");
 		},function(){
 		$(this).addClass("left-sidebar-order").removeClass("left-sidebar-orderH");
 			});
-		//收藏
+	//收藏
 	$(".left-sidebar-collect").hover(function(){
 		$(this).addClass("left-sidebar-collectH").removeClass("left-sidebar-collect");
 		$(this).find(".left-collect-box").addClass("left-side-active");
@@ -63,7 +62,7 @@ $(function(){
 		$(this).addClass("left-sidebar-collect").removeClass("left-sidebar-collectH");
 		$(this).find(".left-collect-box").removeClass("left-side-active");
 			});
-		//浏览
+	//浏览
 	$(".left-sidebar-browse").hover(function(){
 		$(this).addClass("left-sidebar-browseH").removeClass("left-sidebar-browse");
 		$(this).find(".left-browse-box").addClass("left-side-active");
@@ -71,7 +70,7 @@ $(function(){
 		$(this).addClass("left-sidebar-browse").removeClass("left-sidebar-browseH");
 		$(this).find(".left-browse-box").removeClass("left-side-active");
 			});
-			//咨询
+	//咨询
 	$(".left-sidebar-consult").hover(function(){
 		$(this).addClass("left-sidebar-consultH").removeClass("left-sidebar-consult");
 		$(this).find(".left-consult-box").addClass("left-side-active");
@@ -79,7 +78,7 @@ $(function(){
 		$(this).addClass("left-sidebar-consult").removeClass("left-sidebar-consultH");
 		$(this).find(".left-consult-box").removeClass("left-side-active");
 			});
-			//联系
+	//联系
 	$(".left-sidebar-contact").hover(function(){
 		$(this).addClass("left-sidebar-contactH").removeClass("left-sidebar-contact");
 		$(this).find(".left-contact-box").addClass("left-side-active");
@@ -103,7 +102,7 @@ $(function(){
 		},function(){
 			$(this).find(".down-ico").removeClass("up-ico");
 			$(this).children(".all-classify-list").removeClass("classify-list-on");
-			});
+		});
 			
 	//产品内容页面图片展示
 	$(".pd-good-imgItem>ul li").click(function(){
@@ -176,8 +175,8 @@ $(function(){
 	$("#ps-contrast-cls").click(function(){
 		$(".ps-contrast").removeClass("trigon-show");
 		})
-     //购买流程2-支付方式
-	 $(".bf-pay-rad").click(function(){
+    //购买流程2-支付方式
+	$(".bf-pay-rad").click(function(){
 		 $(".bf-pay-rad").parents("p").removeClass("bf-pay-cur");
 		 $(this).parent("p").addClass("bf-pay-cur");
 		 })
@@ -192,7 +191,7 @@ function AutoScroll(obj){
         });
 };
 //首页左右切换特卖产品      
-   function abc(){var $obj = $('.recommend-prc-box>li');var len  = $obj.length;var i = 0; 
+function abc(){var $obj = $('.recommend-prc-box>li');var len  = $obj.length;var i = 0; 
 		$(".recommend-per").click(function(){i++;if(i==len){ i = 0;}  
               $obj.stop(true,true).hide().eq(i).fadeIn(600);return false;  
          });      
@@ -296,7 +295,6 @@ if(targetObj.style.display!="none"){
 }
 };
 /*IE 兼容getElementsByClassName*/
-
 function getElementsByClassName(className,tagName) { 
     tagName=tagName||"*";                                    //参数tagName可以不写。
     if (document.getElementsByClassName) {                    //如果浏览器支持getElementsByClassName就直接用
@@ -322,4 +320,32 @@ function click_scroll(obj){
    scrollTop:scroll_offset.top  //让body的scrollTop等于pos的top，就实现了滚动
    },500);
 	}
-   
+//产品展示页面产品图片切换
+function preview(img){
+	$("#preview .jqzoom img").attr("src",$(img).attr("src"));
+	$("#preview .jqzoom img").attr("jqimg",$(img).attr("bimg"));
+}
+//递增递减
+
+function dj(a){//递减
+       var v = $(a).val();
+        if(v>1){v--;}else{v=1;}
+		$(a).val(v)
+    }
+function dz(a){//递增
+       var v = $(a).val();
+        if(v<5){v++;}else{v=5}		
+        $(a).val(v)
+    }
+	//判断两次输入的密码是否一致
+function checkPass(p1,p2){
+		p1Value=document.getElementById(p1).value;
+		p2Value=document.getElementById(p2).value;
+		if(p1Value!=p2Value){
+			document.getElementById('errorpwd').innerHTML='*两次密码不一样。';
+			document.getElementById(p1).value='';
+			document.getElementById(p2).value='';
+			}else{
+				document.getElementById('errorpwd').innerHTML="两次密码一致";
+				}
+		}

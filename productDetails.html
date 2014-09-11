@@ -91,21 +91,20 @@
 <div class="pd-goods-show">
   <!--产品图片展示-->
   <div class="pd-good-left">
-    <div class="pd-good-mainImg"> <img src="images/pd/main1.jpg"  width="600" height="420" /> </div>
+    <div class="pd-good-mainImg" id="preview"><span class="jqzoom"><img src="images/pd/b1.jpg"  jqimg="images/pd/s1.jpg" /></span></div>
     <div class="pd-good-imgItem">
       <ul>
-        <li class="pd-picimg pd-pic-active"><i class="trigon-bg trigon-show"></i><img src="images/pd/img1.jpg" width="140" height="88" /></li>
-        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/img2.jpg" width="140" height="88" /></li>
-        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/img3.jpg" width="140" height="88" /></li>
-        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/img4.jpg" width="140" height="88" /></li>
+        <li class="pd-picimg pd-pic-active"><i class="trigon-bg trigon-show"></i><img src="images/pd/b2.jpg"  bimg="images/pd/s2.jpg" width="140" height="88" onclick="preview(this);" /></li>
+        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/b1.jpg"  bimg="images/pd/s1.jpg" width="140" height="88"  onclick="preview(this);"/></li>
+        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/b2.jpg"  bimg="images/pd/s2.jpg" width="140" height="88"  onclick="preview(this);"/></li>
+        <li class="pd-picimg"><i class="trigon-bg"></i><img src="images/pd/b1.jpg" bimg="images/pd/s1.jpg" width="140" height="88" onclick="preview(this);" /></li>
       </ul>
     </div>
   </div>
   <!--产品基本信息-->
   <div class="pd-good-right">
     <div class="pd-goodRig-top">
-      <h2 class="pd-good-name">Y400N 14.0英寸笔记本电脑（i5-3230M 4G 1T 2G独显 摄像
-        头 DVD刻 Win8）</h2>
+      <h2 class="pd-good-name">Y400N 14.0英寸笔记本电脑（i5-3230M 4G 1T 2G独显 摄像头 DVD刻 Win8）</h2>
       <p class="pd-good-brief">Y400/Y500，全新一代“彪悍的小Y”，预装Windows 8 中文版，搭载Intel Ivy Bridge新平台CPU，配以NVIDIA 28NM制程高</p>
       <ul class="pd-good-configuration">
         <li><span>CPU类型：</span>i5-3230M(2.6GHz，可睿频加速至3.2 </li>
@@ -132,7 +131,7 @@
               </div>
               <div class="pd-delivery-province">
                   <div class="pd-delivery-tab">
-                      <div class="pd-place tab-list">
+                      <div class="pd-place">
                           <ul class="pd-place-tab" id="pd-place-tab">
                               <li class="tab-cur" onclick="setTab('pd-place-tab','1','pd-areaBox');" id="li1"><a><em>四川省</em><i></i></a></li>
                               <li onclick="setTab('pd-place-tab','2','pd-areaBox');" id="li2"><a><em>成都市</em><i></i></a></li>
@@ -188,9 +187,9 @@
               </div>
              </div>              
               11:00前完成下单，预计<b>后天（8月15日）</b>送达</li>
-        <li style="margin-top:15px;"><span class="pd-good-quantity">购买数量： </span><span class="pd-good-decrease"></span>
-          <input type="text" size="5" value="1" class="pd-good-input"/>
-          <span class="pd-good-increase"></span>
+        <li style="margin-top:15px;"><span class="pd-good-quantity">购买数量： </span><span class="pd-good-decrease" onclick="dj('#djz')"></span>
+          <input type="text" size="5" value="1" class="pd-good-input" id="djz"/>
+          <span class="pd-good-increase" onclick="dz('#djz')"></span>
           <div class="clear"></div>
           </li>
         <li><span class="pd-good-serveSpan">支持服务： </span><a href="#" class="pd-good-serve">免运费</a><a href="#" class="pd-good-serve">快速上门</a></li>
@@ -853,16 +852,15 @@ var jiathis_config={
 </div>
 <div class="clear"></div>
 </div>
-
 <!--footer-->
 <div class="footer">
     <div class="footer-box">
         <dl>
             <dt><span class="footer-circle"></span>购物指南</dt>
-            <dd><a href="#">购买流程</a></dd>
-            <dd><a href="#">会员注册</a></dd>
-            <dd><a href="#">购买方式</a></dd>
-            <dd><a href="#">服务商信息</a></dd>
+            <dd><a href="help.html">购买流程</a></dd>
+            <dd><a href="helpRegister.html">会员注册</a></dd>
+            <dd><a href="helpPay.html">购买方式</a></dd>
+            <dd><a href="helpFacilitator.html">服务商信息</a></dd>
           </dl>
           <dl>
             <dt><span class="footer-circle"></span>配送方式</dt>
@@ -904,5 +902,9 @@ var jiathis_config={
 </div>
 <script src="js/jquery.js"></script> 
 <script src="js/global.js"></script>
+<script src="js/jquery.jqzoom.js"></script><!--鼠标定位产品图片放大-->
+<script>
+$(".jqzoom").jqueryzoom({xzoom:380,yzoom:410});
+</script>
 </body>
 </html>
