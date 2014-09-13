@@ -5,7 +5,7 @@ var process_request = "{$lang.process_request}";
 <!--网页最上方板块webtop开始-->
 <div class="webtop-bg">
   <div class="webtop">
-    <p>欢迎，来到<em>成都联想网上商城！</em> {insert_scripts files='transport.js,utils.js'}
+    <p>欢迎，来到<em>成都联想网上商城！</em> 
       {insert name='member_info'} </p>
     <ul>
       <li><a href="#">联想官网</a></li>
@@ -39,13 +39,19 @@ var process_request = "{$lang.process_request}";
         {/if}
       </ul>
     </form>
-  </div>
-  <div class="hd-tool">
-    <div class="hd-tool-account"><a href="#"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
-    <div class="hd-tool-shopping shopping-sty"><a href="#"><span class="hd-shopping-ico shopping-ico-bg"></span><span class="hd-shopping-til">购物车</span><span class="hd-tool-jt tool-jt-bg"></span></a> </div>
-    <div class="shopping-minicart"> <i class="shopping-minicart-ico"></i> <span>购物车中还没有商品，赶紧选购吧！</span> </div>
-  </div>
-  <div class="clear"></div>
+    </div>
+    <div class="hd-tool">
+        <div class="hd-tool-account"><a href="myAccount.html"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
+        <div class="hd-tool-shopping shopping-sty">
+        <a href="buyflow0.html">
+            <span class="hd-shopping-ico shopping-ico-bg"></span>
+            <span class="hd-shopping-til">购物车</span>
+            <span class="hd-tool-jt tool-jt-bg"></span>
+        </a>
+        <div class="shopping-minicart" id="shopping-minicart"> <i class="shopping-minicart-ico"></i> <span>购物车中还没有商品，赶紧选购吧！</span> </div>
+    </div>         
+    </div>
+    <div class="clear"></div>
 </div>
 <!--公告滚动-->
 <div class="site-info" id="scrollDiv"> <span class="site-info-ico"></span>
@@ -103,6 +109,7 @@ var process_request = "{$lang.process_request}";
     <div class="clear"></div>
   </div>
 </div>
+
 <script type="text/javascript">
     {literal}
     <!--
