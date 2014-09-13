@@ -39,6 +39,12 @@ $(function(){
     },function(){
 		$(this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
 		});	
+	//首页5、6楼鼠标悬停图片向左移动
+	$(".wskt-item-img>a img").hover(function(){
+		$(this).stop().animate({"margin-left":"-15px"},{queue:false,duration:200});
+    },function(){
+		$(this).stop().animate({"margin-left":"0px"},{queue:false,duration:200});
+		});	
 	//首页右边悬浮层
 	$(".right-sidebar-item>ul li").hover(function(){
 		$(this).find("span").addClass("span-hidden");

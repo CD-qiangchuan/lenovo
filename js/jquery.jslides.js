@@ -23,12 +23,10 @@ $(function(){
 	var ulstart = '<ul id="pagination">',
 		ulcontent = '',
 		ulend = '</ul>';
-	ADDLI();
-	var pagination = $('#pagination li');
+	    ADDLI();
+	var pagination = $('#pagination li');	
 	
-	
-	pagination.eq(0).addClass('tab-ico-on');
-		
+	pagination.eq(0).addClass('tab-ico-on');		
 	function ADDLI(){
 		//var lilicount = numpic + 1;
 		for(var i = 0; i <= numpic; i++){
@@ -40,15 +38,12 @@ $(function(){
 
 	pagination.on('click',DOTCHANGE)
 	
-	function DOTCHANGE(){
-		
-		var changenow = $(this).index();
-		
+	function DOTCHANGE(){		
+		var changenow = $(this).index();		
 		$('#slides li').eq(nownow).css('z-index','900');
 		$('#slides li').eq(changenow).css({'z-index':'800'}).show();
 		pagination.eq(changenow).addClass('tab-ico-on').siblings('li').removeClass('tab-ico-on');
-		$('#slides li').eq(changenow).fadeIn(500,function(){$('#slides li').eq(nownow).hide();});
-		
+		$('#slides li').eq(changenow).fadeIn(200,function(){$('#slides li').eq(nownow).hide();});		
 		nownow = changenow;
 	}
 	
@@ -69,17 +64,14 @@ $(function(){
 			if(nownow < numpic){
 			$('#slides li').eq(nownow).css('z-index','900');
 			$('#slides li').eq(NN).css({'z-index':'800'}).show();
-			pagination.eq(NN).addClass('tab-ico-on').siblings('li').removeClass('tab-ico-on');
-			
-			$('#slides li').eq(NN).fadeIn(500,function(){$('#slides li').eq(nownow).hide();});
-			
+			pagination.eq(NN).addClass('tab-ico-on').siblings('li').removeClass('tab-ico-on');			
+			$('#slides li').eq(NN).fadeIn(200,function(){$('#slides li').eq(nownow).hide();});			
 			nownow += 1;
-
 		}else{
 			NN = 0;
 			$('#slides li').eq(nownow).css('z-index','900');
 			$('#slides li').eq(NN).stop(true,true).css({'z-index':'800'}).show();
-			$('#slides li').eq(NN).fadeIn(500,function(){$('#slides li').eq(nownow).hide();});
+			$('#slides li').eq(NN).fadeIn(200,function(){$('#slides li').eq(nownow).hide();});
 			
 			pagination.eq(NN).addClass('tab-ico-on').siblings('li').removeClass('tab-ico-on');
 
