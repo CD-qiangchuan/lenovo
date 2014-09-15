@@ -81,8 +81,8 @@ margin-left: 3px;float: right;margin-top: 7px;}
 .sidebar-hover a,.sidebar-hover h4{ color:#333;}
 .sidebar-hover a:hover{ color:#f00; text-decoration:underline;}
 .sub-sidebar{ display:none; width:550px; position:absolute; background:#fff; color:#747474;margin-left: 200px;margin-top: -55px; z-index:999;}
-.sub-sidebar dl{ width:525px; margin-top:12px; padding:0 15px 5px; height:37px; border-bottom:1px dotted #747474;}
-.sub-sidebar dt{ font-size:15px; color:#f00; float:left;}
+.sub-sidebar dl{ width:515px; margin-top:12px; padding:0 15px 5px; height:37px; border-bottom:1px dotted #747474;}
+.sub-sidebar dt{ font-size:14px; color:#f00; float:left;}
 .sub-sidebar dt a{ font-size:12px; color:#c32a22;}
 .sub-sidebar dt a:hover{ color:#c32a22;}
 .sub-sidebar dd{ float:left; color:#747474;}
@@ -121,7 +121,7 @@ margin-left: 3px;float: right;margin-top: 7px;}
 .recommend-prc-img img{ margin-top:7px;}
 .recommend-price{ color:#f00; margin-left:13px; float:left; font-size:16px;}
 .price-old{ color:#747474; margin-left:10px; text-decoration:line-through; font-size:12px;}
-.recommend-prc-count{ width:10px; height:20px;position: absolute;margin-top: 75px;}
+.recommend-prc-count{ width:10px; height:20px;position: absolute;margin-top: 78px; font-size:12px;}
 #ISL_Cont_1{ width:1146px; overflow:hidden;}
 #List1_1,#List2_1{ float:left;}
 .scrCont{ width:2300px;}
@@ -183,8 +183,8 @@ margin-left: 3px;float: right;margin-top: 7px;}
 .tab-hot-p a{ color:#6e6e6e; font-size:14px;}
 .tab-hot-price{ font-size:14px; color:#3d3d3d;}
 .tab-recommend-prcspan1{ height:320px;}
-.recommend-prcspan1-big{ width:430px; float:left; border-right:1px solid #E6E6E6; height:320px;}
-.recommend-prcspan1-nol{ float:left; height:320px; width:245px;}
+.recommend-prcspan1-big{ width:440px; float:left; border-right:1px solid #E6E6E6; height:320px; overflow:hidden;}
+.recommend-prcspan1-nol{ float:left; height:320px; width:220px;}
 .prcspan1-big-p{ margin:22px auto auto 20px;}
 .prcspan1-nol-p{ margin:22px auto auto 7px;}
 .prcspan1-big-p h2{ height:35px; font-size:20px;}
@@ -202,11 +202,11 @@ margin-left: 3px;float: right;margin-top: 7px;}
 .prcspan1-nol-img img{ float:right; margin-top:-5px;}
 
 .tab-recommend-prcspan2{ width:100%; height:150px; border-top:1px solid #e6e6e6;}
-.recommend-prcspan2-item{ width:226px; height:127px; border-right:1px solid #e6e6e6; float:left;}
-.prcspan2-item-left{ float:left; width:135px; padding-top:45px; margin-left:5px;}
+.recommend-prcspan2-item{ width:220px; height:127px; border-right:1px solid #e6e6e6; float:left;}
+.prcspan2-item-left{ float:left; width:110px; padding-top:45px; margin-left:5px;}
 .prcspan2-item-price{font-size: 16px;color: red;line-height: 35px; padding-left:10px;}
-.prcspan2-item-p{padding-left: 5px;font-size: 14px; color:#343434;}
-.prcspan2-item-img{width: 86px;float: right;padding-top: 45px;}
+.prcspan2-item-p{padding-left: 5px;font-size: 12px; color:#343434;}
+.prcspan2-item-img{width: 86px;float: left;padding-top: 30px;}
 .border-rit-none{ border-right:none;}
 .tab-banner1{ background:url(../images/1F/tab-banner1.jpg) no-repeat; height:450px;}
 .tab-banner2{ background:url(../images/1F/2.jpg) no-repeat; height:450px; display:none;}
@@ -312,7 +312,7 @@ margin-left: 3px;float: right;margin-top: 7px;}
 .all-classify-h3{ height:40px; line-height:40px;  color:#fff; width:240px; text-align:center; background:#B7281F; cursor:pointer;}
 .down-ico{ width:25px; height:25px; display:block; float:right;margin:7px 28px auto auto; background:url(../images/ico.png) no-repeat scroll -95px -69px transparent;}
 .up-ico{ background-position:-63px -69px;}
-.all-classify-list{font-size:14px; cursor:pointer; z-index:9999; background:url(../images/bg001.jpg); border:1px solid #e0e0e0; display:none;}
+.all-classify-list{font-size:14px; cursor:pointer; z-index:9999; background:url(../images/bg001.jpg); border:1px solid #e0e0e0; display:none; position:absolute; width:240px;}
 .classify-list-on{ display:block;}
 .all-classify-list a{ color:#333; display:block; height:40px; line-height:40px; text-align:center;}
 .all-classify-list li a:hover{ color:#f00;}
