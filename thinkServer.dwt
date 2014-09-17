@@ -4,90 +4,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>thinkServer页面</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery.js"></script> 
+ {insert_scripts files='transport.js,utils.js'}
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+//解决jquery冲突，先引入transport，在引入jquery
+$(function() {
+window.__Object_toJSONString = Object.prototype.toJSONString;
+delete Object.prototype.toJSONString;
+});
+</script>
 <script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/jquery.jslides.js"></script><!--幻灯片方法-->
 </head>
 
 <body>
-<!--网页最上方板块webtop开始-->
-<div class="webtop-bg">
-  <div class="webtop">
-    <p>欢迎，来到<em>成都联想网上商城！</em> <a href="login.html" class="webtop-login">登录</a> <span class="webtop-separator"></span> <a href="login.html">注册</a></p>
-    <ul>
-      <li><a href="index.html">联想官网</a></li>
-      <li class="webtop-separator  sp-h"></li>
-      <li><a href="myAccount.html">我的账户</a></li>
-      <li class="webtop-separator  sp-h"></li>
-      <li><a href="help.html">帮助中心</a></li>
-      <li class="webtop-separator  sp-h"></li>
-      <li><a href="#" style="color: rgb(217, 47, 37);">服务热线：400-028-6620</a></li>
-    </ul>
-  </div>
-</div>
-<!--header开始-->
-<div class="header">
-  <div class="hd-logo"><a href="index.html"> <img src="images/logo.jpg" /></a> </div>
-  <div class="hd-search">
-    <form method="post">
-      <input type="text" class="hd-text-box" value="搜索" onfocus="if(this.value=='搜索'){this.value='';}" onblur="if(this.value==''){this.value='搜索';}" title="在此处输入关键字"/>
-      <input type="submit" class="hd-sub" value="搜索" />
-      <ul class="hd-hot-query">
-        <li><a href="#">ThinkPad T440</a></li>
-        <li class="webtop-separator"></li>
-        <li><a href="#">ThinkServer TS 540</a></li>
-        <li class="webtop-separator"></li>
-        <li><a href="#">ThinkStation</a></li>
-      </ul>
-    </form>
-  </div>
-  <div class="hd-tool">
-    <div class="hd-tool-account"><a href="myAccount.html"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
-    <div class="hd-tool-shopping shopping-sty">
-        <a href="buyflow0.html">
-         <s></s>
-            <span class="hd-shopping-ico shopping-ico-bg"></span>
-            <span class="hd-shopping-til">购物车</span>
-            <span class="hd-tool-jt tool-jt-bg"></span>
-        </a>
-        <div class="shopping-minicart" id="shopping-minicart"> <i class="shopping-minicart-ico"></i> <span>购物车中还没有商品，赶紧选购吧！</span> </div>
-    </div>
-    
-  </div>
-  <div class="clear"></div>
-</div>
-<!--导航条-->
-<div class="preference-mian-nav">
-  <div class="preference-nav-box">
-    <div class="all-classify">
-      <h3 class="pd-classify-h3">所有产品分类<span class="down-ico"></span>
-        <ul class="all-classify-list">
-          <li><a href="#">家用笔记本电脑</a></li>
-          <li><a href="#">商用笔记本电脑</a></li>
-          <li><a href="#">家用分体台式机</a></li>
-          <li><a href="#">商用分体台式机</a></li>
-          <li><a href="#">家用一体台式机</a></li>
-          <li><a href="#">商用一体台式机</a></li>
-          <li><a href="#">ThinkPad</a></li>
-          <li><a href="#">ThinkServer</a></li>
-          <li><a href="#">ThinkStation</a></li>
-          <li><a href="#">服务器</a></li>
-          <li><a href="#">平板电脑</a></li>
-          <li><a href="#">数码配件</a></li>
-        </ul>
-      </h3>
-    </div>
-    <ul class="pd-mainbar">
-      <li><a href="index.html">商城首页</a></li>
-      <li><a href="preference.html">特惠专区</a></li>
-      <li><a href="newProduct.html">新品专区</a></li>
-      <li><a href="thinkPad.html">ThinkPad</a></li>      
-      <li><a href="workstation.html">图形工作站</a></li>
-      <li><a href="thinkServer.html">ThinkServer</a></li>
-    </ul>
-  </div>
-</div>
-<div class="ts">
+<!-- #BeginLibraryItem "/library/page_header-1.lbi" --><!-- #EndLibraryItem -->
 <!--banner-->
 <div class="ts-img"><img src="images/ts/banner.jpg" /></div>
 <!--产品分类-->
@@ -260,52 +191,6 @@
     </ul>
 </div>
 <!--footer-->
-<div class="footer">
-    <div class="footer-box">
-        <dl>
-            <dt><span class="footer-circle"></span>购物指南</dt>
-            <dd><a href="help.html">购买流程</a></dd>
-            <dd><a href="helpRegister.html">会员注册</a></dd>
-            <dd><a href="helpPay.html">购买方式</a></dd>
-            <dd><a href="helpFacilitator.html">服务商信息</a></dd>
-          </dl>
-          <dl>
-            <dt><span class="footer-circle"></span>配送方式</dt>
-            <dd><a href="#">物流查询</a></dd>
-            <dd><a href="#">签收原则</a></dd>
-            <dd><a href="#">配送方式</a></dd>
-            <dd><a href="#">配送方信息</a></dd>
-           </dl>
-           <dl>
-            <dt><span class="footer-circle"></span>支付方式</dt>
-            <dd><a href="#">支付宝支付</a></dd>
-            <dd><a href="#">线下支付</a></dd>
-            <dd><a href="#">支付指南</a></dd>
-            <dd><a href="#">货到付款</a></dd>
-           </dl>
-           <dl>
-            <dt><span class="footer-circle"></span>订单信息</dt>
-            <dd><a href="#">订单状态</a></dd>
-            <dd><a href="#">发票制度</a></dd>
-           </dl>
-           <dl>           
-            <dt><span class="footer-circle"></span>售后服务</dt>
-            <dd><a href="#">无忧服务</a></dd>
-            <dd><a href="#">服务政策</a></dd>
-            <dd><a href="#">商品退货保障</a></dd>
-           </dl>
-           <div class="clear"></div>
-           <p class="footer-tel">服务热线： <span>028-85047106  028-850480466  400-028-6620</span></p>
-           <div class="footer-botton">
-               <div class="footer-botton-left">
-                   <img src="images/footer1.jpg" /><img src="images/footer2.jpg" />
-               </div>
-               <div class="footer-botton-right">
-                   <p>©2011-2014 成都强川科技有限公司 版 权 所 有   ICP备案编号：蜀ICP备11026978号-6</p>
-                   <p>友情链接：<a href="http://www.server2008.cn/">成都服务器</a>|<a href="http://www.dellzmd.com/">戴尔专卖店</a>|<a href="http://www.028hp.cn/">惠普专卖店</a>   工作时间：周一至周六 9:00-18:00</p>
-               </div>
-           </div>
-    </div>
-</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 </html>

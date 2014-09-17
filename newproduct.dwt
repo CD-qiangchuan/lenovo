@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>新品专区页面</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+ {insert_scripts files='transport.js,utils.js'}
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+//解决jquery冲突，先引入transport，在引入jquery
+$(function() {
+window.__Object_toJSONString = Object.prototype.toJSONString;
+delete Object.prototype.toJSONString;
+});
+</script>
+<script type="text/javascript" src="js/global.js"></script>
+</head>
+
+<body>
+<!-- #BeginLibraryItem "/library/page_header-1.lbi" --><!-- #EndLibraryItem -->
+<!--新品专区banner-->
+<div class="np-main-banner">
+    <img src="images/newp/dt_10.png" />
+</div>
+<!--最新商品-->
+<div class="np-newgoods">
+    <div class="np-newItem np-bg1">
+        <div class="np-newgoods-img"><img src="images/newp/p1.png" /></div>
+        <div class="np-newgoods-name">
+            <p>智能英特尔®酷睿 Haswell双核处理器i5-4210U</p>
+            <p>Windows 8 中文版</p>
+            <p>14英寸Full HD LED（1920*1080）</p>
+            <p>4G DDR3/500G HDD</p>
+            <p>AMD Radeon™ R9 M275</p>
+        </div>
+        <hr />
+        <div class="np-newgoods-price">
+            <span class="np-price-span1">销售价：<em>￥4999</em></span>
+            <span class="np-price-span2">市场价：￥6499</span>
+        </div>
+        <div class="np-newgoods-buybtn">
+             <a href="#">立即购买</a>
+        </div>
+    </div>
+    <div class="np-newItem np-bg2">
+        <div class="np-newgoods-img"><img src="images/newp/p1.png" /></div>
+        <div class="np-newgoods-name">
+            <p>智能英特尔®酷睿 Haswell双核处理器i5-4210U</p>
+            <p>Windows 8 中文版</p>
+            <p>14英寸Full HD LED（1920*1080）</p>
+            <p>4G DDR3/500G HDD</p>
+            <p>AMD Radeon™ R9 M275</p>
+        </div>
+        <hr />
+        <div class="np-newgoods-price">
+            <span class="np-price-span1">销售价：<em>￥4999</em></span>
+            <span class="np-price-span2">市场价：￥6499</span>
+        </div>
+        <div class="np-newgoods-buybtn">
+             <a href="#">立即购买</a>
+        </div>
+    </div>
+    <div class="np-newItem np-bg3">
+        <div class="np-newgoods-img"><img src="images/newp/p1.png" /></div>
+        <div class="np-newgoods-name">
+            <p>智能英特尔®酷睿 Haswell双核处理器i5-4210U</p>
+            <p>Windows 8 中文版</p>
+            <p>14英寸Full HD LED（1920*1080）</p>
+            <p>4G DDR3/500G HDD</p>
+            <p>AMD Radeon™ R9 M275</p>
+        </div>
+        <hr />
+        <div class="np-newgoods-price">
+            <span class="np-price-span1">销售价：<em>￥4999</em></span>
+            <span class="np-price-span2">市场价：￥6499</span>
+        </div>
+        <div class="np-newgoods-buybtn">
+             <a href="#">立即购买</a>
+        </div>
+    </div>
+</div>
+<!--更多新品上市-->
+<div class="np-more">
+    <div class="np-more-t"></div>
+    <div class="np-more-item">
+        <div class="np-item-pic np-more-bg1">
+            <div class="np-item-sum">8.0英寸高清IPS广视角炫彩屏，<br />
+支持十点触控。</div>
+            <div class="np-item-img"><img src="images/newp/p2.png" /></div>
+            <div class="np-item-title"><a href="#">MIIX 2-8 ZTH (星光银)</a></div>
+        </div>
+        <div class="np-item-price">销售价：￥<em>2499.00</em>
+            <a href="#" class="np-item-buyBtn">立即购买</a>
+        </div>
+        <hr />
+        <div class="np-item-cnfig">
+            <p>英特尔BayTrail处理器智能英特尔四核处理器</p>
+            <p>Windows 8.1 中文版</p>
+            <p>2G内存/64G EMMC内嵌式硬盘</p>
+        </div>
+    </div>
+    <div class="np-more-item">
+        <div class="np-item-pic np-more-bg2">
+            <div class="np-item-sum">8.0英寸高清IPS广视角炫彩屏，<br />
+支持十点触控。</div>
+            <div class="np-item-img"><img src="images/newp/p2.png" /></div>
+            <div class="np-item-title"><a href="#">MIIX 2-8 ZTH (星光银)</a></div>
+        </div>
+        <div class="np-item-price">销售价：￥<em>2499.00</em>
+            <a href="#" class="np-item-buyBtn">立即购买</a>
+        </div>
+        <hr />
+        <div class="np-item-cnfig">
+            <p>英特尔BayTrail处理器智能英特尔四核处理器</p>
+            <p>Windows 8.1 中文版</p>
+            <p>2G内存/64G EMMC内嵌式硬盘</p>
+        </div>
+    </div>
+    <div class="np-more-item">
+        <div class="np-item-pic np-more-bg3">
+            <div class="np-item-sum">8.0英寸高清IPS广视角炫彩屏，<br />
+支持十点触控。</div>
+            <div class="np-item-img"><img src="images/newp/p2.png" /></div>
+            <div class="np-item-title"><a href="#">MIIX 2-8 ZTH (星光银)</a></div>
+        </div>
+        <div class="np-item-price">销售价：￥<em>2499.00</em>
+            <a href="#" class="np-item-buyBtn">立即购买</a>
+        </div>
+        <hr />
+        <div class="np-item-cnfig">
+            <p>英特尔BayTrail处理器智能英特尔四核处理器</p>
+            <p>Windows 8.1 中文版</p>
+            <p>2G内存/64G EMMC内嵌式硬盘</p>
+        </div>
+    </div>
+    <div class="np-more-item">
+        <div class="np-item-pic np-more-bg4">
+            <div class="np-item-sum">8.0英寸高清IPS广视角炫彩屏，<br />
+支持十点触控。</div>
+            <div class="np-item-img"><img src="images/newp/p2.png" /></div>
+            <div class="np-item-title"><a href="#">MIIX 2-8 ZTH (星光银)</a></div>
+        </div>
+        <div class="np-item-price">销售价：￥<em>2499.00</em>
+            <a href="#" class="np-item-buyBtn">立即购买</a>
+        </div>
+        <hr />
+        <div class="np-item-cnfig">
+            <p>英特尔BayTrail处理器智能英特尔四核处理器</p>
+            <p>Windows 8.1 中文版</p>
+            <p>2G内存/64G EMMC内嵌式硬盘</p>
+        </div>
+    </div>
+    <div class="np-more-item">
+        <div class="np-item-pic np-more-bg5">
+            <div class="np-item-sum">8.0英寸高清IPS广视角炫彩屏，<br />
+支持十点触控。</div>
+            <div class="np-item-img"><img src="images/newp/p2.png" /></div>
+            <div class="np-item-title"><a href="#">MIIX 2-8 ZTH (星光银)</a></div>
+        </div>
+        <div class="np-item-price">销售价：￥<em>2499.00</em>
+            <a href="#" class="np-item-buyBtn">立即购买</a>
+        </div>
+        <hr />
+        <div class="np-item-cnfig">
+            <p>英特尔BayTrail处理器智能英特尔四核处理器</p>
+            <p>Windows 8.1 中文版</p>
+            <p>2G内存/64G EMMC内嵌式硬盘</p>
+        </div>
+    </div>    
+    <div class="np-more-item">
+        <div class="np-item-pic np-more-bg6">
+            <div class="np-item-sum">8.0英寸高清IPS广视角炫彩屏，<br />
+支持十点触控。</div>
+            <div class="np-item-img"><img src="images/newp/p2.png" /></div>
+            <div class="np-item-title"><a href="#">MIIX 2-8 ZTH (星光银)</a></div>
+        </div>
+       <div class="np-item-price">销售价：￥<em>2499.00</em>
+            <a href="#" class="np-item-buyBtn">立即购买</a>
+        </div>
+        <hr />
+        <div class="np-item-cnfig">
+            <p>英特尔BayTrail处理器智能英特尔四核处理器</p>
+            <p>Windows 8.1 中文版</p>
+            <p>2G内存/64G EMMC内嵌式硬盘</p>
+        </div>
+    </div>
+</div>
+<!--授权-->
+<div class="np-impower"></div>
+</div>
+<!--左边固定栏-->
+<div class="left-sidebar">
+    <ul class="left-sidebar-item">
+        <li class="left-sidebar-order"><a href="index.html" title="首页"></a></li>
+        <li class="left-sidebar-collect">
+            <a href="#" title="收藏"></a>
+            <div class="left-collect-box">
+                 <h5>我收藏的产品</h5>
+                 <div class="left-collect-item">
+                     <div class="collect-item-img"><a href="#"><img src="images/1.jpg" /></a></div>
+                     <div class="collect-item-name"><a href="#">ThinkPad T430u 3351A33</a></div>
+                 </div>
+                 <div class="left-collect-item">
+                     <div class="collect-item-img"><a href="#"><img src="images/1.jpg" /></a></div>
+                     <div class="collect-item-name"><a href="#">ThinkPad T430u 3351A33</a></div>
+                 </div>
+                 <div class="left-collect-item">
+                     <div class="collect-item-img"><a href="#"><img src="images/1.jpg" /></a></div>
+                     <div class="collect-item-name"><a href="#">ThinkPad T430u 3351A33</a></div>
+                 </div>
+                 <div class="left-collect-bottom1"></div>
+                 <div class="left-collect-bottom2"></div>
+            </div>
+        </li>
+        <li class="left-sidebar-browse">
+            <a href="#" title="浏览"></a>
+            <div class="left-browse-box">
+                 <h5>我的浏览记录</h5>
+                 <p>暂无相关内容</p>
+                 <div class="left-collect-bottom1"></div>
+                 <div class="left-collect-bottom2"></div>
+            </div>
+        </li>
+        <li class="left-sidebar-consult">
+            <a href="#" title="咨询"></a>
+            <div class="left-consult-box">
+                <div class="left-consult-img"></div>
+                <div class="left-consult-text">
+                    <p>QQ咨询，获取更多优惠</p>
+                    <p class="consult-text-p">时间：9:00 - 18:00</p>
+                </div>
+            </div>
+        </li>
+        <li class="left-sidebar-contact">
+            <a href="#" title="联系"></a>
+            <div class="left-contact-box">
+                <div class="left-contact-img"></div>
+                <div class="left-contact-text">
+                    <p>服务热线</p>
+                    <p class="contact-text-p">400-028-6620</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--footer-->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

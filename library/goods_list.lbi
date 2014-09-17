@@ -39,7 +39,7 @@
       <span class="ps-goods-title">{$goods.goods_style_name}</span> 
       <span class="ps-goods-pj">
       <a href="#" class="ps-goods-evaluate">{$goods.commt_num}条评价</a>
-      <span class="ps-goods-kc">库存正常</span></span> 
+      <span class="ps-goods-kc"><!--{if $goods.goods_number neq 0}-->库存正常<!--{else}--><b style="color:#F00">缺货</b><!--{/if}--></span></span> 
       <a href="#" class="ps-goods-oldPri">￥{$goods.market_price}</a>
        </div>
       <div class="ps-goods-tool"> <a href="{$goods.url}">商品详情</a>

@@ -14,10 +14,12 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery.js"></script> 
 <script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/jquery.jqzoom.js"></script><!--鼠标定位产品图片放大-->
 {* 包含脚本文件 *}
 {insert_scripts files='common.js'}
 {insert_scripts files='transport.js'}
 <script  type="text/javascript">
+$(".jqzoom").jqueryzoom({xzoom:380,yzoom:410});
 function $id(element) {
   return document.getElementById(element);
 }
@@ -50,37 +52,50 @@ function reg(str){
   <p><!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem --></p>
 </div>
 <!--当前位置 end--> 
-
 <!--产品详情板块-->
-<div class="pd-goods-show"> 
+<div class="pd-goods-show">
   <!--产品图片展示-->
   <div class="pd-good-left">
-    <div class="pd-good-mainImg"> <img src="images/pd/main1.jpg"  width="600" height="420" /> </div>
+    <div class="pd-good-mainImg" id="preview"><span class="jqzoom"><img src="{$goods.goods_img}"  jqimg="{$goods.goods_img}" /></span></div>
     <div class="pd-good-imgItem">
       <ul>
         <!-- {if $pictures}-->
         <!-- {foreach name=pic from=$pictures item=picture}-->
-        {if $smarty.foreach.pic.first}
-        <li class="pd-picimg  pd-pic-active ">
-        	<i class="trigon-bg trigon-show"></i>
-        {else}
-         <li class="pd-picimg">
-        <i class="trigon-bg"></i>
-        {/if}
-       		<img src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" width="140" height="88" />
-        </li>
-       
+         {if $smarty.foreach.pic.first}
+        <li class="pd-picimg pd-pic-active"><i class="trigon-bg trigon-show"></i><img src="{$picture.img_url}"  bimg="{$picture.img_url}" width="100" height="100" onclick="preview(this);" /></li>
+         {else}
+        <li class="pd-picimg"><i class="trigon-bg"></i><img src="{$picture.img_url}"  bimg="{$picture.img_url}" width="100" height="100"  onclick="preview(this);"/></li>
+         {/if}
         <!--{/foreach}-->
         <!-- {/if}-->
       </ul>
     </div>
   </div>
+<!--产品详情板块-->
+
   <!--产品基本信息-->
   <div class="pd-good-right">
     <div class="pd-goodRig-top">
       <!--商品名-->
       <h2 class="pd-good-name">{$goods.goods_style_name}</h2>
-      <p class="pd-good-brief">Y400/Y500，全新一代“彪悍的小Y”，预装Windows 8 中文版，搭载Intel Ivy Bridge新平台CPU，配以NVIDIA 28NM制程高</p>
+      <p class="pd-good-brief">{$goods.goods_brief}</p>
+      <!-- {if $promotion} -->
+     <p class="pd-good-brief">
+      <!-- {foreach from=$promotion item=item key=key} 优惠活动-->
+      {$lang.activity}
+      <!-- {if $item.type eq "snatch"} -->
+      <a href="snatch.php" title="{$lang.snatch}" style="font-weight:100; color:#006bcd; text-decoration:none;">[{$lang.snatch}]</a>
+      <!-- {elseif $item.type eq "group_buy"} -->
+      <a href="group_buy.php" title="{$lang.group_buy}" style="font-weight:100; color:#006bcd; text-decoration:none;">[{$lang.group_buy}]</a>
+      <!-- {elseif $item.type eq "auction"} -->
+      <a href="auction.php" title="{$lang.auction}" style="font-weight:100; color:#006bcd; text-decoration:none;">[{$lang.auction}]</a>
+      <!-- {elseif $item.type eq "favourable"} -->
+      <a href="activity.php" title="{$lang.favourable}" style="font-weight:100; color:#006bcd; text-decoration:none;">[{$lang.favourable}]</a>
+      <!-- {/if} -->
+      <a href="{$item.url}" title="{$lang.$item.type} {$item.act_name}{$item.time}" style="font-weight:100; color:#006bcd;">{$item.act_name}</a><br />
+      <!-- {/foreach} -->
+     </p>
+      <!-- {/if} -->
       <ul class="pd-good-configuration">
         <li><span>CPU类型：</span>{$goods_CPU}</li>
         <li><span>内    存：</span>{$goods_Memory}</li>
@@ -110,81 +125,16 @@ function reg(str){
                 <!-- {/if} -->
           <div class="clear"></div>
         </li>
-        <!--
-        <li><span class="pd-delivery-span">配送至：</span>
-          <div id="pd-store-selector">
-            <div class="pd-delivery-place">
-              <div class="pd-delivery-placeText">成都市区</div>
-              <b></b> </div>
-            <div class="pd-delivery-province">
-              <div class="pd-delivery-tab">
-                <div class="pd-place tab-list">
-                  <ul class="pd-place-tab" id="pd-place-tab">
-                    <li class="tab-cur" onclick="setTab('pd-place-tab','1','pd-areaBox');" id="li1"><a><em>四川省</em><i></i></a></li>
-                    <li onclick="setTab('pd-place-tab','2','pd-areaBox');" id="li2"><a><em>成都市</em><i></i></a></li>
-                    <li onclick="setTab('pd-place-tab','3','pd-areaBox');" id="li3"><a ><em>成都市区</em><i></i></a></li>
-                  </ul>
-                </div>
-                <div id="pd-areaBox" class="tabCon">
-                  <div class="pd-area tabDiv tab-cur" id="main1">
-                    <ul class="pd-area-list">
-                      <li><a href="#">北京</a></li>
-                      <li><a href="#">云南</a></li>
-                      <li><a href="#">河南</a></li>
-                      <li><a href="#">重庆</a></li>
-                      <li><a href="#">西藏</a></li>
-                      <li><a href="#">上海</a></li>
-                      <li><a href="#">湖北</a></li>
-                      <li><a href="#">山西</a></li>
-                      <li><a href="#">江西</a></li>
-                      <li><a href="#">甘肃</a></li>
-                    </ul>
-                  </div>
-                  <div class="tabDiv" id="main2">
-                    <ul class="pd-area-list">
-                      <li><a href="#">绵阳</a></li>
-                      <li><a href="#">德阳</a></li>
-                      <li><a href="#">泸州</a></li>
-                      <li><a href="#">宜宾</a></li>
-                      <li><a href="#">达州</a></li>
-                      <li><a href="#">遂宁</a></li>
-                      <li><a href="#">南充</a></li>
-                      <li><a href="#">巴中</a></li>
-                      <li><a href="#">乐山</a></li>
-                      <li><a href="#">眉山</a></li>
-                      <li><a href="#">自贡</a></li>
-                      <li><a href="#">广安</a></li>
-                    </ul>
-                  </div>
-                  <div class="tabDiv" id="main3">
-                    <ul class="pd-area-list">
-                      <li><a href="#">郫县</a></li>
-                      <li><a href="#">龙泉驿区</a></li>
-                      <li><a href="#">都江堰</a></li>
-                      <li><a href="#">新津县</a></li>
-                      <li><a href="#">高新西区</a></li>
-                      <li><a href="#">青羊区</a></li>
-                      <li><a href="#">锦江区</a></li>
-                      <li><a href="#">金牛区</a></li>
-                      <li><a href="#">武侯区</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          11:00前完成下单，预计<b>后天（8月15日）</b>送达</li>
-          -->
-        <li><span class="pd-good-quantity">购买数量： </span><span class="pd-good-decrease"></span>
-          <input type="text" size="5" value="1" class="pd-good-input"/>
-          <span class="pd-good-increase"></span>
+        <li style="margin-top:15px;"><span class="pd-good-quantity">购买数量： </span><span class="pd-good-decrease" onclick="dj('#djz')"></span>
+          <input type="text" size="5" value="1" class="pd-good-input" id="djz"/>
+          <span class="pd-good-increase" onclick="dz('#djz')"></span>
           <div class="clear"></div>
         </li>
         <li><span class="pd-good-serveSpan">支持服务： </span><a href="#" class="pd-good-serve">免运费</a><a href="#" class="pd-good-serve">快速上门</a></li>
         <div class="clear"></div>
       </ul>
       <div class="pd-good-btn">
-       	<a href="javascript:addToCart({$goods.goods_id})"  class="pd-good-buy"><i class="pd-good-buyIco"></i>加入购物车</a> 
+       	<a href="javascript:addToCartnumber({$goods.goods_id})"  class="pd-good-buy"><i class="pd-good-buyIco"></i>加入购物车</a> 
       	<a href="javascript:collect({$goods.goods_id})" class="pd-good-collect"><i class="pd-good-collectIco"></i>收藏商品</a> 
       </div>
       <div class="clear"></div>
@@ -294,7 +244,7 @@ var jiathis_config={
       <h4>人气排行榜</h4>
       <!-- {foreach  from=$goods_top_hot item=goods}-->
       <div class="pd-finalbuy-item">
-        <div class="pd-finalbuy-img"> <img width="140" height="88" src="{$goods.thumb}" /> </div>
+        <div class="pd-finalbuy-img"> <a href="{$goods.url}"><img width="140" height="88" src="{$goods.thumb}" /></a></div>
         <div class="pd-finalbuy-goodsname">
          <a href="{$goods.url}">{$goods.name|truncate:25:false}</a> <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">{$goods.price}</em>元</span> </div>
       </div>

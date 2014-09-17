@@ -14,9 +14,7 @@ var process_request = "{$lang.process_request}";
       <li class="webtop-separator  sp-h"></li>
       <li><a href="javascript:void(0)">帮助中心</a></li>
       <li class="webtop-separator  sp-h"></li>
-      <li><a href="javascript:void(0)">EPP会员专享</a></li>
-      <li class="webtop-separator  sp-h"></li>
-      <li><a href="javascript:void(0)">银行分期</a></li>
+      <li><a href="#" style="color: rgb(217, 47, 37);">服务热线：400-028-6620</a></li>
     </ul>
   </div>
 </div>
@@ -41,14 +39,15 @@ var process_request = "{$lang.process_request}";
     </form>
   </div>
   <div class="hd-tool">
-    <div class="hd-tool-account"><a href="user.php"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
+    <div class="hd-tool-account"><a href="myAccount.html"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
     <div class="hd-tool-shopping shopping-sty">
-        <a href="#">
+        <a href="buyflow0.html">
+         <s></s>
             <span class="hd-shopping-ico shopping-ico-bg"></span>
             <span class="hd-shopping-til">购物车</span>
             <span class="hd-tool-jt tool-jt-bg"></span>
         </a>
-        <div class="shopping-minicart"> <i class="shopping-minicart-ico"></i> <span>购物车中还没有商品，赶紧选购吧！</span> </div>
+        <div class="shopping-minicart" id="shopping-minicart"> <i class="shopping-minicart-ico"></i> <span>购物车中还没有商品，赶紧选购吧！</span> </div>
     </div>
     
   </div>

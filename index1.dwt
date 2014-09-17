@@ -19,12 +19,10 @@
 <!--main-banner部分开始-->
 <div class="main-banner">
     <ul class="main-banner-img"  id="slides">
-        <li class="main-banner1"></li>
-        <li class="main-banner2"></li>
-        <li class="main-banner3"></li>
-        <li class="main-banner4"></li>
-        <li class="main-banner5"></li>
-        <li class="main-banner6"></li>
+    	<!--{foreach name=ec_ad from=$ec_ad item=ad}-->
+        <li class="main-banner1" style="background-image:url({$ad.imgcode})"></li>
+         <!--{/foreach}-->
+
     </ul>  
 </div>
 <!--recommend-prc特惠产品部分-->
@@ -34,12 +32,14 @@
        <div class="scrCont">
          <div id="List1_1">
            <ul class="recommend-prc-box">
+         <!--{foreach from=$new_goods item=goods}-->
          <li>
-             <span class="recommend-prc-img"><a href="#"><img src="images/recommend/1.jpg" /></a></span>
-             <a href="#">ideapad V2010商用平板</a>
-             <span class="recommend-price">￥4888.00</span>
-             <span class="price-old">￥4999.0</span>
+             <span class="recommend-prc-img"><a href="{$goods.url}"><img width="122" height="122" src="{$goods.thumb}" /></a></span>
+             <a href="{$goods.url}">{$goods.name|truncate:20:false}</a>
+             <span class="recommend-price">￥{$goods.shop_price}</span>
+             <span class="price-old">￥{$goods.market_price}</span>
          </li>
+         <!--{/foreach}-->
          <li>
              <span class="recommend-prc-img"><a href="#"><img src="images/recommend/2.jpg" /></a></span>
              <a href="#">ThinkPad T440 20B6S00X00</a>
@@ -70,7 +70,6 @@
        </div>
       </div>  
       <div class="recommend-rig">
-         <span class="recommend-prc-count">1/5</span>
          <span class="recommend-next" onmouseup="ISL_StopDown_1()" onmousedown="ISL_GoDown_1()" onmouseout="ISL_StopDown_1()"></span>
       </div>
      <div class="clear"></div>
@@ -200,56 +199,7 @@
             <div class="tab-prc-hot">
                 <div class="tab-hot-hd">TOP销售排行榜</div>
                 <div class="tab-hot-bd">
-                    <div class="tab-hot-item ">
-                        <div class="tab-hot-num tab-num-col">1</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>
-                    <div class="tab-hot-item">
-                        <div class="tab-hot-num tab-num-col">2</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>
-                    <div class="tab-hot-item">
-                        <div class="tab-hot-num tab-num-col">3</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>
-                    <div class="tab-hot-item">
-                        <div class="tab-hot-num">4</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>
-                    <div class="tab-hot-item">
-                        <div class="tab-hot-num">5</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>                    
+                <!-- #BeginLibraryItem "/library/1F_home_top5.lbi" --> <!-- #EndLibraryItem -->
                 </div>       
             </div>
         </div>
@@ -324,56 +274,7 @@
             <div class="tab-prc-hot">
                 <div class="tab-hot-hd">TOP销售排行榜</div>
                 <div class="tab-hot-bd">
-                    <div class="tab-hot-item ">
-                        <div class="tab-hot-num tab-num-col">1</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>
-                    <div class="tab-hot-item">
-                        <div class="tab-hot-num tab-num-col">2</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>
-                    <div class="tab-hot-item">
-                        <div class="tab-hot-num tab-num-col">3</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>
-                    <div class="tab-hot-item">
-                        <div class="tab-hot-num">4</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>
-                    <div class="tab-hot-item">
-                        <div class="tab-hot-num">5</div>
-                        <div class="tab-hot-text">
-                            <div class="tab-hot-p"><a href="#">昭阳 E4430G-ISE</a></div>
-                            <div class="tab-hot-price">￥7199.00</div>
-                        </div>
-                        <div class="tab-hot-img">
-                            <a href="#"><img src="images/1F/hot-1.jpg" /></a>
-                        </div>
-                    </div>                    
+                    <!-- #BeginLibraryItem "/library/1F_shangyong_top5.lbi" --> <!-- #EndLibraryItem -->>                    
                 </div>       
             </div>
       </div>
@@ -1452,7 +1353,8 @@
             <a href="#" title="浏览"></a>
             <div class="left-browse-box">
                  <h5>我的浏览记录</h5>
-                 <p>暂无相关内容</p>
+                 <!--加载浏览记录-->
+					{insert name='indexhistory'}
                  <div class="left-collect-bottom1"></div>
                  <div class="left-collect-bottom2"></div>
             </div>

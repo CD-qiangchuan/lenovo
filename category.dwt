@@ -75,7 +75,7 @@ delete Object.prototype.toJSONString;
         <div class="pd-browse-history">
             <div class="pd-browse-historyImg"><a href="{$goods.url}"><img title="{$goods.name|escape:html}" src="{$goods.thumb}" width="180" height="180" /></a></div>
             <div class="pd-browse-historyName">
-                <a href="{$goods.url}">{$goods.name|escape:html}</a>
+                <a href="{$goods.url}">{$goods.name|truncate:30:false}</a>
                 <span class="pd-selling-price">销售价：<em class="pd-selling-priceEm">{$goods.shop_price}元</em></span>
             </div>
         </div>

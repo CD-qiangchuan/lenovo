@@ -44,6 +44,7 @@ var process_request = "{$lang.process_request}";
         <div class="hd-tool-account"><a href="myAccount.html"><span class="hd-account-ico"></span><span class="hd-account-til">我的账户</span><span class="hd-tool-jt tool-jt-bg"></span></a></div>
         <div class="hd-tool-shopping shopping-sty">
         <a href="buyflow0.html">
+           <s></s>
             <span class="hd-shopping-ico shopping-ico-bg"></span>
             <span class="hd-shopping-til">购物车</span>
             <span class="hd-tool-jt tool-jt-bg"></span>
@@ -71,15 +72,15 @@ var process_request = "{$lang.process_request}";
       <ul class="sidebar-ul">
         <!--{foreach from=$categories item=cat}-->
         <li class="sidebar-f-h sidebar-li-height" id="sidebar-li">
-          <h4>{$cat.name}</h4>
+          <h4><a  href="{$cat.url}">{$cat.name}</a></h4>
           <!--<span> <a href="#">家用分体台式机</a> <a href="#">商用笔记本电脑</a> </span>-->
           <div class="sub-sidebar"> 
             <!--{foreach from=$cat.cat_id item=child}-->
             <dl>
-              <dt>{$child.name}</dt>
+              <dt><a href="{$child.url}">{$child.name}</a></dt>
               <!--{foreach from=$child.cat_id item=childer}-->
               <dd class="webtop-separator"></dd>
-              <dd>{$childer.name}</dd>
+              <dd>{$childer.name}</a></dd>
               <!--{/foreach}-->
               
             </dl>

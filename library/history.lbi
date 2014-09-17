@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <div class="pd-browse-box">
       <h4>最近浏览过的商品</h4>
-    {insert name='indexhistory'}
+    {insert name='goodshistory'}
   </div>
 <script type="text/javascript">
 if (document.getElementById('history_list').innerHTML.replace(/\s/g,'').length<1)

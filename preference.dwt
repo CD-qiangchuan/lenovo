@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>特惠专区</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+ {insert_scripts files='transport.js,utils.js'}
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+//解决jquery冲突，先引入transport，在引入jquery
+$(function() {
+window.__Object_toJSONString = Object.prototype.toJSONString;
+delete Object.prototype.toJSONString;
+});
+</script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/jquery.jslides.js"></script><!--幻灯片方法-->
+</head>
+
+<body>
+<!-- #BeginLibraryItem "/library/page_header-1.lbi" --><!-- #EndLibraryItem -->
+
+<!--特惠专区banner-->
+<div class="pf-mainBanner">
+    <ul id="slides">
+        <li class="pf-banner1"></li>
+        <li class="pf-banner2"></li>
+        <li class="pf-banner3"></li>
+        <li class="pf-banner4"></li>
+    </ul>
+</div>
+<!--特惠广告-->
+<div class="pf-ad">
+    <div class="pf-ad1"><img src="images/pf/2.jpg" /></div>
+    <div class="pf-ad2"><img src="images/pf/p1.jpg" /></div>
+    <div class="pf-ad3"><img src="images/pf/p2.jpg" /></div>
+    <div class="pf-ad4"><img src="images/pf/p3.jpg" /></div>
+    <div class="pf-ad5"><img src="images/pf/p4.jpg" /></div>
+</div>
+
+<!--特惠产品-->
+<div class="pf-goods">  
+    <span class="pf-goods-title"></span>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="pf-goods-item">
+        <div class="pf-gdIco"></div>
+        <div class="pf-goods-img"><img src="images/pf/g1.jpg" /></div>
+        <div class="pf-goods-name">
+            <h3><a href="#">ThinkPad E430c 33651E3</a></h3>
+            <span class="pf-goods-gray">i3-3110M 2G 500G Linux</span>
+        </div>
+        <div class="pf-goods-btn">
+            <span class="ps-btn-pri">RMB<em>21999</em></span>
+            <span class="ps-btn-buy">立即抢购</span>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <span class="pf-bom"><img src="images/pf/b1.jpg" /></span>
+</div>
+</div>
+<!--左边固定栏-->
+<div class="left-sidebar">
+    <ul class="left-sidebar-item">
+        <li class="left-sidebar-order"><a href="index.html" title="首页"></a></li>
+        <li class="left-sidebar-collect">
+            <a href="#" title="收藏"></a>
+            <div class="left-collect-box">
+                 <h5>我收藏的产品</h5>
+                 <div class="left-collect-item">
+                     <div class="collect-item-img"><a href="#"><img src="images/1.jpg" /></a></div>
+                     <div class="collect-item-name"><a href="#">ThinkPad T430u 3351A33</a></div>
+                 </div>
+                 <div class="left-collect-item">
+                     <div class="collect-item-img"><a href="#"><img src="images/1.jpg" /></a></div>
+                     <div class="collect-item-name"><a href="#">ThinkPad T430u 3351A33</a></div>
+                 </div>
+                 <div class="left-collect-item">
+                     <div class="collect-item-img"><a href="#"><img src="images/1.jpg" /></a></div>
+                     <div class="collect-item-name"><a href="#">ThinkPad T430u 3351A33</a></div>
+                 </div>
+                 <div class="left-collect-bottom1"></div>
+                 <div class="left-collect-bottom2"></div>
+            </div>
+        </li>
+        <li class="left-sidebar-browse">
+            <a href="#" title="浏览"></a>
+            <div class="left-browse-box">
+                 <h5>我的浏览记录</h5>
+                 <p>暂无相关内容</p>
+                 <div class="left-collect-bottom1"></div>
+                 <div class="left-collect-bottom2"></div>
+            </div>
+        </li>
+        <li class="left-sidebar-consult">
+            <a href="#" title="咨询"></a>
+            <div class="left-consult-box">
+                <div class="left-consult-img"></div>
+                <div class="left-consult-text">
+                    <p>QQ咨询，获取更多优惠</p>
+                    <p class="consult-text-p">时间：9:00 - 18:00</p>
+                </div>
+            </div>
+        </li>
+        <li class="left-sidebar-contact">
+            <a href="#" title="联系"></a>
+            <div class="left-contact-box">
+                <div class="left-contact-img"></div>
+                <div class="left-contact-text">
+                    <p>服务热线</p>
+                    <p class="contact-text-p">400-028-6620</p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--footer-->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>
